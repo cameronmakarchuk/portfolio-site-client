@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.scss';
+import PageHeader from './components/PageHeader/PageHeader';
 
 function App() {
   return (
-<h2>Portfolio Site</h2>
+    <PageHeader />
+
   );
 }
 
