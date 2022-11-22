@@ -11,15 +11,15 @@ export default function PageHeader(): JSX.Element {
         <header className="page-header">
             <nav className="page-header__nav">
                 <ul className="page-header__nav-list">
-                    <li className="page-header__nav-item">
-                        <NavLink to="" className="page-header__nav-link">About</NavLink>
-                    </li>
-                    <li className="page-header__nav-item">
-                        <NavLink to="" className="page-header__nav-link">Projects</NavLink>
-                    </li>
-                    <li className="page-header__nav-item">
-                        <NavLink to="" className="page-header__nav-link">Contact</NavLink>
-                    </li>
+                <NavLink to="" className="page-header__nav-link">
+                    <li className="page-header__nav-item">About</li>
+                        </NavLink>
+                        <NavLink to="" className="page-header__nav-link">
+                    <li className="page-header__nav-item">Projects</li>
+                    </NavLink>
+                    <NavLink to="" className="page-header__nav-link">
+                    <li className="page-header__nav-item">Contact</li>
+                    </NavLink>
                 </ul>
 
                <img src={darkToggleIcon} alt="light dark toggle" className="page-header__light-dark-toggle" />
