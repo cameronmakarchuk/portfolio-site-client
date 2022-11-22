@@ -2,7 +2,7 @@
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
 
-html {
+html, body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Mona Sans";

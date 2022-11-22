@@ -1,3 +1,49 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+
+.page-header {
+    margin: 0;
+    width: 100vw;
+    position: relative;
+    padding: 1.0rem;
+
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__nav-list {
+        width: 175px;
+        margin: 0;
+        padding: 0.125rem 0.5rem;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 20px;
+        border: 0.5px solid lightgray;
+        box-shadow: 0 0 10px 1px lightgray;
+    }
+
+    &__nav-item {
+        margin: 0;
+    }
+
+    &__nav-link {
+        @include bodyCopy;
+        text-decoration: none;
+        font-size: 10px;
+    }
+
+    &__light-dark-toggle {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 0;
+        top: 1.0rem;
+        
+    }
+}
