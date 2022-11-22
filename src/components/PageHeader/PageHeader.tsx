@@ -1,11 +1,29 @@
 import "./PageHeader.scss";
+import {NavLink} from "react-router-dom";
 
 
-export default function PageHeader() {
+// interface PageHeaderProps {
+//     person: string;
+
+// }
+
+export default function PageHeader(): JSX.Element {
     
     return (
         <header className="page-header">
-            <h2>This is header</h2>
+            <nav className="page-header__nav">
+                <ul className="page-header__nav-list">
+                    <li className="page-header__nav-item">
+                        <NavLink to="">About</NavLink>
+                    </li>
+                    <li className="page-header__nav-item">
+                        <NavLink to="">Projects</NavLink>
+                    </li>
+                    <li className="page-header__nav-item">
+                        <NavLink to="">Contact</NavLink>
+                    </li>
+                </ul>
+            </nav>
         </header>
     )
 }

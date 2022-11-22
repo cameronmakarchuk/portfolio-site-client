@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageHeader from './components/PageHeader/PageHeader';
 
 function App() {
   return (
-    <PageHeader />
+    <BrowserRouter>
+      <PageHeader />
+      <Routes>
+        <Route path="/" element="" />
+      </Routes>
+
+    </BrowserRouter>
 
   );
 }
