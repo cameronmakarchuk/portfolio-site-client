@@ -3,10 +3,8 @@
 @use "../../styles/partials/typography" as *;
 
 .page-header {
-    margin: 0;
-    width: 100vw;
+    @include mainSection;
     position: relative;
-    padding: 1.0rem;
 
     &__profile-img {
         width: 25px;

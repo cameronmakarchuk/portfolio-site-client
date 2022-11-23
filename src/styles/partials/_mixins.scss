@@ -1,7 +1,14 @@
 @use "./typography";
 @use "./variables";
 
+@mixin mainSection {
+    width: 100vw;
+    margin: 0;
+    padding: 1.0rem;
+}
+
 @mixin pageTitle {
+    margin: 0;
     font-family: "Mona Sans";
     font-size: 24px;
     font-weight: 700;
@@ -9,8 +16,9 @@
 }
 
 @mixin bodyCopy {
+    margin: 0;
     font-family: "Mona Sans";
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 200;
     color: black;
 }

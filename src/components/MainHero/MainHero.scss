@@ -1,3 +1,17 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+
+.main-hero {
+    @include mainSection;
+
+    &__title {
+        @include pageTitle;
+        margin: 1.0rem 0;
+    }
+
+    &__intro {
+        @include bodyCopy;
+        line-height: 1.25rem;
+    }
+}
