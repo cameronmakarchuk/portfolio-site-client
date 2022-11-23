@@ -1,9 +1,19 @@
 import React from "react";
 import "./MainHero.scss";
+import camProfilePic from "../../assets/images/cam-profile-square.png";
+import twitterLogo from "../../assets/icons/twitter-logo.svg";
+import instagramLogo from "../../assets/icons/instagram-logo.svg";
+import linkedinLogo from "../../assets/icons/linkedin-logo.svg";
+import githubLogo from "../../assets/icons/github-logo.svg";
 
 export default function MainHero(): JSX.Element {
   return (
     <section className="main-hero">
+      <img
+        src={camProfilePic}
+        alt="Cameron profile"
+        className="main-hero__profile-img"
+      />
       <h1 className="main-hero__title">
         Software developer, fitness entreprenuer, and travel enthusiast.
       </h1>
@@ -14,12 +24,52 @@ export default function MainHero(): JSX.Element {
         themselves. Now I'm leaning into my love of tech through software
         development.
       </p>
-      {/* <div className="main-hero__social-icons">
-        <img src="" alt="twitter icon" className="main-hero__social-icon" />
-        <img src="" alt="instagram icon" className="main-hero__social-icon" />
-        <img src="" alt="linkedin icon" className="main-hero__social-icon" />
-        <img src="" alt="github icon" className="main-hero__social-icon" />
-      </div> */}
+      <div className="main-hero__social-icons">
+        <a
+          href="https://twitter.com/cmakarchuk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={twitterLogo}
+            alt="twitter icon"
+            className="main-hero__social-icon"
+          />
+        </a>
+        <a
+          href="https://instagram.com/cameronmakarchuk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={instagramLogo}
+            alt="instagram icon"
+            className="main-hero__social-icon"
+          />
+        </a>
+        <a
+          href="https://linkedin.com/in/cameronmakarchuk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={linkedinLogo}
+            alt="linkedin icon"
+            className="main-hero__social-icon"
+          />
+        </a>
+        <a
+          href="https://github.com/cameronmakarchuk"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={githubLogo}
+            alt="github icon"
+            className="main-hero__social-icon"
+          />
+        </a>
+      </div>
     </section>
   );
 }

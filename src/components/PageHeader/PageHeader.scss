@@ -6,15 +6,6 @@
     @include mainSection;
     position: relative;
 
-    &__profile-img {
-        width: 25px;
-        // height: 20px;
-        border-radius: 50%;
-        position: absolute;
-        left: 1.0rem;
-        top: 1.0rem;
-    }
-
     &__nav {
         width: 100%;
         display: flex;
