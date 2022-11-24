@@ -24,6 +24,10 @@
         border-radius: 20px;
         border: 0.5px solid lightgray;
         box-shadow: 0 0 10px 1px lightgray;
+        background-color: white;
+        position: fixed;
+        top: 1.0rem;
+        // z-index: 1;
     }
 
     &__nav-item {
@@ -41,8 +45,8 @@
     &__light-dark-toggle {
         width: 20px;
         height: 20px;
-        position: absolute;
-        right: 1.0rem;
+        position: fixed;
+        right: 1.5rem;
         top: 1.0rem;
         background-color: white;
         border: 0.5px solid lightgray;

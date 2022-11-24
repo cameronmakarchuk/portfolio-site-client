@@ -4,13 +4,15 @@
 
 .main-hero {
     @include mainSection;
+    padding-top: 3.0rem;
 
     &__profile-img {
         width: 50px;
         border-radius: 50%;
-        // position: absolute;
-        // left: 1.0rem;
-        // top: 1.0rem;
+        position: sticky;
+        left: 1.0rem;
+        top: 1.0rem;
+
     }
 
     &__title {

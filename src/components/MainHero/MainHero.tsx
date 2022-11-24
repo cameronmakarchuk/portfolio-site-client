@@ -15,7 +15,7 @@ export default function MainHero(): JSX.Element {
         className="main-hero__profile-img"
       />
       <h1 className="main-hero__title">
-        Software developer, fitness entreprenuer, and travel enthusiast.
+        Software developer, fitness entreprenuer.
       </h1>
       <p className="main-hero__intro">
         Hi. I'm Cameron, a full-stack software developer and entreprenuer based
