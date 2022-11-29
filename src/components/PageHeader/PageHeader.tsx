@@ -9,12 +9,14 @@ export default function PageHeader(): JSX.Element {
     <header className="page-header">
       <nav className="page-header__nav">
         <ul className="page-header__nav-list">
+          <NavLink to="/" className="page-header__nav-link">
+            <li className="page-header__nav-item">Projects</li>
+          </NavLink>
+
           <NavLink to="" className="page-header__nav-link">
             <li className="page-header__nav-item">About</li>
           </NavLink>
-          <NavLink to="" className="page-header__nav-link">
-            <li className="page-header__nav-item">Projects</li>
-          </NavLink>
+
           <NavLink to="" className="page-header__nav-link">
             <li className="page-header__nav-item">Contact</li>
           </NavLink>
