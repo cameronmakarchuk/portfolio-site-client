@@ -1,5 +1,6 @@
 import React from "react";
 import MainHero from "../../components/MainHero/MainHero";
+import Projects from "../../components/Projects/Projects";
 import TechStack from "../../components/TechStack/TechStack";
 
 export default function HomePage(): JSX.Element {
@@ -7,6 +8,7 @@ export default function HomePage(): JSX.Element {
     <section className="home-page">
       <MainHero />
       <TechStack />
+      <Projects />
     </section>
   );
 }

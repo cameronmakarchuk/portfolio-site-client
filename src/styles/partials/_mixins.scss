@@ -16,6 +16,14 @@
     color: black;
 }
 
+@mixin pageSubtitle {
+    margin: 0;
+    font-family: "Mona Sans";
+    font-size: 12px;
+    font-weight: 400;
+    color: gray;
+}
+
 @mixin bodyCopy {
     margin: 0;
     font-family: "Mona Sans";
