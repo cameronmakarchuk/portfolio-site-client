@@ -34,6 +34,13 @@ export default function TechStack(): JSX.Element {
       </div>
       <div className="tech-stack__tech-logo">
         <img
+          src={sassLogo}
+          alt=" logo"
+          className="tech-stack__tech-logo--img"
+        />
+      </div>
+      <div className="tech-stack__tech-logo">
+        <img
           src={typescriptLogo}
           alt=" logo"
           className="tech-stack__tech-logo--img"
@@ -42,13 +49,6 @@ export default function TechStack(): JSX.Element {
       <div className="tech-stack__tech-logo">
         <img
           src={reactLogo}
-          alt=" logo"
-          className="tech-stack__tech-logo--img"
-        />
-      </div>
-      <div className="tech-stack__tech-logo">
-        <img
-          src={sassLogo}
           alt=" logo"
           className="tech-stack__tech-logo--img"
         />
