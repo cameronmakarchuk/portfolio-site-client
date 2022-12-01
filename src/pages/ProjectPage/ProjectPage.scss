@@ -21,3 +21,24 @@
         @include bodyCopy;
     }
 }
+
+.project {
+    &__title {
+        @include pageTitle;
+    }
+
+    &__subtitle {
+        @include pageSubtitle;
+    }
+
+    &__img-container {
+        padding: 1.0rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__img-mockup {
+        width: 32%;
+        
+    }
+}
