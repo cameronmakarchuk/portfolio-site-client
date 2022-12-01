@@ -1,10 +1,25 @@
+import "./ProjectPage.scss";
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 export default function ProjectPage(): JSX.Element {
   return (
     <section className="project-page">
-      {/* BUILD PROJECTS NAV BAR THAT CAN BE CLICKED TO DISPLAY EACH PROJECT BELOW */}
+      <div className="project-page__nav">
+        <ul className="project-page__nav-list">
+          <NavLink to="/projects/recleague" className="project-page__nav-link">
+            <li className="project-page__nav-item">RecLeague</li>
+          </NavLink>
+
+          <NavLink to="/projects/brainstorm" className="project-page__nav-link">
+            <li className="project-page__nav-item">BrainStorm</li>
+          </NavLink>
+
+          <NavLink to="/projects/portfolio" className="project-page__nav-link">
+            <li className="project-page__nav-item">CM Portfolio</li>
+          </NavLink>
+        </ul>
+      </div>
 
       <Outlet />
     </section>

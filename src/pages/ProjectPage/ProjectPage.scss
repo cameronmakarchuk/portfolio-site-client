@@ -1,3 +1,23 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+
+.project-page {
+    @include mainSection;
+
+    &__nav-list {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    &__nav-link {
+        text-decoration: none;
+    }
+
+    &__nav-item {
+        @include bodyCopy;
+    }
+}
