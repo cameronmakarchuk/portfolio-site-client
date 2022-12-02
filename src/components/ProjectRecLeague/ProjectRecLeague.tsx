@@ -10,20 +10,34 @@ export type Mockups = {
   src: string;
 };
 
-export interface RecLeagueDetails {
+export interface ProjectDetails {
   title: string;
   position: string;
   responsibilities: string;
   date: string;
   mockups: Mockups[];
+  techStack: string[];
+  problem: string;
 }
 
 export default function ProjectRecLeague(): JSX.Element {
-  const recleagueDetails: RecLeagueDetails = {
+  const recleagueDetails: ProjectDetails = {
     title: "RecLeague",
     position: "Creator",
     responsibilities: "UI/UX, Development",
     date: "November 2022",
+    techStack: [
+      "HTML",
+      "CSS",
+      "Sass",
+      "JavaScript",
+      "React",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "Knex.js",
+      "SQL/mySQL",
+    ],
     mockups: [
       {
         id: uuidv4(),
@@ -38,6 +52,8 @@ export default function ProjectRecLeague(): JSX.Element {
         src: recleagueProfileIphone,
       },
     ],
+    problem:
+      "Most recreational sports leagues are difficult to find, have websites that are challenging to navigate, and joining is a pain - especially when you're new in town.",
   };
 
   return (

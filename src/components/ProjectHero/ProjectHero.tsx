@@ -1,16 +1,21 @@
-import {
-  RecLeagueDetails,
-  Mockups,
-} from "../ProjectRecLeague/ProjectRecLeague";
+import { ProjectDetails, Mockups } from "../ProjectRecLeague/ProjectRecLeague";
 
 interface ProjectHeroProps {
-  recleagueDetails: RecLeagueDetails;
+  recleagueDetails: ProjectDetails;
 }
 
 export default function ProjectHero({
   recleagueDetails,
 }: ProjectHeroProps): JSX.Element {
-  const { title, position, responsibilities, date, mockups } = recleagueDetails;
+  const {
+    title,
+    position,
+    responsibilities,
+    date,
+    mockups,
+    techStack,
+    problem,
+  } = recleagueDetails;
   return (
     <>
       <h2 className="project__title">{title}</h2>
@@ -27,6 +32,11 @@ export default function ProjectHero({
           />
         ))}
       </div>
+      <h3 className="project__subtitle project__tech-stack">
+        {techStack.join(" ")}
+      </h3>
+      <h2 className="project__problem-header">The Problem</h2>
+      <p className="project__problem-description">{problem}</p>
     </>
   );
 }

@@ -41,4 +41,12 @@
         width: 32%;
         
     }
+
+    &__problem-header {
+        @include pageTitle;
+    }
+
+    &__problem-description {
+        @include bodyCopy;
+    }
 }
