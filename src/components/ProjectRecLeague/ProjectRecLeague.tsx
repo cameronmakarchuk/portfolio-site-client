@@ -37,6 +37,7 @@ export default function ProjectRecLeague(): JSX.Element {
       "Express.js",
       "Knex.js",
       "SQL/mySQL",
+      "JWT",
     ],
     mockups: [
       {

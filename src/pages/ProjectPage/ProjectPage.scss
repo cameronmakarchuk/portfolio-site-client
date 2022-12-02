@@ -42,11 +42,18 @@
         
     }
 
+    &__tech-stack {
+        color: lighten(gray, 20%);
+        font-weight: 300;
+    }
+
     &__problem-header {
         @include pageTitle;
+        padding: 1.0rem 0;
     }
 
     &__problem-description {
         @include bodyCopy;
+        line-height: 1.25rem;
     }
 }
