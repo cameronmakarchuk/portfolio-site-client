@@ -1,4 +1,7 @@
-import { RecLeagueDetails } from "../ProjectRecLeague/ProjectRecLeague";
+import {
+  RecLeagueDetails,
+  Mockups,
+} from "../ProjectRecLeague/ProjectRecLeague";
 
 interface ProjectHeroProps {
   recleagueDetails: RecLeagueDetails;
@@ -15,9 +18,10 @@ export default function ProjectHero({
         {`${position} | ${responsibilities} | ${date}`}
       </h3>
       <div className="project__img-container">
-        {mockups.map((mockup: string) => (
+        {mockups.map((mockup: Mockups) => (
           <img
-            src={mockup}
+            key={mockup.id}
+            src={mockup.src}
             alt="rec league iphone mockup"
             className="project__img-mockup"
           />
