@@ -4,6 +4,7 @@ import recleagueiPhone from "../../assets/images/recleague-iphone.png";
 import recleagueAddUserIphone from "../../assets/images/recleague-adduser-iphone.png";
 import recleagueProfileIphone from "../../assets/images/recleague-profile-iphone.png";
 import ProjectHero from "../ProjectHero/ProjectHero";
+import YouTubeEmbed from "../YouTubeEmbed/YouTubeEmbed";
 
 export type Mockups = {
   id: string;
@@ -57,9 +58,12 @@ export default function ProjectRecLeague(): JSX.Element {
       "Most recreational sports leagues are difficult to find, have websites that are challenging to navigate, and joining is a pain - especially when you're new in town.",
   };
 
+  const recleagueVideoEmbedId: string = "tmo6_BDQmcc";
+
   return (
     <section className="project">
       <ProjectHero recleagueDetails={recleagueDetails} />
+      <YouTubeEmbed embedId={recleagueVideoEmbedId} />
     </section>
   );
 }
