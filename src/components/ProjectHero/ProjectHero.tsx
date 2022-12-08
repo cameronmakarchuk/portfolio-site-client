@@ -1,4 +1,4 @@
-import { ProjectDetails, Mockups } from "../ProjectRecLeague/ProjectRecLeague";
+import { ProjectDetails, Mockups } from "../../utils/types";
 
 interface ProjectHeroProps {
   recleagueDetails: ProjectDetails;

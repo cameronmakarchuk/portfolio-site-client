@@ -5,21 +5,7 @@ import recleagueAddUserIphone from "../../assets/images/recleague-adduser-iphone
 import recleagueProfileIphone from "../../assets/images/recleague-profile-iphone.png";
 import ProjectHero from "../ProjectHero/ProjectHero";
 import YouTubeEmbed from "../YouTubeEmbed/YouTubeEmbed";
-
-export type Mockups = {
-  id: string;
-  src: string;
-};
-
-export interface ProjectDetails {
-  title: string;
-  position: string;
-  responsibilities: string;
-  date: string;
-  mockups: Mockups[];
-  techStack: string[];
-  problem: string;
-}
+import { ProjectDetails } from "../../utils/types";
 
 export default function ProjectRecLeague(): JSX.Element {
   const recleagueDetails: ProjectDetails = {
