@@ -63,6 +63,8 @@ export default function ProjectRecLeague(): JSX.Element {
   return (
     <section className="project">
       <ProjectHero recleagueDetails={recleagueDetails} />
+
+      <h2 className="project__header">Watch The Demo</h2>
       <YouTubeEmbed embedId={recleagueVideoEmbedId} />
     </section>
   );

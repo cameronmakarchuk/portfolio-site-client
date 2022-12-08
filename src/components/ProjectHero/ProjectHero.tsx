@@ -35,7 +35,7 @@ export default function ProjectHero({
       <h3 className="project__subtitle project__tech-stack">
         {techStack.join(" ")}
       </h3>
-      <h2 className="project__problem-header">The Problem</h2>
+      <h2 className="project__header">The Problem</h2>
       <p className="project__problem-description">{problem}</p>
     </>
   );

@@ -11,6 +11,7 @@ export default function YouTubeEmbed({
   return (
     <div className="video-responsive">
       <iframe
+        className="video-responsive__video"
         width="853"
         height="480"
         src={`https://www.youtube.com/embed/${embedId}`}

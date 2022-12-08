@@ -1,6 +1,7 @@
 import "./ProjectPage.scss";
 import React from "react";
 import { Outlet, NavLink } from "react-router-dom";
+import CallToAction from "../../components/CallToAction/CallToAction";
 
 export default function ProjectPage(): JSX.Element {
   return (
@@ -22,6 +23,7 @@ export default function ProjectPage(): JSX.Element {
       </div>
 
       <Outlet />
+      <CallToAction />
     </section>
   );
 }
