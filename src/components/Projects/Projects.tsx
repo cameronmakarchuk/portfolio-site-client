@@ -7,7 +7,7 @@ import brainstormiPhone from "../../assets/images/brainstorm-iphone.png";
 export default function Projects(): JSX.Element {
   return (
     <section className="projects">
-      <Link to="" className="projects__link">
+      <Link to="/projects/recleague" className="projects__link">
         <article className="projects__card">
           <h3 className="projects__card-subtitle">WEB APP</h3>
           <h2 className="projects__card-title">RecLeague</h2>
