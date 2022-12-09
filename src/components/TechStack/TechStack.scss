@@ -3,7 +3,6 @@
 @use "../../styles/partials/typography" as *;
 
 .tech-stack {
-    @include mainSection;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

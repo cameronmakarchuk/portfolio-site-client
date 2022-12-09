@@ -3,17 +3,11 @@
 @use "../../styles/partials/typography" as *;
 
 .main-hero {
-    @include mainSection;
-    padding-top: 3.0rem;
+    padding-top: 2.0rem;
 
     &__profile-img {
-        width: 50px;
+        width: 60px;
         border-radius: 50%;
-        position: sticky;
-        left: 1.0rem;
-        top: 1.0rem;
-        z-index: 1000;
-
     }
 
     &__title {

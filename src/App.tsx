@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import ProjectRecLeague from "./components/ProjectRecLeague/ProjectRecLeague";
 import ProjectBrainStorm from "./components/ProjectBrainStorm/ProjectBrainStorm";
+import CallToAction from "./components/CallToAction/CallToAction";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/projects/brainstorm" element={<ProjectBrainStorm />} />
         </Route>
       </Routes>
+      <CallToAction />
     </BrowserRouter>
   );
 }

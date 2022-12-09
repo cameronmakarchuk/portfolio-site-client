@@ -3,7 +3,6 @@
 @use "../../styles/partials/typography" as *;
 
 .projects {
-    @include mainSection;
 
     &__link {
         text-decoration: none;

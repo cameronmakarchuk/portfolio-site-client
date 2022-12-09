@@ -1,6 +1,6 @@
 import React from "react";
 import "./PageHeader.scss";
-import darkToggleIcon from "../../assets/icons/dark_mode_FILL0_wght400_GRAD0_opsz48.svg";
+// import darkToggleIcon from "../../assets/icons/dark_mode_FILL0_wght400_GRAD0_opsz48.svg";
 // import _lightToggleIcon from "../../assets/icons/light_mode_FILL0_wght400_GRAD0_opsz48.svg";
 import { NavLink } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export default function PageHeader(): JSX.Element {
       <nav className="page-header__nav">
         <ul className="page-header__nav-list">
           <NavLink to="/" className="page-header__nav-link">
-            <li className="page-header__nav-item">Projects</li>
+            <li className="page-header__nav-item">Home</li>
           </NavLink>
 
           <NavLink to="" className="page-header__nav-link">
@@ -22,11 +22,11 @@ export default function PageHeader(): JSX.Element {
           </NavLink>
         </ul>
       </nav>
-      <img
+      {/* <img
         src={darkToggleIcon}
         alt="light dark toggle"
         className="page-header__light-dark-toggle"
-      />
+      /> */}
     </header>
   );
 }
