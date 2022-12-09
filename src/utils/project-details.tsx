@@ -5,7 +5,7 @@ import recleagueProfileIphone from "../assets/images/recleague-profile-iphone.pn
 import brainstormHome from "../assets/images/brainstorm-home.png";
 import brainstormInput from "../assets/images/brainstorm-input.png";
 import brainstormPrompts from "../assets/images/brainstorm-prompts.png";
-import brainstormSuccess from "../assets/images/brainstorm-success.png";
+import _brainstormSuccess from "../assets/images/brainstorm-success.png";
 import { v4 as uuidv4 } from "uuid";
 
 export const recleagueDetails: ProjectDetails = {
