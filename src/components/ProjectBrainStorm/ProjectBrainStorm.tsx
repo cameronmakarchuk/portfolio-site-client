@@ -1,12 +1,8 @@
-import { ProjectDetails, Mockups } from "../../utils/types";
+import "../../pages/ProjectPage/ProjectPage.scss";
+import { Mockups } from "../../utils/types";
+import { brainstormDetails } from "../../utils/project-details";
 
-interface ProjectHeroProps {
-  recleagueDetails: ProjectDetails;
-}
-
-export default function ProjectHero({
-  recleagueDetails,
-}: ProjectHeroProps): JSX.Element {
+export default function ProjectBrainStorm(): JSX.Element {
   const {
     title,
     position,
@@ -15,9 +11,10 @@ export default function ProjectHero({
     mockups,
     techStack,
     problem,
-  } = recleagueDetails;
+  } = brainstormDetails;
+
   return (
-    <>
+    <section className="project">
       <h2 className="project__title">{title}</h2>
       <h3 className="project__subtitle">
         {`${position} | ${responsibilities} | ${date}`}
@@ -37,6 +34,6 @@ export default function ProjectHero({
       </h3>
       <h2 className="project__header">The Problem</h2>
       <p className="project__problem-description">{problem}</p>
-    </>
+    </section>
   );
 }

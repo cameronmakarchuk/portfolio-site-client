@@ -5,6 +5,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 import HomePage from "./pages/HomePage/HomePage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import ProjectRecLeague from "./components/ProjectRecLeague/ProjectRecLeague";
+import ProjectBrainStorm from "./components/ProjectBrainStorm/ProjectBrainStorm";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Route path="/projects" element={<ProjectPage />}>
           <Route path="/projects/recleague" element={<ProjectRecLeague />} />
+          <Route path="/projects/brainstorm" element={<ProjectBrainStorm />} />
         </Route>
       </Routes>
     </BrowserRouter>

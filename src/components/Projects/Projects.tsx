@@ -20,7 +20,7 @@ export default function Projects(): JSX.Element {
         </article>
       </Link>
 
-      <Link to="" className="projects__link">
+      <Link to="/projects/brainstorm" className="projects__link">
         <article className="projects__card">
           <h3 className="projects__card-subtitle">MOBILE</h3>
           <h2 className="projects__card-title">BrainStorm</h2>
