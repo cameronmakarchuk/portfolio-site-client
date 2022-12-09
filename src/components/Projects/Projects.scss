@@ -12,7 +12,7 @@
     &__card {
         margin: 1.0rem;
         padding: 1.0rem;
-        background-color: bisque;
+        background: radial-gradient($primary-two-pink, $primary-five-lightblue);
         border-radius: 10px;
         display: flex;
         flex-direction: column;
