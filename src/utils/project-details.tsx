@@ -2,6 +2,10 @@ import { ProjectDetails } from "./types";
 import recleagueiPhone from "../assets/images/recleague-iphone.png";
 import recleagueAddUserIphone from "../assets/images/recleague-adduser-iphone.png";
 import recleagueProfileIphone from "../assets/images/recleague-profile-iphone.png";
+import brainstormHome from "../assets/images/brainstorm-home.png";
+import brainstormInput from "../assets/images/brainstorm-input.png";
+import brainstormPrompts from "../assets/images/brainstorm-prompts.png";
+import brainstormSuccess from "../assets/images/brainstorm-success.png";
 import { v4 as uuidv4 } from "uuid";
 
 export const recleagueDetails: ProjectDetails = {
@@ -58,16 +62,17 @@ export const brainstormDetails: ProjectDetails = {
   mockups: [
     {
       id: uuidv4(),
-      src: recleagueiPhone,
+      src: brainstormHome,
     },
     {
       id: uuidv4(),
-      src: recleagueAddUserIphone,
+      src: brainstormInput,
     },
     {
       id: uuidv4(),
-      src: recleagueProfileIphone,
+      src: brainstormPrompts,
     },
   ],
-  problem: "Virtual idea-box/brainstorming application for teams.",
+  problem:
+    "As part of a 24-hour hackathon organized by Microsoft and BrainStation we were tasked with developing a solution to keep employees engaged while working from home, and feeling like their work mattered.",
 };
