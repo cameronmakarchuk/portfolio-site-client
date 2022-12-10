@@ -8,11 +8,13 @@ import { NavLink } from "react-router-dom";
 export default function PageHeader(): JSX.Element {
   return (
     <header className="page-header">
-      <img
-        src={cmSignature}
-        alt="Cameron Makarchuk Signature"
-        className="page-header__logo"
-      />
+      <NavLink to="/" className="page-header__nav-link">
+        <img
+          src={cmSignature}
+          alt="Cameron Makarchuk Signature"
+          className="page-header__logo"
+        />
+      </NavLink>
       <nav className="page-header__nav">
         <ul className="page-header__nav-list">
           <NavLink to="/" className="page-header__nav-link">

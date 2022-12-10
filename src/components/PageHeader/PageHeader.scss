@@ -3,7 +3,7 @@
 @use "../../styles/partials/typography" as *;
 
 .page-header {
-    margin: 1.0rem 0;
+    margin: 1.5rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,9 +37,7 @@
         border: 0.5px solid $primary-six-grey;
         box-shadow: 0 0 10px 1px $primary-six-grey;
         background-color: $primary-seven-white;
-        // position: sticky;
-        // top: 1.0rem;
-        // z-index: 1;
+      
     }
 
     &__nav-item {
@@ -47,6 +45,10 @@
         font-weight: 400;
         font-size: 10px;
         margin: 0;
+
+        &:hover {
+            color: $primary-four-blue;
+        }
         
     }
 
