@@ -32,4 +32,13 @@
     &__signature {
         width: 120px
     }
+
+    &__link {
+        text-decoration: none;
+        color: $primary-four-blue;
+
+        &:hover {
+            color: $primary-eight-black;
+        }
+    }
 }

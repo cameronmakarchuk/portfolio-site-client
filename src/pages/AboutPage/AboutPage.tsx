@@ -22,8 +22,11 @@ export default function AboutPage(): JSX.Element {
       <p className="about-page__description">
         That passion continued as a fitness professional when I made the
         decision to close my personal training studio in 2015 and begin shifting
-        my business into the online coaching model that BluePhoenix Fitness runs
-        on today.
+        my business into the online coaching model that{" "}
+        <a href="https://bluephoenixfitness.com" className="about-page__link">
+          BluePhoenix Fitness
+        </a>{" "}
+        runs on today.
       </p>
       <p className="about-page__description">
         I always found myself being drawn towards “digital” - whether it was
