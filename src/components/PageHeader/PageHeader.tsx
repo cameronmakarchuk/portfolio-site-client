@@ -1,5 +1,6 @@
 import React from "react";
 import "./PageHeader.scss";
+import cmSignature from "../../assets/icons/cm-signature-black.svg";
 // import darkToggleIcon from "../../assets/icons/dark_mode_FILL0_wght400_GRAD0_opsz48.svg";
 // import _lightToggleIcon from "../../assets/icons/light_mode_FILL0_wght400_GRAD0_opsz48.svg";
 import { NavLink } from "react-router-dom";
@@ -7,6 +8,11 @@ import { NavLink } from "react-router-dom";
 export default function PageHeader(): JSX.Element {
   return (
     <header className="page-header">
+      <img
+        src={cmSignature}
+        alt="Cameron Makarchuk Signature"
+        className="page-header__logo"
+      />
       <nav className="page-header__nav">
         <ul className="page-header__nav-list">
           <NavLink to="/" className="page-header__nav-link">
