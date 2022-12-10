@@ -11,12 +11,15 @@
     }
 
     &__connect-wrapper {
+        padding-bottom: 3.0rem;
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     &__connect-link {
-        width: 30%;
+        width: 27%;
 
     }
 
