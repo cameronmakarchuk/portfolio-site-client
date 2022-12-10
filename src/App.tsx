@@ -7,6 +7,7 @@ import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import ProjectRecLeague from "./components/ProjectRecLeague/ProjectRecLeague";
 import ProjectBrainStorm from "./components/ProjectBrainStorm/ProjectBrainStorm";
 import CallToAction from "./components/CallToAction/CallToAction";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/projects/recleague" element={<ProjectRecLeague />} />
           <Route path="/projects/brainstorm" element={<ProjectBrainStorm />} />
         </Route>
+
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <CallToAction />
     </BrowserRouter>
