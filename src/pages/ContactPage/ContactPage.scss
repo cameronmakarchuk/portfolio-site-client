@@ -9,4 +9,15 @@
         @include pageTitle;
         padding: 3.0rem 0 1.5rem;
     }
+
+    &__connect-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__connect-icon {
+        width: 30%;
+        padding: 1.0rem;
+    }
 }
