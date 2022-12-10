@@ -11,13 +11,22 @@
     }
 
     &__connect-wrapper {
-        width: 100%;
         display: flex;
         flex-wrap: wrap;
     }
 
-    &__connect-icon {
+    &__connect-link {
         width: 30%;
+
+    }
+
+    &__connect-icon {
+        width: 100%;
         padding: 1.0rem;
+
+
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
