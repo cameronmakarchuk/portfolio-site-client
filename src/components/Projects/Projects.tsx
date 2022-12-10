@@ -33,7 +33,7 @@ export default function Projects(): JSX.Element {
         </article>
       </Link>
 
-      <Link to="" className="projects__link">
+      {/* <Link to="" className="projects__link">
         <article className="projects__card">
           <h3 className="projects__card-subtitle">WEB APP</h3>
           <h3 className="projects__card-subtitle">(this site!)</h3>
@@ -45,7 +45,7 @@ export default function Projects(): JSX.Element {
             className="projects__card-image"
           />
         </article>
-      </Link>
+      </Link> */}
     </section>
   );
 }

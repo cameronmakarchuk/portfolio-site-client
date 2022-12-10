@@ -15,9 +15,9 @@ export default function ProjectPage(): JSX.Element {
             <li className="project-page__nav-item">BrainStorm</li>
           </NavLink>
 
-          <NavLink to="/projects/portfolio" className="project-page__nav-link">
+          {/* <NavLink to="/projects/portfolio" className="project-page__nav-link">
             <li className="project-page__nav-item">CM Portfolio</li>
-          </NavLink>
+          </NavLink> */}
         </ul>
       </div>
 
