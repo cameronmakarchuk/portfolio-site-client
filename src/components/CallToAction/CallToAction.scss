@@ -20,9 +20,14 @@
 
     &__description {
         @include bodyCopy;
+        line-height: 1.25rem;
     }
 
     &__message-link {
         @include bodyCopy;
+
+        &:hover {
+            color: $primary-four-blue;
+        }
     }
 }
