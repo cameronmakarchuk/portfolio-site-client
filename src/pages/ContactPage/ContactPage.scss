@@ -1,0 +1,12 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.contact-page {
+    @include mainSection;
+
+    &__title {
+        @include pageTitle;
+        padding: 3.0rem 0 1.5rem;
+    }
+}

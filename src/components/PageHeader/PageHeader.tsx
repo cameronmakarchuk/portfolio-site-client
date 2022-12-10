@@ -25,7 +25,7 @@ export default function PageHeader(): JSX.Element {
             <li className="page-header__nav-item">About</li>
           </NavLink>
 
-          <NavLink to="" className="page-header__nav-link">
+          <NavLink to="/contact" className="page-header__nav-link">
             <li className="page-header__nav-item">Contact</li>
           </NavLink>
         </ul>

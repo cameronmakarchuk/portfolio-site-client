@@ -8,6 +8,7 @@ import ProjectRecLeague from "./components/ProjectRecLeague/ProjectRecLeague";
 import ProjectBrainStorm from "./components/ProjectBrainStorm/ProjectBrainStorm";
 import CallToAction from "./components/CallToAction/CallToAction";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         </Route>
 
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <CallToAction />
     </BrowserRouter>
