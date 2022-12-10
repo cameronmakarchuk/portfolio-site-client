@@ -4,6 +4,7 @@
 
 .project-page {
     @include mainSection;
+    padding-bottom: 3.0rem;
 
     &__nav-list {
         padding: 0;
@@ -19,20 +20,26 @@
 
     &__nav-item {
         @include bodyCopy;
+
+        &:hover {
+            color: $primary-four-blue;
+        }
     }
 }
 
 .project {
     &__title {
         @include pageTitle;
+        padding-top: 1.5rem;
     }
 
     &__subtitle {
         @include pageSubtitle;
+        color: lighten($primary-eight-black, 40%);
     }
 
     &__img-container {
-        padding: 1.0rem 0;
+        padding: 1.5rem 0;
         display: flex;
         justify-content: space-between;
     }
@@ -43,13 +50,14 @@
     }
 
     &__tech-stack {
-        color: lighten(gray, 20%);
+        @include pageSubtitle;
+        color: lighten($primary-eight-black, 40%);
         font-weight: 300;
     }
 
     &__header {
         @include pageTitle;
-        padding: 1.0rem 0;
+        padding: 3.0rem 0 1.0rem;
     }
 
     &__problem-description {
