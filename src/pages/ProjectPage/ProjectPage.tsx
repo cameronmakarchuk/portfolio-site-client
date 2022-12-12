@@ -1,8 +1,12 @@
 import "./ProjectPage.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 
 export default function ProjectPage(): JSX.Element {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section className="project-page">
       <div className="project-page__nav">
