@@ -57,11 +57,11 @@
 
     &__header {
         @include pageTitle;
-        padding: 3.0rem 0 1.0rem;
+        padding: 2.5rem 0 1.0rem;
     }
 
     &__problem-description {
         @include bodyCopy;
-        line-height: 1.25rem;
+        padding-bottom: 0.5rem;
     }
 }

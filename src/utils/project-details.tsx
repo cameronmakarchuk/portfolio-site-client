@@ -41,7 +41,7 @@ export const recleagueDetails: ProjectDetails = {
     },
   ],
   problem:
-    "Most recreational sports leagues are difficult to find, have websites that are challenging to navigate, and joining is a pain - especially when you're new in town.",
+    "Most recreational sports leagues are difficult to find, have websites that are challenging to navigate, and joining is a pain - especially when you're new in town. So I set out to build a better way with RecLeague.",
 };
 
 export const brainstormDetails: ProjectDetails = {
@@ -74,5 +74,5 @@ export const brainstormDetails: ProjectDetails = {
     },
   ],
   problem:
-    "As part of a 24-hour hackathon organized by Microsoft and BrainStation we were tasked with developing a solution to keep employees engaged while working from home, and feeling like their work mattered.",
+    "As part of a 24-hour hackathon organized by Microsoft and BrainStation we were tasked with developing a solution to create working environments in which employees and teams are empowered to work together effectively and contribute meaningfully to the company's goals.",
 };
