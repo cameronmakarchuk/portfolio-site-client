@@ -24,6 +24,11 @@
 
     @include tablet {
         padding: 1.5rem 3.0rem;
+        border-radius: 6px;
+    }
+
+    @include desktop {
+        padding: 2.5rem 4.0rem;
     }
 }
 
@@ -33,6 +38,14 @@
     font-size: 24px;
     font-weight: 700;
     color: $primary-one-orange;
+
+    @include tablet {
+        font-size: 28px;
+    }
+
+    @include desktop {
+        font-size: 32px;
+    }
 }
 
 @mixin pageSubtitle {
@@ -41,6 +54,14 @@
     font-size: 12px;
     font-weight: 400;
     color: $primary-six-grey;
+
+    @include tablet {
+        font-size: 16px;
+    }
+
+    @include desktop {
+        font-size: 20px;
+    }
 }
 
 @mixin bodyCopy {
@@ -50,4 +71,12 @@
     font-size: 11px;
     font-weight: 200;
     color: $primary-eight-black;
+
+    @include tablet {
+        font-size: 15px;
+    }
+
+    @include desktop {
+        font-size: 18px;
+    }
 }

@@ -9,12 +9,20 @@
     align-items: center;
     position: relative;
 
+    @include tablet {
+        margin: 2.0rem 0;
+    }
+
     &__logo {
-        width: 70px;
+        width: 55px;
         position: absolute;
-        top: -0.6rem;
+        top: -0.3rem;
         left: 0;
         transform: rotate(345deg);
+
+        @include tablet {
+            width: 120px;
+        }
     }
 
     &__nav {
@@ -36,6 +44,11 @@
         border: 0.5px solid $primary-six-grey;
         box-shadow: 0 0 10px 1px $primary-six-grey;
         background-color: $primary-seven-white;
+
+        @include tablet {
+            width: 275px;
+            padding: 0.5rem 0.75rem;
+        }
       
     }
 
