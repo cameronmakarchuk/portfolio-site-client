@@ -9,6 +9,10 @@
     align-items: center;
     padding-bottom: 2.0rem;
 
+    @include tablet {
+        padding: 0.5rem 0 2.5rem;
+    }
+
 
     &__tech-logo {
         width: 23%;
