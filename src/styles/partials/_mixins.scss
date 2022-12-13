@@ -1,6 +1,19 @@
 @use "./typography" as *;
 @use "./variables" as *;
 
+//BREAKPOINTS
+@mixin tablet {
+    @media (min-width: $tablet) and (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
 @mixin mainSection {
     width: 100%;
     margin: 0;
