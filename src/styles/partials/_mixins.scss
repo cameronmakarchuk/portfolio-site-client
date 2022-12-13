@@ -14,12 +14,17 @@
     }
 }
 
+//CONTENT
 @mixin mainSection {
     width: 100%;
     margin: 0;
     padding: 1.0rem;
     border-radius: 5px;
     background-color: $primary-seven-white;
+
+    @include tablet {
+        padding: 1.5rem 3.0rem;
+    }
 }
 
 @mixin pageTitle {

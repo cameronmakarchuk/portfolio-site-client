@@ -16,4 +16,12 @@ body {
   min-height: 100vh;
   padding: 0 0.75rem;
   background: linear-gradient($primary-four-blue, $primary-two-pink, $primary-five-lightblue);
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include desktop {
+    padding: 0 3.0rem;
+  }
 }
