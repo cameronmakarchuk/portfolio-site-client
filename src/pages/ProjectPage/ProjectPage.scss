@@ -6,6 +6,10 @@
     @include mainSection;
     padding-bottom: 3.0rem;
 
+    @include tablet {
+        padding-bottom: 3.0rem;
+    }
+
     &__nav-list {
         padding: 0;
         list-style: none;
@@ -31,6 +35,10 @@
     &__title {
         @include pageTitle;
         padding-top: 1.5rem;
+
+        @include tablet {
+            padding: 2.5rem 0 0.5rem;
+        }
     }
 
     &__subtitle {
@@ -58,6 +66,10 @@
     &__header {
         @include pageTitle;
         padding: 2.5rem 0 1.0rem;
+
+        @include tablet {
+            padding: 4.0rem 0 1.5rem;
+        }
     }
 
     &__problem-description {
