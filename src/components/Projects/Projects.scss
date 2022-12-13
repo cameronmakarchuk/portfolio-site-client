@@ -5,6 +5,10 @@
 .projects {
     padding-bottom: 1.0rem;
 
+    @include tablet {
+        padding-bottom: 2.0rem;
+    }
+
     &__link {
         text-decoration: none;
     }
@@ -18,6 +22,10 @@
         flex-direction: column;
         align-items: center;
         transition: translate 0.5s;
+
+        @include tablet {
+            padding: 2.0rem;
+        }
 
         &:hover {
             translate: 0 -20px;
@@ -34,9 +42,17 @@
         align-self: flex-end;
         padding-bottom: 1.0rem;
 
+        @include tablet {
+            padding-bottom: 2.0rem;
+        }
+
     }
 
     &__card-image {
         width: 80%;
+
+        @include tablet {
+            width: 60%;
+        }
     }
 }
