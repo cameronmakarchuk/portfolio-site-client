@@ -11,19 +11,38 @@
     align-items: center;
     justify-content: center;
 
+    @include tablet {
+        padding: 4.0rem 0;
+        height: 100vh;
+    }
+
     &__title {
         @include pageTitle;
+        color: $primary-seven-white;
         font-size: 22px;
         text-align: center;
         padding-bottom: 1.0rem;
+
+        @include tablet {
+            width: 75%;
+            font-size: 36px;
+        }
     }
 
     &__description {
         @include bodyCopy;
+
+        @include tablet {
+            font-size: 18px;
+        }
     }
 
     &__message-link {
         @include bodyCopy;
+
+        @include tablet {
+            font-size: 18px;
+        }
 
         &:hover {
             color: $primary-four-blue;
