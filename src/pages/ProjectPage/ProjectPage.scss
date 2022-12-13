@@ -64,4 +64,8 @@
         @include bodyCopy;
         padding-bottom: 0.5rem;
     }
+
+    &__link {
+        @include bodyCopy;
+    }
 }

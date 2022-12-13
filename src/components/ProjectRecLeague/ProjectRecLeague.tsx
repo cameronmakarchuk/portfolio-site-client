@@ -39,6 +39,15 @@ export default function ProjectRecLeague(): JSX.Element {
 
       <h2 className="project__header">Watch The Demo</h2>
       <YouTubeEmbed embedId={recleagueVideoEmbedId} />
+
+      <a
+        className="project__link"
+        href="https://github.com/cameronmakarchuk/recleague-client"
+      >
+        <p className="project__problem-description">
+          Click here to check out the GitHub repo for this project.
+        </p>
+      </a>
     </section>
   );
 }
