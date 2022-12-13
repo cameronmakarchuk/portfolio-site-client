@@ -5,14 +5,26 @@
 .main-hero {
     padding: 3.0rem 0 2.0rem;
 
+    @include tablet {
+        padding: 4.0rem 0 3.0rem;
+    }
+
     &__profile-img {
         width: 60px;
         border-radius: 50%;
+
+        @include tablet {
+            width: 100px;
+        }
     }
 
     &__title {
         @include pageTitle;
         margin: 1.0rem 0;
+
+        @include tablet {
+            margin: 1.5rem 0;
+        }
     }
 
     &__intro {
@@ -23,11 +35,19 @@
         width: 40%;
         display: flex;
         justify-content: space-between;
+
+        @include tablet {
+            width: 30%;
+        }
     }
 
     &__social-icon {
         width: 15px;
         margin: 1.0rem 0;
+
+        @include tablet {
+            width: 20px;
+        }
 
         &:hover {
             transform: scale(1.1);
