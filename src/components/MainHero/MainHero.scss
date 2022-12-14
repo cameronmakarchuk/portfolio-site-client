@@ -4,9 +4,18 @@
 
 .main-hero {
     padding: 3.0rem 0 2.0rem;
+    display: flex;
+    flex-direction: column;
 
     @include tablet {
         padding: 4.0rem 0 3.0rem;
+    }
+
+    @include desktop {
+        padding: 5.0rem 0 3.0rem;
+        width: 80%;
+        flex-direction: row;
+        align-items: flex-start;
     }
 
     &__profile-img {
@@ -16,6 +25,19 @@
         @include tablet {
             width: 100px;
         }
+
+        @include desktop {
+            width: 130px;
+        }
+    }
+
+    &__profile-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            padding-left: 1.5rem;
+        }
     }
 
     &__title {
@@ -23,6 +45,10 @@
         margin: 1.0rem 0;
 
         @include tablet {
+            margin: 1.5rem 0;
+        }
+
+        @include desktop {
             margin: 1.5rem 0;
         }
     }
@@ -39,6 +65,10 @@
         @include tablet {
             width: 30%;
         }
+
+        @include desktop {
+            width: 30%;
+        }
     }
 
     &__social-icon {
@@ -49,8 +79,16 @@
             width: 20px;
         }
 
+        @include desktop {
+            width: 25px;
+        }
+
         &:hover {
             transform: scale(1.1);
+
+            @include desktop {
+                transform: scale(1.2);
+            }
         }
     }
 }
