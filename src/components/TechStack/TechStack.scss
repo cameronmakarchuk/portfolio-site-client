@@ -13,6 +13,10 @@
         padding: 0.5rem 0 2.5rem;
     }
 
+    @include desktop {
+        padding: 2.0rem 0 5.0rem;
+    }
+
 
     &__tech-logo {
         width: 23%;
@@ -22,6 +26,10 @@
             max-width: 100%;
             max-height: 60px;
             filter: saturate(80%);
+
+            @include desktop {
+                max-height: 80px;
+            }
 
         }
     }
