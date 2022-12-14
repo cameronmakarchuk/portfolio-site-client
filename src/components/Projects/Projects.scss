@@ -9,6 +9,10 @@
         padding-bottom: 2.0rem;
     }
 
+    @include desktop {
+        padding-bottom: 3.0rem;
+    }
+
     &__link {
         text-decoration: none;
     }
@@ -27,8 +31,16 @@
             padding: 2.0rem;
         }
 
+        @include desktop {
+            padding: 4.0rem;
+        }
+
         &:hover {
             translate: 0 -20px;
+
+            @include desktop {
+                translate: 0 -40px;
+            }
         }
     }
 
@@ -46,6 +58,10 @@
             padding-bottom: 2.0rem;
         }
 
+        @include desktop {
+            padding-bottom: 4.0rem;
+        }
+
     }
 
     &__card-image {
@@ -53,6 +69,10 @@
 
         @include tablet {
             width: 60%;
+        }
+
+        @include desktop {
+            width: 50%;
         }
     }
 }
