@@ -12,6 +12,10 @@
         @include tablet {
             padding: 4.0rem 0 2.0rem;
         }
+
+        @include desktop {
+            padding: 5.0rem 0 2.5rem;
+        }
     }
 
     &__description {
@@ -22,6 +26,11 @@
         @include tablet {
             margin: 1.5rem 0;
             padding: 0 1.5rem;
+        }
+
+        @include desktop {
+            margin: 1.5rem 0;
+            padding: 0 3.0rem;
         }
     }
 
@@ -40,6 +49,11 @@
             width: 100px;
             margin-right: 0.75rem;
         }
+
+        @include desktop {
+            width: 120px;
+            margin-right: 1.0rem;
+        }
     }
 
     &__signature {
@@ -47,6 +61,10 @@
 
         @include tablet {
             width: 140px;
+        }
+
+        @include desktop {
+            width: 175px;
         }
     }
 
