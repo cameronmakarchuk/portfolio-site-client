@@ -13,6 +13,10 @@
         margin: 2.0rem 0;
     }
 
+    @include desktop {
+        margin: 2.5rem 0;
+    }
+
     &__logo {
         width: 55px;
         position: absolute;
@@ -22,6 +26,10 @@
 
         @include tablet {
             width: 120px;
+        }
+
+        @include desktop {
+            width: 140px;
         }
     }
 
@@ -48,6 +56,11 @@
         @include tablet {
             width: 275px;
             padding: 0.5rem 0.75rem;
+        }
+
+        @include desktop {
+            width: 325px;
+            padding: 0.5rem 1.5rem;
         }
       
     }
