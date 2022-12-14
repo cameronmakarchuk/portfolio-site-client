@@ -12,6 +12,10 @@
         @include tablet {
             padding: 4.0rem 0 2.0rem;
         }
+
+        @include desktop {
+            padding: 5.0rem 0 2.5rem;
+        }
     }
 
     &__connect-wrapper {
@@ -23,6 +27,10 @@
 
         @include tablet {
             width: 60%;
+        }
+
+        @include desktop {
+            width: 40%;
         }
     }
 
