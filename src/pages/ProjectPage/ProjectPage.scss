@@ -10,6 +10,10 @@
         padding-bottom: 3.0rem;
     }
 
+    @include desktop {
+        padding-bottom: 4.0rem;
+    }
+
     &__nav-list {
         padding: 0;
         list-style: none;
@@ -39,6 +43,10 @@
         @include tablet {
             padding: 2.5rem 0 0.5rem;
         }
+
+        @include desktop {
+            padding: 3.5rem 0 0.75rem;
+        }
     }
 
     &__subtitle {
@@ -50,6 +58,10 @@
         padding: 1.5rem 0;
         display: flex;
         justify-content: space-between;
+
+        @include desktop {
+            padding: 2.5rem 0;
+        }
     }
 
     &__img-mockup {
@@ -69,6 +81,10 @@
 
         @include tablet {
             padding: 4.0rem 0 1.5rem;
+        }
+
+        @include desktop {
+            padding: 5.0rem 0 2.0rem;
         }
     }
 
