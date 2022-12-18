@@ -26,10 +26,12 @@
 
         @include tablet {
             width: 120px;
+            top: -1.0rem;
         }
 
         @include desktop {
             width: 140px;
+            top: -1.4rem;
         }
     }
 
