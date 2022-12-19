@@ -19,15 +19,15 @@
     }
 
     &__profile-img {
-        width: 60px;
+        width: 75px;
         border-radius: 50%;
 
         @include tablet {
-            width: 100px;
+            width: 115px;
         }
 
         @include desktop {
-            width: 130px;
+            width: 145px;
         }
     }
 
