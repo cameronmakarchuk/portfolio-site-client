@@ -55,12 +55,12 @@
         background-color: $primary-seven-white;
 
         @include tablet {
-            width: 275px;
+            width: 50vw;
             padding: 0.5rem 0.75rem;
         }
 
         @include desktop {
-            width: 325px;
+            width: 60vw;
             padding: 0.5rem 1.5rem;
         }
       
