@@ -2,6 +2,8 @@
     font-family: "Mona Sans";
     src: url("../../assets/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
     url("../../assets/fonts/Mona-Sans.woff2") format("woff2-variations");
+    src: url("../../assets/fonts/Mona-Sans.woff") format("woff supports variations"),
+    url("../../assets/fonts/Mona-Sans.woff") format("woff-variations");
     font-weight: 200 900;
     font-stretch: 75% 125%;
 }
