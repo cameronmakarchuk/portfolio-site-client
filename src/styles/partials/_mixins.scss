@@ -35,23 +35,23 @@
 @mixin pageTitle {
     margin: 0;
     font-family: "Mona Sans";
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: $primary-one-orange;
 
     @include tablet {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     @include desktop {
-        font-size: 36px;
+        font-size: 48px;
     }
 }
 
 @mixin pageSubtitle {
     margin: 0;
     font-family: "Mona Sans";
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     color: $primary-six-grey;
 
@@ -60,7 +60,7 @@
     }
 
     @include desktop {
-        font-size: 22px;
+        font-size: 28px;
     }
 }
 
@@ -73,10 +73,10 @@
     color: $primary-eight-black;
 
     @include tablet {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     @include desktop {
-        font-size: 18px;
+        font-size: 22px;
     }
 }
