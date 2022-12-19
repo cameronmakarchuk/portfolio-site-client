@@ -8,7 +8,9 @@
     flex-direction: column;
 
     @include tablet {
+        max-width: 60vw;
         padding: 4.0rem 0 3.0rem;
+        margin: auto;
     }
 
     @include desktop {
