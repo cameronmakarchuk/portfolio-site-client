@@ -18,7 +18,7 @@
     }
 
     &__logo {
-        width: 55px;
+        width: 65px;
         position: absolute;
         top: -0.3rem;
         left: 0;
@@ -43,7 +43,7 @@
     }
 
     &__nav-list {
-        min-width: 175px;
+        min-width: 190px;
         margin: 0;
         padding: 0.25rem 0.5rem;
         list-style: none;
@@ -52,7 +52,7 @@
         align-items: center;
         border-radius: 20px;
         border: 0.5px solid $primary-six-grey;
-        box-shadow: 0 0 10px 1px $primary-six-grey;
+        // box-shadow: 0 0 10px 1px $primary-six-grey;
         background-color: $primary-seven-white;
 
         @include tablet {
@@ -70,7 +70,7 @@
     &__nav-item {
         @include bodyCopy;
         font-weight: 400;
-        font-size: 10px;
+        font-size: 12px;
         margin: 0;
 
         &:hover {
