@@ -7,10 +7,12 @@
 
     @include tablet {
         padding-bottom: 2.0rem;
+        display: flex;
     }
 
     @include desktop {
         padding-bottom: 3.0rem;
+        display: flex;
     }
 
     &__link {
@@ -67,13 +69,5 @@
 
     &__card-image {
         width: 80%;
-
-        @include tablet {
-            width: 60%;
-        }
-
-        @include desktop {
-            width: 50%;
-        }
     }
 }

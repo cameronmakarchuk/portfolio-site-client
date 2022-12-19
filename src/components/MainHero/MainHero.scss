@@ -10,7 +10,7 @@
     @include tablet {
         max-width: 60vw;
         padding: 4.0rem 0 3.0rem;
-        margin: auto;
+        margin-left: 1.0rem;
     }
 
     @include desktop {
