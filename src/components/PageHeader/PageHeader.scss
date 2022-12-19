@@ -52,7 +52,6 @@
         align-items: center;
         border-radius: 20px;
         border: 0.5px solid $primary-six-grey;
-        // box-shadow: 0 0 10px 1px $primary-six-grey;
         background-color: $primary-seven-white;
 
         @include tablet {
@@ -82,17 +81,4 @@
     &__nav-link {
         text-decoration: none;
     }
-
-    // &__light-dark-toggle {
-    //     width: 20px;
-    //     height: 20px;
-    //     position: fixed;
-    //     right: 1.5rem;
-    //     top: 1.0rem;
-    //     background-color: white;
-    //     border: 0.5px solid lightgray;
-    //     border-radius: 50%;
-    //     box-shadow: 0 0 10px 1px lightgray;
-    //     padding: 0.25rem;
-    // }
 }
