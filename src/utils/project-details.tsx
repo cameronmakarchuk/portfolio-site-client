@@ -1,30 +1,30 @@
-import { v4 as uuidv4 } from 'uuid';
-import brainstormHome from '../assets/images/brainstorm-home.png';
-import brainstormInput from '../assets/images/brainstorm-input.png';
-import brainstormPrompts from '../assets/images/brainstorm-prompts.png';
-import _brainstormSuccess from '../assets/images/brainstorm-success.png';
-import recleagueAddUserIphone from '../assets/images/recleague-adduser-iphone.png';
-import recleagueiPhone from '../assets/images/recleague-iphone.png';
-import recleagueProfileIphone from '../assets/images/recleague-profile-iphone.png';
-import type { ProjectDetails } from './types';
+import { v4 as uuidv4 } from "uuid";
+import brainstormHome from "../assets/images/brainstorm-home.png";
+import brainstormInput from "../assets/images/brainstorm-input.png";
+import brainstormPrompts from "../assets/images/brainstorm-prompts.png";
+import _brainstormSuccess from "../assets/images/brainstorm-success.png";
+import recleagueAddUserIphone from "../assets/images/recleague-adduser-iphone.png";
+import recleagueiPhone from "../assets/images/recleague-iphone.png";
+import recleagueProfileIphone from "../assets/images/recleague-profile-iphone.png";
+import type { ProjectDetails } from "./types";
 
 export const recleagueDetails: ProjectDetails = {
-	title: 'RecLeague',
-	position: 'Creator',
-	responsibilities: 'UI/UX, Development',
-	date: 'November 2022',
+	title: "RecLeague",
+	position: "Creator",
+	responsibilities: "UI/UX, Development",
+	date: "November 2022",
 	techStack: [
-		'HTML',
-		'CSS',
-		'Sass',
-		'JavaScript',
-		'React',
-		'Axios',
-		'Node.js',
-		'Express.js',
-		'Knex.js',
-		'SQL/mySQL',
-		'JWT',
+		"HTML",
+		"CSS",
+		"Sass",
+		"JavaScript",
+		"React",
+		"Axios",
+		"Node.js",
+		"Express.js",
+		"Knex.js",
+		"SQL/mySQL",
+		"JWT",
 	],
 	mockups: [
 		{
@@ -45,19 +45,19 @@ export const recleagueDetails: ProjectDetails = {
 };
 
 export const brainstormDetails: ProjectDetails = {
-	title: 'BrainStorm',
-	position: 'Co-Creator, Co-Developer',
-	responsibilities: 'Development',
-	date: 'November 2022',
+	title: "BrainStorm",
+	position: "Co-Creator, Co-Developer",
+	responsibilities: "Development",
+	date: "November 2022",
 	techStack: [
-		'HTML',
-		'CSS',
-		'Sass',
-		'JavaScript',
-		'React',
-		'Axios',
-		'Node.js',
-		'Express.js',
+		"HTML",
+		"CSS",
+		"Sass",
+		"JavaScript",
+		"React",
+		"Axios",
+		"Node.js",
+		"Express.js",
 	],
 	mockups: [
 		{
