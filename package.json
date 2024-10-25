@@ -13,10 +13,17 @@
 		"inc": "npm --no-git-tag-version version --type && npm version"
 	},
 	"eslintConfig": {
-		"extends": ["react-app", "react-app/jest"]
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
 	},
 	"browserslist": {
-		"production": [">0.2%", "not dead", "not op_mini all"],
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
 		"development": [
 			"last 1 chrome version",
 			"last 1 firefox version",
@@ -24,6 +31,8 @@
 		]
 	},
 	"dependencies": {
+		"@chakra-ui/react": "^3.0.0",
+		"@emotion/react": "^11.13.3",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
@@ -32,8 +41,10 @@
 		"@types/react": "^18.0.25",
 		"@types/react-dom": "^18.0.9",
 		"@types/uuid": "^9.0.0",
+		"next-themes": "^0.3.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
+		"react-icons": "^5.3.0",
 		"react-router-dom": "^6.4.3",
 		"react-scripts": "5.0.1",
 		"sass": "^1.56.1",
