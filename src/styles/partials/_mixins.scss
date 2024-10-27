@@ -3,7 +3,7 @@
 
 //BREAKPOINTS
 @mixin tablet {
-    @media (min-width: $tablet) and (max-width: 1279px) {
+    @media (min-width: $tablet) {
         @content;
     }
 }
