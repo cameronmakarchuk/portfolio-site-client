@@ -10,30 +10,26 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
-import { system } from "./utils/theme/theme";
 
 function App() {
 	return (
 		<BrowserRouter>
-			<Provider>
-				<PageHeader2 />
-				<PageHeader />
-				<Routes>
-					<Route path="/" element={<HomePage />} />
+			{/* <Provider> */}
+			{/* <PageHeader2 /> */}
+			<PageHeader />
+			<Routes>
+				<Route path="/" element={<HomePage />} />
 
-					<Route path="/projects" element={<ProjectPage />}>
-						<Route path="/projects/recleague" element={<ProjectRecLeague />} />
-						<Route
-							path="/projects/brainstorm"
-							element={<ProjectBrainStorm />}
-						/>
-					</Route>
+				<Route path="/projects" element={<ProjectPage />}>
+					<Route path="/projects/recleague" element={<ProjectRecLeague />} />
+					<Route path="/projects/brainstorm" element={<ProjectBrainStorm />} />
+				</Route>
 
-					<Route path="/about" element={<AboutPage />} />
-					<Route path="/contact" element={<ContactPage />} />
-				</Routes>
-				<CallToAction />
-			</Provider>
+				<Route path="/about" element={<AboutPage />} />
+				<Route path="/contact" element={<ContactPage />} />
+			</Routes>
+			<CallToAction />
+			{/* </Provider> */}
 		</BrowserRouter>
 	);
 }
