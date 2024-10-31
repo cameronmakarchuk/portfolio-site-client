@@ -27,41 +27,46 @@
     }
 
     &__nav-list {
-        width: 50vw;
-        min-width: 190px;
         margin: 0;
-        padding: 0.65rem;
+        padding: 0.5rem;
         list-style: none;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        border-radius: 20px;
-        border: 0.5px solid $primary-six-grey;
-        background-color: $primary-seven-white;
+        transition: all 0.5s linear;
 
-        @include tablet {
-            width: 50vw;
-        }
 
-        @include desktop {
-            width: 60vw;
-        }
-      
+        &--blur {
+            border-radius: 25px;
+            background-color: $primary-six-grey;
+            backdrop-filter: blur(20px) saturate(1.7);
+        }  
     }
 
     &__nav-item {
         @include bodyCopy;
-        font-weight: 400;
         font-size: 12px;
         margin: 0;
+        padding: 0 1.5rem;
+
+        @include tablet {
+            padding: 0 2.0rem;
+        }
+
+        @include desktop {
+            padding: 0 3.0rem
+        }
 
         &:hover {
-            color: $primary-four-blue;
-        }
-
-        &--active {
             color: $primary-five-lightblue;
         }
+
+        // FIXME: need to calculate padding when active is applied
+        // &--active {
+        //     background-color: $primary-seven-white;
+        //     padding: 0.65rem;
+        //     border-radius: 25px;
+        // }
         
     }
 
