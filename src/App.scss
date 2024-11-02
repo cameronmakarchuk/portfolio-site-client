@@ -15,7 +15,7 @@ html, body {
 body {
   min-height: 100vh;
   padding: 0.75rem 0.75rem 0;
-  background: linear-gradient($tertiary-background-dark, $secondary-background, $tertiary-background-light);
+  background: linear-gradient($secondary-dark, $secondary-background, $tertiary-dark);
 
   @include tablet {
     padding: 1.5rem 1.5rem 0;
