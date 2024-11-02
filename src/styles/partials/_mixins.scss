@@ -20,7 +20,7 @@
     margin: 0;
     padding: 1.0rem;
     border-radius: 5px;
-    background-color: $primary-seven-white;
+    background-color: $primary-light;
 
     @include tablet {
         padding: 1.5rem 3.0rem;
@@ -37,7 +37,7 @@
     font-family: "Mona Sans";
     font-size: 28px;
     font-weight: 700;
-    color: $primary-one-orange;
+    color: $primary-accent;
 
     @include tablet {
         font-size: 32px;
@@ -53,7 +53,7 @@
     font-family: "Mona Sans";
     font-size: 14px;
     font-weight: 400;
-    color: $primary-six-grey;
+    color: $secondary-light;
 
     @include tablet {
         font-size: 16px;
@@ -70,7 +70,7 @@
     font-family: "Mona Sans";
     font-size: 14px;
     font-weight: 200;
-    color: $primary-eight-black;
+    color: $primary-dark;
 
     @include tablet {
         font-size: 18px;

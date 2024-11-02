@@ -38,7 +38,7 @@
 
         &--blur {
             border-radius: 25px;
-            background-color: $primary-six-grey;
+            background-color: $secondary-light;
             backdrop-filter: blur(20px) saturate(1.7);
         }  
     }
@@ -58,12 +58,12 @@
         }
 
         &:hover {
-            color: $primary-five-lightblue;
+            color: $tertiary-background-light;
         }
 
         // FIXME: need to calculate padding when active is applied
         // &--active {
-        //     background-color: $primary-seven-white;
+        //     background-color: $primary-light;
         //     padding: 0.65rem;
         //     border-radius: 25px;
         // }

@@ -30,7 +30,7 @@
         @include bodyCopy;
 
         &:hover {
-            color: $primary-four-blue;
+            color: $tertiary-background-dark;
         }
     }
 }
@@ -51,7 +51,7 @@
 
     &__subtitle {
         @include pageSubtitle;
-        color: lighten($primary-eight-black, 40%);
+        color: lighten($primary-dark, 40%);
     }
 
     &__img-container {
@@ -71,7 +71,7 @@
 
     &__tech-stack {
         @include pageSubtitle;
-        color: lighten($primary-eight-black, 40%);
+        color: lighten($primary-dark, 40%);
         font-weight: 300;
     }
 
