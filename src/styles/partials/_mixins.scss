@@ -18,18 +18,6 @@
 @mixin mainSection {
     width: 100%;
     margin: 0;
-    padding: 1.0rem;
-    border-radius: 5px;
-    background-color: $primary-light;
-
-    @include tablet {
-        padding: 1.5rem 3.0rem;
-        border-radius: 6px;
-    }
-
-    @include desktop {
-        padding: 3.0rem 5.0rem;
-    }
 }
 
 @mixin pageTitle {
@@ -70,7 +58,7 @@
     font-family: "Mona Sans";
     font-size: 14px;
     font-weight: 200;
-    color: $primary-dark;
+    color: $primary-light;
 
     @include tablet {
         font-size: 18px;
