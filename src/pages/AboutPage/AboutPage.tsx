@@ -1,6 +1,7 @@
 import "./AboutPage.scss";
 import cmSignature from "../../assets/icons/cm-signature-black.svg";
 import camProfilePic from "../../assets/images/cam-profile-square.png";
+import TechStack from "../../components/TechStack/TechStack";
 
 export default function AboutPage(): JSX.Element {
 	return (
@@ -44,6 +45,8 @@ export default function AboutPage(): JSX.Element {
 				facilities, and building my own businesses will allow me to thrive as a
 				software engineer.
 			</p>
+
+			<TechStack />
 
 			<div className="about-page__profile-card">
 				<img

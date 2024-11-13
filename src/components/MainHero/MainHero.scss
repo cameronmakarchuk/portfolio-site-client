@@ -3,19 +3,19 @@
 @use "../../styles/partials/typography" as *;
 
 .main-hero {
-    padding: 4.0rem 0 2.0rem;
+    padding: 4.0rem 1.0rem 2.0rem;
     display: flex;
     flex-direction: column;
 
     @include tablet {
-        padding: 6.0rem 0 3.0rem;
+        padding: 6.0rem 1.5rem 3.0rem;
         width: 90%;
         flex-direction: row;
         align-items: flex-start;
     }
 
     @include desktop {
-        padding: 8.0rem 0 3.0rem;
+        padding: 8.0rem 3.0 3.0rem;
         width: 80%;
 
     }
