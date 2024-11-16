@@ -72,10 +72,10 @@
 
     &__link {
         text-decoration: none;
-        color: $secondary-dark;
+        color: $secondary-light;
 
         &:hover {
-            color: $primary-dark;
+            color: $primary-accent;
         }
     }
 }
