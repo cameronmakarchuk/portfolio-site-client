@@ -22,20 +22,24 @@
     &__card {
         margin: 1.5rem 1.0rem;
         padding: 1.0rem;
-        background: radial-gradient($primary-two-pink, $primary-five-lightblue);
-        border-radius: 10px;
+        background: radial-gradient($secondary-accent, $tertiary-light);
+        border-radius: 25px;
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: translate 0.5s;
+        height: 250px;
+        overflow: hidden;
 
         @include tablet {
             padding: 2.0rem;
+            height: 400px;
         }
 
         @include desktop {
             padding: 4.0rem;
             margin: 3.5rem 1.0rem;
+            height: 600px;
         }
 
         &:hover {
@@ -54,6 +58,7 @@
 
     &__card-title {
         @include pageTitle;
+        color: $secondary-dark;
         align-self: flex-end;
         padding-bottom: 1.0rem;
 
@@ -69,5 +74,6 @@
 
     &__card-image {
         width: 80%;
+        
     }
 }
