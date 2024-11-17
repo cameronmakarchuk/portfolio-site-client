@@ -1,5 +1,5 @@
 import "./AboutPage.scss";
-import cmSignature from "../../assets/icons/cm-signature-black.svg";
+import cmSignature from "../../assets/icons/cm-signature-white.png";
 import camProfilePic from "../../assets/images/cam-profile-square.png";
 
 export default function AboutPage(): JSX.Element {

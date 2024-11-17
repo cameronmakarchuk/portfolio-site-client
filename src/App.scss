@@ -14,14 +14,14 @@ html, body {
 
 body {
   min-height: 100vh;
-  padding: 0 0.75rem;
-  background: linear-gradient($primary-four-blue, $primary-two-pink, $primary-five-lightblue);
+  padding: 0.75rem 0 0;
+  background: linear-gradient($primary-background, $tertiary-dark, $secondary-background);
 
   @include tablet {
-    padding: 0 1.5rem;
+    padding: 1.5rem 0 0;
   }
 
   @include desktop {
-    padding: 0 3.0rem;
+    padding: 3.0rem 0 0;
   }
 }
