@@ -3,14 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci  # Clean install of dependencies
+        - npm ci
     build:
       commands:
-        - npm run build  # Runs "vite build"
-    artifacts:
-      baseDirectory: dist  # Where Vite outputs the build
-      files:
-        - '**/*'  # Include all files in dist/
-    cache:
-      paths:
-        - node_modules/**/*  # Cache node_modules for faster builds
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
