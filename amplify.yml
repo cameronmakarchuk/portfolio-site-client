@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci  # Use 'ci' for a clean install from package-lock.json
+    build:
+      commands:
+        - npm run build  # Runs "vite build" as per your package.json
+    artifacts:
+      baseDirectory: dist  # Vite outputs to dist/
+      files:
+        - '**/*'
+    cache:
+      paths:
+        - node_modules/**/*
