@@ -1,0 +1,196 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &__hamburger {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            .page-header__hamburger-line {
+                background: $primary-accent;
+                
+            }
+
+        }
+
+        &--open {
+            .page-header__hamburger-line {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -7px)
+                }
+            }
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__hamburger-line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: $primary-light;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+
+    }
+
+    &__nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 1.25rem;
+        z-index: 999999;
+
+        @include tablet {
+            top: 1.5rem;
+        }
+
+        @include desktop {
+            top: 2.0rem;
+        }
+    }
+
+    &__nav-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: $primary-dark;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+
+        @include tablet {
+            margin: 0;
+            padding: 0.5rem;
+            list-style: none;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            transition: all 0.5s linear;
+            left: 0;
+            height: auto;
+            width: auto;
+            position: static;
+            background: transparent;
+        }
+
+        @include desktop {
+            padding: 0.75rem;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        &--open {
+            left: 0;
+        }
+
+        &--blur {
+            border-radius: 25px;
+            background-color: $tertiary-dark;
+            backdrop-filter: blur(20px) saturate(1.7);
+            transition: background-color 0.3s ease;
+        }  
+    }
+
+    &__nav-item {
+        @include bodyCopy;
+        margin: 20px 0;
+        font-size: 1.5rem;
+        transition: color 0.2s ease;        
+
+        @include tablet {
+            font-size: 12px;
+            margin: 0;
+            padding: 0 clamp(1rem, 2vw, 2rem)
+        }
+
+        @include desktop {
+            padding: 0 3.5rem;
+            position: relative;
+
+            &:hover {
+                color: $primary-accent;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -4px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 50%;
+                    height: 2px;
+                    background: $primary-accent;
+                    transition: width 0.2s ease;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background: $primary-accent;
+                transition: width 0.2s ease;
+            }
+        }
+
+        &:hover {
+            color: $primary-accent;
+        }
+
+        // FIXME: need to calculate padding when active is applied
+        // &--active {
+        //     background-color: $secondary-light;
+        //     padding: 0.65rem 1rem;
+        //     border-radius: 25px;
+        //     color: $primary-accent;
+        //     opacity: 40%;
+        // }
+        
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+
+        @include tablet {
+            width: auto;
+            text-align: left;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import "./AboutPage.scss";
+import "./About.scss";
 import cmSignature from "../../assets/icons/cm-signature-white.png";
 import camProfilePic from "../../assets/images/cam-profile-square.png";
 
