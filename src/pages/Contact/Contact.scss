@@ -7,15 +7,7 @@
 
     &__title {
         @include pageTitle;
-        padding: 3.0rem 0 1.5rem;
-
-        @include tablet {
-            padding: 4.0rem 0 2.0rem;
-        }
-
-        @include desktop {
-            padding: 5.0rem 0 2.5rem;
-        }
+        padding: 5.0rem 0 2.5rem;
     }
 
     &__connect-wrapper {
