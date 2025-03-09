@@ -1,4 +1,4 @@
-import "./ProjectPage.scss";
+import "./Projects.scss";
 import { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 

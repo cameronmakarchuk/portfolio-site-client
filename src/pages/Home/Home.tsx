@@ -1,4 +1,4 @@
-import "./HomePage.scss";
+import "./Home.scss";
 import MainHero from "../../components/MainHero/MainHero";
 import Projects from "../../components/Projects/Projects";
 
