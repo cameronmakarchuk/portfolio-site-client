@@ -60,6 +60,11 @@
 
     &__intro {
         @include bodyCopy;
+        padding-bottom: 0.5rem;
+    }
+
+    &__intro-link {
+        width: fit-content;
     }
 
     &__social-icons {

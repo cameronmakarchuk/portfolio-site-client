@@ -130,7 +130,7 @@
         transition: color 0.2s ease;        
 
         @include tablet {
-            font-size: 12px;
+            font-size: 1.0rem;
             margin: 0;
             padding: 0 clamp(1rem, 2vw, 2rem)
         }
@@ -172,6 +172,7 @@
             color: $primary-accent;
         }
 
+
         // FIXME: need to calculate padding when active is applied
         // &--active {
         //     background-color: $secondary-light;
@@ -188,9 +189,15 @@
         width: 100%;
         text-align: center;
 
+        &:hover {
+            color: $primary-accent;
+        }
+
         @include tablet {
             width: auto;
             text-align: left;
         }
+
+
     }
 }

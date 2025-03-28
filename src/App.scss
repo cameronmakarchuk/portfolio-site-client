@@ -25,3 +25,10 @@ body {
     padding: 3.0rem 0 0;
   }
 }
+
+a {
+  &:hover {
+    color: $primary-accent;
+    
+  }
+}

@@ -5,44 +5,39 @@ import camProfilePic from "../../assets/images/cam-profile-square.png";
 export default function AboutPage(): JSX.Element {
 	return (
 		<section className="about-page">
-			<h2 className="about-page__title">Hey, I'm Cameron!</h2>
+			<h2 className="about-page__title">
+				From Sweat To Software: Life Rebooted
+			</h2>
 
 			<p className="about-page__description">
-				Ever since I was a kid I've loved 2 things - sports/fitness and
-				computers. You'd be just as likely to find me running around outside
-				playing basketball, or in my bedroom sitting behind our first computer
-				in the 90's teaching myself html.
+				Hey there! I’m Cameron—once your friendly neighborhood fitness pro, now
+				a code-slinging wizard with a knack for reinvention. For 15 years, I was
+				the maestro of sweat, running a private personal training studio and an
+				online coaching empire under the BluePhoenix Fitness banner. It was a
+				world of grunts, gains, and glory—until I swapped dumbbells for
+				debuggers to chase a childhood dream of bending computers to my will.
+			</p>
+			<p className="about-page__description">
+				As a kid, I’d lose myself in the thrill of building things with code,
+				grinning ear-to-ear when a tricky problem finally clicked. That spark
+				never faded, even as a fitness pro.
 			</p>
 
 			<p className="about-page__description">
-				As a kid I would get so much pleasure from being able to build things on
-				my computer with code, and joy when I would finally figure out a
-				challenging problem in the process.
+				In 2015, I closed my studio and pivoted to an online coaching model,
+				leaning hard into the digital realm. Whether it was mastering digital
+				marketing or tinkering with my website’s code for hours, I couldn’t
+				resist the pull of the virtual. So, two years ago, I leapt fully into
+				software development, channeling the same gusto I once brought to
+				deadlifts into crafting digital magic.
 			</p>
+
 			<p className="about-page__description">
-				That passion continued as a fitness professional when I made the
-				decision to close my personal training studio in 2015 and begin shifting
-				my business into the online coaching model that{" "}
-				<a href="https://bluephoenixfitness.com" className="about-page__link">
-					BluePhoenix Fitness
-				</a>{" "}
-				runs on today.
-			</p>
-			<p className="about-page__description">
-				I always found myself being drawn towards “digital” - whether it was
-				learning digital marketing for my business, or getting lost in the code
-				of my website for hours.
-			</p>
-			<p className="about-page__description">
-				So after spending 15+ years helping thousands of people transform their
-				health in the fitness industry, I'm finally leaning into my second
-				passion of computers. Specifically full-stack software development.
-			</p>
-			<p className="about-page__description">
-				Even though I didn't start my career in tech, I believe my unique blend
-				of skills from leading teams, managing multi-million dollar fitness
-				facilities, and building my own businesses will allow me to thrive as a
-				software engineer.
+				When I’m not tethered to a screen, you’ll find me hiking rugged trails,
+				cycling like I’m outrunning deadlines, or jetting off to snag passport
+				stamps and the occasional dubious souvenir. From sculpting bodies to
+				shaping code, I’m all about building—preferably with a strong coffee in
+				hand. Welcome to my world!``
 			</p>
 
 			<div className="about-page__profile-card">
