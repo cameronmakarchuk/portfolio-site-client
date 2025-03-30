@@ -4,4 +4,9 @@
 
 .home-page {
     @include mainSection;
+    padding: 0;
+
+    @include tablet {
+        padding: 0;
+    }
 }

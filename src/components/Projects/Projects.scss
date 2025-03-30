@@ -3,77 +3,125 @@
 @use "../../styles/partials/typography" as *;
 
 .projects {
-    padding-bottom: 1.0rem;
+    padding: 2rem 2rem;
+    background: $secondary-light;
 
     @include tablet {
-        padding-bottom: 2.0rem;
-        display: flex;
+        padding: 2.5rem 1.5rem;
     }
 
     @include desktop {
-        padding-bottom: 3.0rem;
-        display: flex;
+        padding: 2.75rem 1.75rem;
+    }
+  
+    &__container {
+      max-width: 80rem;
+      margin: 0 auto;
+    }
+  
+    &__title {
+      @include pageTitle;
+      text-align: center;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        margin-bottom: 2.5rem;
+      }
+
+      @include desktop {
+        margin-bottom: 2.75rem;
+      }
+    }
+  
+    &__grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center;
+      gap: 1.5rem;
+  
+      @include tablet {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+
+      @include desktop {
+        gap: 2.25rem;
+      }
+    }
+  
+    &__card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 250px;
+      overflow: hidden;
+
+      @include tablet {
+        height: 400px;
+        padding: 1.5rem;
+      }
+
+      @include desktop {
+        height: 600px;
+        padding: 1.75rem;
+      }
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+  
+    &__img {
+      width: 100%;
+      border-radius: 4px;
+    }
+  
+    &__card-title {
+      @include pageTitle;
+      font-size: 1.25rem;
+      padding: 0;
+      margin: 0rem 0 0.5rem;
+
+      @include tablet {
+        font-size: 1.5rem;
+        margin: 0 0 1.0rem;
+      }
+
+      @include desktop {
+        font-size: 2.0rem;
+        margin: 0 0 1.25rem;
+      }
+    }
+  
+    &__card-desc {
+      @include bodyCopy;
+      color: $secondary-dark;
+    }
+  
+    &__card-btn {
+        display: none;
+
+        @include tablet {
+            display: inline-block;
+            background: $primary-accent;
+            color: white;
+            padding: 0.5rem 1rem;
+            margin: 1.0rem 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        @include desktop {
+            margin: 1.25rem 0;
+        }
     }
 
     &__link {
         text-decoration: none;
     }
-
-    &__card {
-        margin: 1.5rem 1.0rem;
-        padding: 1.0rem;
-        background: radial-gradient($secondary-accent, $tertiary-light);
-        border-radius: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: translate 0.5s;
-        height: 250px;
-        overflow: hidden;
-
-        @include tablet {
-            padding: 2.0rem;
-            height: 400px;
-        }
-
-        @include desktop {
-            padding: 4.0rem;
-            margin: 3.5rem 1.0rem;
-            height: 600px;
-        }
-
-        &:hover {
-            translate: 0 -20px;
-
-            @include desktop {
-                translate: 0 -40px;
-            }
-        }
-    }
-
-    &__card-subtitle {
-        @include pageSubtitle;
-        align-self: flex-end;
-    }
-
-    &__card-title {
-        @include pageTitle;
-        color: $secondary-dark;
-        align-self: flex-end;
-        padding-bottom: 1.0rem;
-
-        @include tablet {
-            padding-bottom: 2.0rem;
-        }
-
-        @include desktop {
-            padding-bottom: 4.0rem;
-        }
-
-    }
-
-    &__card-image {
-        width: 80%;
-        
-    }
-}
+  }
