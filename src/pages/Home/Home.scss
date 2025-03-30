@@ -9,4 +9,8 @@
     @include tablet {
         padding: 0;
     }
+
+    @include desktop {
+        padding: 0 3.5rem;
+    }
 }
