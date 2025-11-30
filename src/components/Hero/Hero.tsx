@@ -47,7 +47,7 @@ export default function Hero() {
 						{ icon: Linkedin, label: 'LinkedIn' },
 						{ icon: Mail, label: 'Email' },
 					].map(({ icon: Icon, label }) => (
-						<a key={label} href='#' className='hero__social' aria-label={label}>
+						<a key={label} href='/' className='hero__social' aria-label={label}>
 							<Icon className='hero__social-icon' />
 						</a>
 					))}

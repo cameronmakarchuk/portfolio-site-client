@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from 'uuid';
 import brainstormHome from '../assets/images/brainstorm-home.png';
 import brainstormInput from '../assets/images/brainstorm-input.png';
 import brainstormPrompts from '../assets/images/brainstorm-prompts.png';
-import _brainstormSuccess from '../assets/images/brainstorm-success.png';
 import recleagueAddUserIphone from '../assets/images/recleague-adduser-iphone.png';
 import recleagueiPhone from '../assets/images/recleague-iphone.png';
 import recleagueProfileIphone from '../assets/images/recleague-profile-iphone.png';

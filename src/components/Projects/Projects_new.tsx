@@ -1,4 +1,4 @@
-import './Projects_new.scss';
+import './Projects.scss';
 import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
@@ -50,11 +50,11 @@ export default function Projects() {
 							</div>
 
 							<div className='projects__card-links'>
-								<a href='#' className='projects__link'>
+								<a href='/' className='projects__link'>
 									<Github className='projects__link-icon' />
 									<span>Code</span>
 								</a>
-								<a href='#' className='projects__link'>
+								<a href='/' className='projects__link'>
 									<ExternalLink className='projects__link-icon' />
 									<span>Live Demo</span>
 								</a>
