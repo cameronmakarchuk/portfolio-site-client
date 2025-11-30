@@ -1,4 +1,4 @@
-import './Projects.scss';
+import './Projects_new.scss';
 import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
