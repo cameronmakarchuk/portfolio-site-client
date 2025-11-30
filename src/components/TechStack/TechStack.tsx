@@ -15,70 +15,34 @@ export default function TechStack(): JSX.Element {
 	return (
 		<section className='tech-stack'>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={htmlLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={htmlLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
 				<img src={cssLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={javascriptLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={javascriptLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={sassLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={sassLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={typescriptLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={typescriptLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={reactLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={reactLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={nodeLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={nodeLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={expressLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={expressLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={knexLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={knexLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
-				<img
-					src={mysqlLogo}
-					alt=' logo'
-					className='tech-stack__tech-logo--img'
-				/>
+				<img src={mysqlLogo} alt=' logo' className='tech-stack__tech-logo--img' />
 			</div>
 			<div className='tech-stack__tech-logo'>
 				<img src={jwtLogo} alt=' logo' className='tech-stack__tech-logo--img' />

@@ -4,9 +4,7 @@ interface YouTubeEmbedProps {
 	embedId: string;
 }
 
-export default function YouTubeEmbed({
-	embedId,
-}: YouTubeEmbedProps): JSX.Element {
+export default function YouTubeEmbed({ embedId }: YouTubeEmbedProps): JSX.Element {
 	return (
 		<div className='video-responsive'>
 			<iframe

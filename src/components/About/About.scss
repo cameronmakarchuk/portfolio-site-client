@@ -1,0 +1,126 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.about {
+  position: relative;
+  padding: 8rem 1.5rem;
+}
+
+.about__container {
+  max-width: 96rem;
+  margin: 0 auto;
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about__text-box {
+  position: relative;
+}
+
+.about__text-glow {
+  position: absolute;
+  inset: 0;
+  @include gradient-bg($pink-500, $cyan-500);
+  border-radius: 1rem;
+  filter: blur(24px);
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.about__text-box:hover .about__text-glow {
+  opacity: 0.5;
+}
+
+.about__text-content {
+  position: relative;
+  background: rgba($bg-dark, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba($pink-500, 0.3);
+  @include smooth-transition;
+
+  .about__text-box:hover & {
+    border-color: rgba($pink-500, 0.5);
+  }
+}
+
+.about__text {
+  color: $gray-300;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about__highlight {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  background: rgba($slate-800, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba($purple-500, 0.3);
+  @include smooth-transition;
+
+  &:hover {
+    border-color: rgba($pink-500, 0.5);
+    background: rgba($purple-500, 0.1);
+
+    .about__highlight-icon-box {
+      background: rgba($cyan-500, 0.2);
+      border-color: rgba($cyan-500, 0.3);
+    }
+  }
+}
+
+.about__highlight-icon-box {
+  flex-shrink: 0;
+  padding: 0.75rem;
+  background: rgba($pink-500, 0.2);
+  border: 1px solid rgba($pink-500, 0.3);
+  border-radius: 0.5rem;
+  @include smooth-transition;
+}
+
+.about__highlight-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: $cyan-400;
+}
+
+.about__highlight-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 0.5rem;
+}
+
+.about__highlight-description {
+  color: $gray-400;
+  font-size: 0.95rem;
+}

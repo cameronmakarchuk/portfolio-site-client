@@ -1,0 +1,146 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.skills {
+  position: relative;
+  padding: 8rem 1.5rem;
+}
+
+.skills__container {
+  max-width: 96rem;
+  margin: 0 auto;
+}
+
+.skills__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.skills__category {
+  position: relative;
+  background: rgba($slate-800, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba($purple-500, 0.3);
+  @include smooth-transition;
+
+  &:hover {
+    border-color: rgba($pink-500, 0.5);
+    background: rgba($purple-500, 0.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    @include gradient-bg($pink-500, $cyan-500);
+    opacity: 0;
+    border-radius: 1.5rem;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+  }
+}
+
+.skills__category-title {
+  position: relative;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $white;
+  margin-bottom: 1.5rem;
+}
+
+.skills__list {
+  position: relative;
+  z-index: 1;
+  space-y: 1.5rem;
+
+  > div + div {
+    margin-top: 1.5rem;
+  }
+}
+
+.skills__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skills__item-name {
+  color: $gray-300;
+  font-weight: 500;
+}
+
+.skills__item-level {
+  color: $cyan-400;
+  font-size: 0.875rem;
+}
+
+.skills__progress {
+  width: 100%;
+  height: 0.5rem;
+  background: rgba($slate-900, 0.5);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.skills__progress-bar {
+  height: 100%;
+  @include gradient-bg($pink-500, $cyan-500);
+  border-radius: 9999px;
+  @include smooth-transition;
+}
+
+.skills__footer {
+  position: relative;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.skills__footer-glow {
+  position: absolute;
+  inset: 0;
+  @include gradient-bg($pink-500, $cyan-500);
+  border-radius: 0.75rem;
+  filter: blur(12px);
+  opacity: 0.5;
+}
+
+.skills__footer-box {
+  position: relative;
+  display: inline-block;
+  background: rgba($slate-800, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba($pink-500, 0.3);
+}
+
+.skills__footer-text {
+  color: $gray-300;
+  font-size: 1.125rem;
+}
+
+.skills__footer-highlight {
+  @include gradient-text($pink-400, $cyan-400);
+  font-weight: 600;
+}

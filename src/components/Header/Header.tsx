@@ -1,6 +1,6 @@
-import "./Header.scss";
-import { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import './Header.scss';
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function PageHeader(): JSX.Element {
 	const location = useLocation();
@@ -13,9 +13,9 @@ export default function PageHeader(): JSX.Element {
 			setBlur(window.scrollY > 0);
 		};
 
-		window.addEventListener("scroll", handleScroll);
+		window.addEventListener('scroll', handleScroll);
 
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
 	useEffect(() => {
@@ -25,9 +25,9 @@ export default function PageHeader(): JSX.Element {
 			}
 		};
 
-		window.addEventListener("resize", handleResize);
+		window.addEventListener('resize', handleResize);
 
-		return () => window.removeEventListener("resize", handleResize);
+		return () => window.removeEventListener('resize', handleResize);
 	}, [isMenuOpen]);
 
 	// Toggle mobile menu
@@ -36,41 +36,41 @@ export default function PageHeader(): JSX.Element {
 	};
 
 	return (
-		<header className="page-header">
-			<nav className="page-header__nav">
+		<header className='page-header'>
+			<nav className='page-header__nav'>
 				{/* Hamburger button */}
 				<button
-					type="button"
-					className={`page-header__hamburger ${isMenuOpen ? "page-header__hamburger--open" : ""}`}
+					type='button'
+					className={`page-header__hamburger ${isMenuOpen ? 'page-header__hamburger--open' : ''}`}
 					onClick={toggleMenu}
-					aria-label="Toggle menu"
+					aria-label='Toggle menu'
 					aria-expanded={isMenuOpen}
-					aria-controls="nav-list"
+					aria-controls='nav-list'
 				>
-					<span className="page-header__hamburger-line" />
-					<span className="page-header__hamburger-line" />
-					<span className="page-header__hamburger-line" />
+					<span className='page-header__hamburger-line' />
+					<span className='page-header__hamburger-line' />
+					<span className='page-header__hamburger-line' />
 				</button>
 
 				<ul
-					id="nav-list"
+					id='nav-list'
 					className={`page-header__nav-list ${
-						blur ? "page-header__nav-list--blur" : ""
-					} ${isMenuOpen ? "page-header__nav-list--open" : ""}`}
+						blur ? 'page-header__nav-list--blur' : ''
+					} ${isMenuOpen ? 'page-header__nav-list--open' : ''}`}
 				>
 					<NavLink
-						to="/"
-						className="page-header__nav-link"
+						to='/'
+						className='page-header__nav-link'
 						onClick={() => {
-							setActive("/");
+							setActive('/');
 							setIsMenuOpen(false); // Close menu on link click
 						}}
 					>
 						<li
 							className={
-								active === "/"
-									? "page-header__nav-item page-header__nav-item--active"
-									: "page-header__nav-item"
+								active === '/'
+									? 'page-header__nav-item page-header__nav-item--active'
+									: 'page-header__nav-item'
 							}
 						>
 							Home
@@ -78,18 +78,18 @@ export default function PageHeader(): JSX.Element {
 					</NavLink>
 
 					<NavLink
-						to="/about"
-						className="page-header__nav-link"
+						to='/about'
+						className='page-header__nav-link'
 						onClick={() => {
-							setActive("/about");
+							setActive('/about');
 							setIsMenuOpen(false);
 						}}
 					>
 						<li
 							className={
-								active === "/about"
-									? "page-header__nav-item page-header__nav-item--active"
-									: "page-header__nav-item"
+								active === '/about'
+									? 'page-header__nav-item page-header__nav-item--active'
+									: 'page-header__nav-item'
 							}
 						>
 							About
@@ -97,18 +97,18 @@ export default function PageHeader(): JSX.Element {
 					</NavLink>
 
 					<NavLink
-						to="/contact"
-						className="page-header__nav-link"
+						to='/contact'
+						className='page-header__nav-link'
 						onClick={() => {
-							setActive("/contact");
+							setActive('/contact');
 							setIsMenuOpen(false);
 						}}
 					>
 						<li
 							className={
-								active === "/contact"
-									? "page-header__nav-item page-header__nav-item--active"
-									: "page-header__nav-item"
+								active === '/contact'
+									? 'page-header__nav-item page-header__nav-item--active'
+									: 'page-header__nav-item'
 							}
 						>
 							Contact

@@ -14,6 +14,7 @@
     }
 }
 
+// OLD MIXINS
 //CONTENT
 @mixin mainSection {
     width: 100%;
@@ -76,4 +77,58 @@
     @include desktop {
         font-size: 22px;
     }
+}
+
+// ====================================================
+
+// NEW MIXINS
+@mixin gradient-text($from, $to, $via: null) {
+  @if $via {
+    background: linear-gradient(135deg, $from, $via, $to);
+  } @else {
+    background: linear-gradient(135deg, $from, $to);
+  }
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin gradient-bg($from, $to, $via: null) {
+  @if $via {
+    background: linear-gradient(135deg, $from, $via, $to);
+  } @else {
+    background: linear-gradient(135deg, $from, $to);
+  }
+}
+
+@mixin glow-effect($color, $intensity: 0.5) {
+  box-shadow: 0 0 20px rgba($color, $intensity);
+}
+
+@mixin smooth-transition {
+  transition: $transition;
+}
+
+@mixin responsive-padding($mobile, $tablet, $desktop) {
+  padding: $mobile;
+
+  @include tablet {
+    padding: $tablet;
+  }
+
+  @include desktop {
+    padding: $desktop;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
