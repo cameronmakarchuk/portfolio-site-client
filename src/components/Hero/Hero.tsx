@@ -13,18 +13,20 @@ export default function Hero() {
 				<div className='hero__badge'>
 					<div className='hero__badge-glow' />
 					<div className='hero__badge-box'>
-						<p className='hero__badge-text'>Welcome to the future</p>
+						<p className='hero__badge-text'>Let's see how deep the rabbit hole goes</p>
 					</div>
 				</div>
 
 				<h1 className='hero__title'>
-					<span className='hero__title-main'>Software Developer</span>
-					<span className='hero__title-sub'>& Creative Coder</span>
+					<span className='hero__title-main'>Software Developer,</span>
+					<span className='hero__title-sub'>Fitness Pro & Adventurer</span>
 				</h1>
 
 				<p className='hero__description'>
-					Crafting digital experiences that blend creativity with cutting-edge technology. Building the
-					future, one line of code at a time.
+					I’m Cameron, a former fitness pro who traded kettlebells for code. For 15 years, I ran a private
+					personal training studio and built an online coaching platform with BluePhoenix Fitness, helping
+					clients transform through hard work and dedication. But a childhood passion for coding—those late
+					nights solving problems and building things on my computer—kept calling.
 				</p>
 
 				<div className='hero__buttons'>

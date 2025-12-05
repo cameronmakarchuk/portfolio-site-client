@@ -16,7 +16,7 @@ export default function Navigation() {
 						<div className='navigation__logo-box'>
 							<Code2 className='navigation__logo-icon' />
 						</div>
-						<span className='navigation__logo-text'>DevPortfolio</span>
+						<span className='navigation__logo-text'>Cameron Makarchuk</span>
 					</div>
 
 					<div className='navigation__menu'>

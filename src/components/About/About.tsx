@@ -1,5 +1,6 @@
 import './About.scss';
 import { Sparkles, Terminal, Zap } from 'lucide-react';
+import cmProfilePic from '../../assets/images/cam-profile-square.png';
 
 export default function About() {
 	const highlights = [
@@ -24,21 +25,44 @@ export default function About() {
 		<section id='about' className='about'>
 			<div className='about__container'>
 				<div className='about__header'>
-					<h2 className='section-title'>About Me</h2>
+					<h2 className='section-title'>From Sweat To Software: Life Rebooted</h2>
 				</div>
 
 				<div className='about__grid'>
 					<div className='about__text-box'>
 						<div className='about__text-glow' />
 						<div className='about__text-content'>
+							<div className='about__text-content-card'>
+								<img
+									className='about__profile-img'
+									src={cmProfilePic}
+									alt='Cameron Makarchuk head shot, colored background'
+								/>
+								<p className='about__text'>
+									I’m Cameron, a former fitness pro who traded kettlebells for code. For 15 years, I
+									ran a private personal training studio and built an online coaching platform with
+									BluePhoenix Fitness, helping clients transform through hard work and dedication. But
+									a childhood passion for coding—those late nights solving problems and building
+									things on my computer—kept calling.
+								</p>
+							</div>
 							<p className='about__text'>
-								I'm a passionate software developer with a love for creating immersive digital
-								experiences. My journey in tech has been driven by curiosity and a desire to build
-								solutions that make a difference.
+								As a kid, I’d lose myself in the thrill of building things with code, grinning
+								ear-to-ear when a tricky problem finally clicked. That spark never faded, even as a
+								fitness pro.
 							</p>
+
 							<p className='about__text'>
-								When I'm not coding, you'll find me exploring the latest tech trends, contributing to
-								open-source projects, or experimenting with creative coding and generative art.
+								In 2015, I shifted my fitness business online, diving deeper into the digital world
+								through marketing and website tinkering. That pull toward tech was too strong to ignore,
+								so in 2022, I made the leap to software development full-time. Now, I craft code with
+								the same focus I once brought to training plans.
+							</p>
+
+							<p className='about__text'>
+								When I’m not at my desk, I’m hiking, cycling, or traveling the world, collecting
+								experiences and the occasional odd souvenir. This is my story—part grit, part geek, all
+								me.
 							</p>
 						</div>
 					</div>
