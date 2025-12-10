@@ -16,12 +16,12 @@ pre-commit:
   parallel: true
   commands:
     Linter:
-      root: "./client"
+      root: "./src"
       run: npm run lint
   
 pre-push:
   parallel: true
   commands:
     TypeCheck:
-      root: "./client"
+      root: "./src"
       run: npx tsc
