@@ -1,42 +1,67 @@
-// import { Link } from 'react-router-dom';
-// import './Projects.scss';
-// import brainstormiPhone from '../../assets/images/brainstorm-iphone.png';
-// import recleagueiPhone from '../../assets/images/recleague-iphone.png';
-//
-// export default function Project2() {
-// 	return (
-// 		<section className='projects'>
-// 			<div className='projects__container'>
-// 				<h2 className='projects__title'>Featured Builds</h2>
-// 				<div className='projects__grid'>
-// 					<Link to='/projects/recleague' className='projects__link'>
-// 						<article className='projects__card'>
-// 							<h3 className='projects__card-title'>Rec League</h3>
-// 							<p className='projects__card-desc'>
-// 								A web/mobile app to find, register for, and manage recreational sports leagues in your
-// 								area.
-// 							</p>
-// 							<button type='button' className='projects__card-btn'>
-// 								View Project
-// 							</button>
-// 							<img src={recleagueiPhone} alt='Rec League App' className='projects__img' />
-// 						</article>
-// 					</Link>
-//
-// 					<Link to='/projects/brainstorm' className='projects__link'>
-// 						<article className='projects__card'>
-// 							<h3 className='projects__card-title'>BrainStorm</h3>
-// 							<p className='projects__card-desc'>
-// 								A mobile app for teams to suggest, brainstorm, and vote on ideas for projects.
-// 							</p>
-// 							<button type='button' className='projects__card-btn'>
-// 								View Project
-// 							</button>
-// 							<img src={brainstormiPhone} alt='BrainStorm App' className='projects__img' />
-// 						</article>
-// 					</Link>
-// 				</div>
-// 			</div>
-// 		</section>
-// 	);
-// }
+import './Projects.scss';
+import { ExternalLink, Github } from 'lucide-react';
+
+export default function Projects() {
+	const projects = [
+		{
+			title: 'Brainstorm',
+			description: 'Mobile web app for teams to brainstorm, suggest, and vote on new ideas for projects.',
+			tags: ['React', 'Javascript', 'Node', 'Express.js', 'REST'],
+		},
+		{
+			title: 'RecLeague',
+			description:
+				'Responsive web app to find, register for, and manage recreational sports leagues in your area.',
+			tags: ['Javascript', 'React', 'Sass', 'Node', 'Express.js', 'SQL', 'REST'],
+			repoUrl: 'https://github.com/cameronmakarchuk/recleague-client',
+			demoUrl: 'https://www.youtube.com/watch?v=tmo6_BDQmcc',
+		},
+	];
+
+	return (
+		<section id='projects' className='projects'>
+			<div className='projects__container'>
+				<div className='projects__header'>
+					<h2 className='section-title'>Featured Projects</h2>
+				</div>
+
+				<div className='projects__grid'>
+					{projects.map((project) => (
+						<div key={project.title} className='projects__card'>
+							<div className='projects__card-divider' />
+
+							<h3 className='projects__card-title'>{project.title}</h3>
+
+							<p className='projects__card-description'>{project.description}</p>
+
+							<div className='projects__card-tags'>
+								{project.tags.map((tag) => (
+									<span key={tag} className='projects__tag'>
+										{tag}
+									</span>
+								))}
+							</div>
+
+							<div className='projects__card-links'>
+								{project.repoUrl && (
+									<a href={project.repoUrl} className='projects__link'>
+										<Github className='projects__link-icon' />
+										<span>Code</span>
+									</a>
+								)}
+								{project.demoUrl && (
+									<a href={project.demoUrl} className='projects__link'>
+										<ExternalLink className='projects__link-icon' />
+										<span>Live Demo</span>
+									</a>
+								)}
+							</div>
+
+							<div className='projects__card-accent' />
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
+}

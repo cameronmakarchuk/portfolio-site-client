@@ -25,13 +25,13 @@ export default function Contact() {
 										<div className='contact__detail-icon-box'>
 											<Mail className='contact__detail-icon' />
 										</div>
-										<span>hello@developer.com</span>
+										<span>hello[at]cameronmakarchuk.com</span>
 									</div>
 									<div className='contact__detail'>
 										<div className='contact__detail-icon-box'>
 											<MapPin className='contact__detail-icon' />
 										</div>
-										<span>San Francisco, CA</span>
+										<span>Toronto, ON</span>
 									</div>
 								</div>
 							</div>
@@ -86,7 +86,8 @@ export default function Contact() {
 					<div className='contact__footer-glow' />
 					<div className='contact__footer-box'>
 						<p className='contact__footer-text'>
-							© 2025 DevPortfolio. Built with <span className='contact__footer-highlight'>React</span> and{' '}
+							© 2025 Cameron Makarchuk. Hand-coded with{' '}
+							<span className='contact__footer-highlight'>React, Typescript</span> and{' '}
 							<span className='contact__footer-highlight'>passion</span>
 						</p>
 					</div>
