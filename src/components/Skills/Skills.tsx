@@ -8,16 +8,14 @@ export default function Skills() {
 				{ name: 'React', level: 95 },
 				{ name: 'TypeScript', level: 90 },
 				{ name: 'Sass', level: 92 },
-				{ name: 'Next.js', level: 88 },
 			],
 		},
 		{
 			category: 'Backend',
 			skills: [
 				{ name: 'Node.js', level: 90 },
-				{ name: 'Python', level: 85 },
+				{ name: 'GraphQL', level: 85 },
 				{ name: 'PostgreSQL', level: 87 },
-				{ name: 'Redis', level: 82 },
 			],
 		},
 		{
@@ -25,8 +23,7 @@ export default function Skills() {
 			skills: [
 				{ name: 'Git', level: 93 },
 				{ name: 'Docker', level: 86 },
-				{ name: 'AWS', level: 84 },
-				{ name: 'GraphQL', level: 88 },
+				{ name: 'Linux', level: 84 },
 			],
 		},
 	];
@@ -65,7 +62,7 @@ export default function Skills() {
 					<div className='skills__footer-box'>
 						<p className='skills__footer-text'>
 							Always learning, always growing. Currently exploring{' '}
-							<span className='skills__footer-highlight'>Web3, AI, and Cloud Architecture</span>
+							<span className='skills__footer-highlight'>AI, blockchain, & system design</span>
 						</p>
 					</div>
 				</div>

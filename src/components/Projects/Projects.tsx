@@ -4,17 +4,22 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function Projects() {
 	const projects = [
 		{
-			title: 'Brainstorm',
-			description: 'Mobile web app for teams to brainstorm, suggest, and vote on new ideas for projects.',
-			tags: ['React', 'Javascript', 'Node', 'Express.js', 'REST'],
-		},
-		{
 			title: 'RecLeague',
 			description:
 				'Responsive web app to find, register for, and manage recreational sports leagues in your area.',
 			tags: ['Javascript', 'React', 'Sass', 'Node', 'Express.js', 'SQL', 'REST'],
 			repoUrl: 'https://github.com/cameronmakarchuk/recleague-client',
 			demoUrl: 'https://www.youtube.com/watch?v=tmo6_BDQmcc',
+		},
+		{
+			title: 'HomeLab',
+			description: 'Personal cloud with self-hosted services handling documents, photos, and media.',
+			tags: ['Linux', 'Docker', 'Raspberry Pi', 'Cloudflare', 'NextCloud', 'Jellyfin', 'PhotoPrism'],
+		},
+		{
+			title: 'Brainstorm',
+			description: 'Mobile web app for teams to brainstorm, suggest, and vote on new ideas for projects.',
+			tags: ['React', 'Javascript', 'Node', 'Express.js', 'REST'],
 		},
 	];
 
