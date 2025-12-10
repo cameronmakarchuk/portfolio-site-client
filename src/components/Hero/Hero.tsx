@@ -1,5 +1,5 @@
 import './Hero.scss';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
 
 export default function Hero() {
 	return (
@@ -45,11 +45,11 @@ export default function Hero() {
 
 				<div className='hero__socials'>
 					{[
-						{ icon: Github, label: 'GitHub' },
-						{ icon: Linkedin, label: 'LinkedIn' },
-						{ icon: Mail, label: 'Email' },
-					].map(({ icon: Icon, label }) => (
-						<a key={label} href='/' className='hero__social' aria-label={label}>
+						{ icon: Github, label: 'GitHub', url: 'https://github.com/cameronmakarchuk' },
+						{ icon: Linkedin, label: 'LinkedIn', url: 'https://linkedin/in/cameronmakarchuk' },
+						{ icon: Instagram, label: 'Instagram', url: 'https://instagram.com/cameronmakarchuk' },
+					].map(({ icon: Icon, label, url }) => (
+						<a key={label} href={url} className='hero__social' target='_blank' aria-label={label}>
 							<Icon className='hero__social-icon' />
 						</a>
 					))}

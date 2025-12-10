@@ -25,7 +25,7 @@ export default function Contact() {
 										<div className='contact__detail-icon-box'>
 											<Mail className='contact__detail-icon' />
 										</div>
-										<span>hello[at]cameronmakarchuk.com</span>
+										<span>hello@cameronmakarchuk.com</span>
 									</div>
 									<div className='contact__detail'>
 										<div className='contact__detail-icon-box'>
