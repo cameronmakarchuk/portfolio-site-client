@@ -1,7 +1,30 @@
 import './Contact.scss';
 import { Mail, MapPin, Send } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
+	const FS_KEY = import.meta.env.VITE_FORMSPREE_CONTACT_KEY;
+
+	if (!FS_KEY) {
+		throw new Error('Missing Formspree contact form key');
+	}
+
+	const [state, handleFormspreeSubmit] = useForm(FS_KEY);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		const form = e.currentTarget;
+
+		try {
+			await handleFormspreeSubmit(e);
+		} catch {
+			// TODO: add better error handling, validation here
+			console.error('Error submitting form');
+		} finally {
+			form.reset();
+		}
+	};
+
 	return (
 		<section id='contact' className='contact'>
 			<div className='contact__container'>
@@ -40,12 +63,19 @@ export default function Contact() {
 
 					<div className='contact__form'>
 						<div className='contact__form-glow' />
-						<form className='contact__form-box'>
+						<form className='contact__form-box' onSubmit={handleSubmit}>
 							<div className='contact__form-group'>
 								<label htmlFor='name' className='contact__label'>
 									Name
 								</label>
-								<input type='text' id='name' className='contact__input' placeholder='Your name' />
+								<input
+									type='text'
+									id='name'
+									name='name'
+									className='contact__input'
+									placeholder='Your name'
+								/>
+								<ValidationError prefix='Name' field='name' errors={state.errors} />
 							</div>
 
 							<div className='contact__form-group'>
@@ -55,9 +85,11 @@ export default function Contact() {
 								<input
 									type='email'
 									id='email'
+									name='email'
 									className='contact__input'
 									placeholder='your@email.com'
 								/>
+								<ValidationError prefix='Email' field='email' errors={state.errors} />
 							</div>
 
 							<div className='contact__form-group'>
@@ -66,17 +98,23 @@ export default function Contact() {
 								</label>
 								<textarea
 									id='message'
+									name='message'
 									rows={4}
 									className='contact__textarea'
 									placeholder='Your message...'
 								/>
+								<ValidationError prefix='Message' field='message' errors={state.errors} />
 							</div>
 
-							<button type='submit' className='contact__submit'>
-								<span>
-									Send Message
-									<Send className='contact__submit-icon' />
-								</span>
+							<button type='submit' className='contact__submit' disabled={state.submitting}>
+								{state.succeeded ? (
+									<span>Thanks, your message has been sent!</span>
+								) : (
+									<span>
+										Send Message
+										<Send className='contact__submit-icon' />
+									</span>
+								)}
 							</button>
 						</form>
 					</div>
