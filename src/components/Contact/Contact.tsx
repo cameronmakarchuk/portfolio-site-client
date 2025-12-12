@@ -3,27 +3,13 @@ import { Mail, MapPin, Send } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
-	const FS_KEY = import.meta.env.VITE_FORMSPREE_CONTACT_KEY;
+	const FORM_KEY = import.meta.env.VITE_FORMSPREE_CONTACT_KEY;
 
-	if (!FS_KEY) {
-		throw new Error('Missing Formspree contact form key');
+	if (!FORM_KEY) {
+		throw new Error('Missing contact form key');
 	}
 
-	const [state, handleFormspreeSubmit] = useForm(FS_KEY);
-
-	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const form = e.currentTarget;
-
-		try {
-			await handleFormspreeSubmit(e);
-		} catch {
-			// TODO: add better error handling, validation here
-			console.error('Error submitting form');
-		} finally {
-			form.reset();
-		}
-	};
+	const [state, handleSubmit] = useForm(FORM_KEY);
 
 	return (
 		<section id='contact' className='contact'>
@@ -107,7 +93,9 @@ export default function Contact() {
 							</div>
 
 							<button type='submit' className='contact__submit' disabled={state.submitting}>
-								{state.succeeded ? (
+								{state.errors ? (
+									<span>Please enter valid name, email, and message and try again.</span>
+								) : state.succeeded ? (
 									<span>Thanks, your message has been sent!</span>
 								) : (
 									<span>
