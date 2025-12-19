@@ -6,18 +6,21 @@ export default function About() {
 	const highlights = [
 		{
 			icon: Terminal,
-			title: 'Clean Code',
-			description: 'Writing maintainable, scalable code that stands the test of time',
+			title: 'Software Saga',
+			description:
+				'Currently building & maintaining backend functionality for an ecommerce platform by day, building an A.I. fitness app and self-hosting a personal cloud server by night.',
 		},
 		{
 			icon: Zap,
-			title: 'Performance',
-			description: 'Optimizing for speed and efficiency in every project',
+			title: 'Digital Fitness Arc',
+			description:
+				'Founded a digital-first fitness & wellness coaching company, developing email & social media marketing campaigns, and designing programs for clients.',
 		},
 		{
 			icon: Sparkles,
-			title: 'Innovation',
-			description: 'Exploring new technologies and pushing creative boundaries',
+			title: 'Side Quests',
+			description:
+				'Cycling, running, and lifting; Reading everything from biographies to graphic novels to software engineering topics.',
 		},
 	];
 
@@ -42,14 +45,15 @@ export default function About() {
 									I’m Cameron, a former fitness pro who traded kettlebells for code. For 15 years, I
 									ran a private personal training studio and built an online coaching platform with
 									BluePhoenix Fitness, helping clients transform through hard work and dedication. But
-									a childhood passion for coding—those late nights solving problems and building
-									things on my computer—kept calling.
+									a childhood passion for coding - those late nights solving problems and building
+									things on my computer - kept calling.
 								</p>
 							</div>
+
 							<p className='about__text'>
-								As a kid, I’d lose myself in the thrill of building things with code, grinning
-								ear-to-ear when a tricky problem finally clicked. That spark never faded, even as a
-								fitness pro.
+								As a kid, I’d lose myself in the thrill of building things and exploring my first
+								computer, so excited when a tricky problem finally clicked or I discovered something
+								new. That spark never faded, even as a fitness pro.
 							</p>
 
 							<p className='about__text'>
@@ -61,7 +65,7 @@ export default function About() {
 
 							<p className='about__text'>
 								When I’m not at my desk, I’m hiking, cycling, or traveling the world, collecting
-								experiences and the occasional odd souvenir. This is my story—part grit, part geek, all
+								experiences and the occasional odd souvenir. This is my story—part grit, part nerd, all
 								me.
 							</p>
 						</div>
