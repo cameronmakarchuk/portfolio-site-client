@@ -1,0 +1,73 @@
+@use "./variables" as *;
+
+$font-body: "Mona Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+$font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", "Liberation Mono", ui-monospace, monospace;
+
+$color-bg: #090914;
+$color-bg-soft: #141421;
+$color-bg-panel: rgba(255, 255, 255, 0.035);
+$color-bg-panel-strong: rgba(255, 255, 255, 0.065);
+$color-text: #f3eadf;
+$color-text-muted: #aaa0b2;
+$color-text-faint: rgba(170, 160, 178, 0.62);
+$color-border: rgba(255, 255, 255, 0.12);
+$color-border-strong: rgba(255, 255, 255, 0.22);
+$color-cyan: #38bdf8;
+$color-teal: #b8f2e6;
+$color-magenta: #ef8354;
+$color-coral: #ef8354;
+$color-lime: #b8f2e6;
+$color-amber: #d9b26f;
+$color-purple: #7c6f9f;
+
+$section-padding-mobile: 4rem 1.25rem;
+$section-padding-tablet: 5.5rem 2rem;
+$section-padding-desktop: 6rem 3rem;
+$content-max-width: 1180px;
+$radius-panel: 0.5rem;
+
+@mixin tablet-up {
+	@media (min-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin desktop-up {
+	@media (min-width: $desktop) {
+		@content;
+	}
+}
+
+@mixin content-shell {
+	width: min(100%, $content-max-width);
+	margin: 0 auto;
+}
+
+@mixin cyber-panel($accent: $color-cyan) {
+	position: relative;
+	background:
+		linear-gradient(135deg, rgba($accent, 0.1), transparent 44%),
+		$color-bg-panel;
+	border: 1px solid $color-border;
+	border-radius: $radius-panel;
+	box-shadow:
+		0 0 0 1px rgba($accent, 0.08),
+		0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+	overflow: hidden;
+}
+
+@mixin mono-label {
+	font-family: $font-mono;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+@mixin gradient-text($from: $color-magenta, $to: $color-cyan) {
+	background: linear-gradient(120deg, $from, $color-purple 48%, $to);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
