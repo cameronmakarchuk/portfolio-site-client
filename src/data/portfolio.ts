@@ -37,7 +37,7 @@ export type ExperienceItem = {
 export const profile = {
 	name: "Cameron Makarchuk",
 	title: "Software Developer",
-	location: "Canada - remote friendly",
+	location: "Toronto, Canada - remote friendly",
 	tagline: "Developer, builder, & learning addict",
 	subtitle: "Now I build products with an operator's instincts and a beginner's appetite for hard problems.",
 	description:
@@ -53,30 +53,30 @@ export const navItems = [
 ];
 
 export const stats = [
-	{ value: "15", label: "Years coaching", accent: "cyan" },
+	{ value: "15+", label: "Years coaching", accent: "cyan" },
 	{ value: "38", label: "Age at pivot", accent: "magenta" },
-	{ value: "03", label: "Featured builds", accent: "lime" },
-	{ value: "01", label: "Career in motion", accent: "amber" },
+	{ value: "04+", label: "Years developer experience", accent: "lime" },
+	{ value: "03", label: "Builds in progress", accent: "amber" },
 ] satisfies Array<{ value: string; label: string; accent: Accent }>;
 
 export const journeyEvents: JourneyEvent[] = [
 	{
-		year: "2009",
+		year: "2007",
 		title: "Started coaching full time",
 		description:
-			"Built a fitness career from the ground up, learning how to sell, teach, listen, and keep showing up when the plan changed.",
+			"Built a fitness career from the ground up, learning how to sell, teach, listen, and help people transform their lives.",
 		accent: "cyan",
 	},
 	{
 		year: "2015",
-		title: "BluePhoenix moved online",
+		title: "BluePhoenix Fitness moved online",
 		description:
 			"Started turning coaching systems into digital workflows, content, automations, and client tools.",
 		accent: "teal",
 	},
 	{
 		year: "2022",
-		title: "The pivot at 38",
+		title: "Career change at 38",
 		description:
 			"Committed to software development full time and rebuilt my work life around code, curiosity, and the discipline I already trusted.",
 		accent: "magenta",
@@ -84,16 +84,16 @@ export const journeyEvents: JourneyEvent[] = [
 	},
 	{
 		year: "2023",
-		title: "Learning in public",
+		title: "First job as a backend software developer",
 		description:
-			"Focused on JavaScript, TypeScript, React, Node, databases, real projects, and the quiet grind of getting a little better every week.",
+			"Building and maintaining production-level backend systems for a global retail and ecommerce brand.",
 		accent: "amber",
 	},
 	{
 		year: "Now",
-		title: "Building useful things",
+		title: "Constant, continuous growth & deep learning",
 		description:
-			"Growing through project work, experiments, and product thinking - looking for teams and problems where ownership matters.",
+			"Always learning, always growing through project work, experiments, and product thinking.",
 		accent: "lime",
 		isNow: true,
 	},
@@ -103,7 +103,7 @@ export const featuredBuilds: FeaturedBuild[] = [
 	{
 		id: "01",
 		name: "RecLeague",
-		status: "Case study",
+		status: "Capstone Project",
 		year: "2022",
 		summary: "Find and register for adult recreational sports leagues.",
 		description:
@@ -118,9 +118,9 @@ export const featuredBuilds: FeaturedBuild[] = [
 		name: "BrainStorm",
 		status: "Hackathon",
 		year: "2022",
-		summary: "A team ideation app for prompts, voting, and rewards.",
+		summary: "A team ideation app with prompts, voting, and rewards.",
 		description:
-			"Built during a 24-hour hackathon with a small team, focused on turning messy collaboration into a guided mobile-first workflow.",
+			"Built during a 24-hour hackathon - hosted by Microsoft & Brainstation - with a small team, focused on turning messy collaboration into a guided mobile-first workflow.",
 		stack: ["React", "JavaScript", "Node", "Express"],
 		image: brainstormImage,
 		imageAlt: "BrainStorm mobile app challenge dashboard",
@@ -129,30 +129,37 @@ export const featuredBuilds: FeaturedBuild[] = [
 	{
 		id: "03",
 		name: "Homelab",
-		status: "Placeholder",
+		status: "Personal",
 		year: "Ongoing",
 		summary: "Self-hosted experiments, automation, and infrastructure learning.",
 		description:
-			"A working placeholder for the experiments section: local services, scripts, tooling experiments, and the kind of tinkering that keeps the learning loop alive.",
+			"My personal experimentation with self-hosting local services, scripts, tooling, and the kind of tinkering that keeps the learning loop alive.",
 		stack: ["Linux", "Networking", "Automation", "Self-hosting"],
 		image: homelabImage,
-		imageAlt: "Cyberpunk homelab dashboard placeholder",
+		imageAlt: "Homelab dashboard placeholder",
 		accent: "cyan",
 	},
 ];
 
 export const experienceItems: ExperienceItem[] = [
 	{
-		role: "Software Developer",
-		org: "Project and freelance work",
-		period: "2022 - Present",
+		role: "Intermediate Backend Software Developer",
+		org: "Lush",
+		period: "2025 - Present",
 		description:
-			"Frontend-heavy product development with React, TypeScript, Sass, API integration, and full-stack fundamentals.",
+			"Planning, building, and maintaining backend systems that power the website/app for a global ecommerce company.",
+	},
+	{
+		role: "Junior Backend Software Developer",
+		org: "Lush",
+		period: "2023 - 2025",
+		description:
+			"Involved in the development and maintenance of internal tools used for order management systems, translating documents, and product subscriptions.",
 	},
 	{
 		role: "Founder / Coach",
-		org: "BluePhoenix Fitness",
-		period: "2009 - Present",
+		org: "Boom Bodyshaping Studio / BluePhoenix Fitness",
+		period: "2007 - Present",
 		description:
 			"Built and operated a coaching business, managed clients, systems, marketing, and online delivery.",
 	},
@@ -161,27 +168,31 @@ export const experienceItems: ExperienceItem[] = [
 		org: "Software development",
 		period: "Age 38 onward",
 		description:
-			"Retrained through practical projects, modern web tooling, and steady iteration from first principles.",
+			"Decided at 38 to take a hard left turn and finally follow a passion I'd had since I was a kid.",
 	},
 ];
 
 export const skills = [
+	"JavaScript",
 	"TypeScript",
 	"React",
-	"JavaScript",
+	"CSS",
+	"Sass",
 	"Node.js",
 	"Express",
-	"Sass",
+	"GraphQL",
 	"SQL",
 	"Git",
 	"APIs",
-	"Product thinking",
+	"Linux",
+	"A.I. Agents",
 ];
 
 export const links = {
-	email: "mailto:cmakarchuk@gmail.com",
+	email: "mailto:cameron@bluephoenixfitness.com",
 	github: "https://github.com/cameronmakarchuk",
 	linkedin: "https://linkedin.com/in/cameronmakarchuk",
 	instagram: "https://instagram.com/cameronmakarchuk",
+	x: "https://x.com/cmakarchuk",
 	bluePhoenix: "https://bluephoenixfitness.com",
 };

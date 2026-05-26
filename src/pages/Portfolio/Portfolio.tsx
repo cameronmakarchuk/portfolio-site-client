@@ -66,7 +66,7 @@ function HeroSection(): JSX.Element {
 					<h1 className="portfolio-hero__title">
 						<span>Developer, builder, & </span>
 						<span>
-							<em>learning</em> addict.
+							<em>learning</em> addict
 						</span>
 					</h1>
 					<p className="portfolio-hero__description">{profile.description}</p>
@@ -132,7 +132,7 @@ function JourneySection(): JSX.Element {
 					kicker="01 - The journey"
 					title={
 						<>
-							From coach to <em>builder</em>.
+							From coach to <em>builder</em>
 						</>
 					}
 					meta="2009 - present"
@@ -190,7 +190,7 @@ function ProjectsSection(): JSX.Element {
 					kicker="02 - Featured builds"
 					title={
 						<>
-							Projects, experiments, and things I am <em>shipping</em>.
+							Projects, experiments, and things I am <em>building</em>
 						</>
 					}
 					meta="case studies + placeholders"
@@ -233,18 +233,18 @@ function ExperienceSection(): JSX.Element {
 					kicker="03 - Experience snapshot"
 					title={
 						<>
-							A resume layer without the <em>resume fog</em>.
+							What I've been up to <em>professionally</em>
 						</>
 					}
 					meta="skills + work history"
 				/>
 				<div className="portfolio-experience">
 					<div className="portfolio-card portfolio-experience__now">
-						<p className="portfolio-label">// Current signal</p>
-						<h3>Builder with an operator's bias.</h3>
+						<p className="portfolio-label">// Current framework</p>
+						<h3>Builder with a founder mindset.</h3>
 						<p>
-							I bring coaching-business ownership into software: clear communication, user empathy,
-							follow-through, and a bias toward useful shipped work.
+							I bring entreprenuer thinking into software development: clear communication, user empathy,
+							follow-through, and understanding the business impact of what we're building.
 						</p>
 					</div>
 					<div className="portfolio-experience__list">
@@ -273,9 +273,10 @@ function ExperienceSection(): JSX.Element {
 
 function ContactSection(): JSX.Element {
 	const contactLinks = [
-		{ label: "Email", value: "cmakarchuk@gmail.com", href: links.email, accent: "cyan" },
-		{ label: "GitHub", value: "@cmakarchuk", href: links.github, accent: "lime" },
+		{ label: "GitHub", value: "cameronmakarchuk", href: links.github, accent: "lime" },
 		{ label: "LinkedIn", value: "in/cameronmakarchuk", href: links.linkedin, accent: "amber" },
+		{ label: "Instagram", value: "@cameronmakarchuk", href: links.instagram, accent: "coral" },
+		{ label: "X", value: "@cmakarchuk", href: links.x, accent: "teal" },
 		{ label: "Fitness", value: "bluephoenixfitness.com", href: links.bluePhoenix, accent: "magenta" },
 	] satisfies Array<{ label: string; value: string; href: string; accent: Accent }>;
 
@@ -289,11 +290,10 @@ function ContactSection(): JSX.Element {
 				<div className="portfolio-contact__grid">
 					<div>
 						<h2>
-							Let's <em>build</em> something useful.
+							Let's <em>build</em> something impactful
 						</h2>
 						<p>
-							I am looking for teams, collaborators, and practical product problems where curiosity,
-							ownership, and steady iteration matter.
+							Have an idea for something you need built? Just want to connect with another builder? You can find me at any of these spots, happy to connect.
 						</p>
 					</div>
 					<div className="portfolio-contact__links">
@@ -312,7 +312,7 @@ function ContactSection(): JSX.Element {
 					</div>
 				</div>
 				<div className="portfolio-footerline">
-					<span>© 2026 Cameron Makarchuk - Canada - Remote</span>
+					<span>© 2026 Cameron Makarchuk - Toronto, Canada - Remote</span>
 					<span>EOF - built with care</span>
 				</div>
 			</div>
