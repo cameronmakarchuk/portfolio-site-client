@@ -36,17 +36,16 @@ export type ExperienceItem = {
 
 export const profile = {
 	name: "Cameron Makarchuk",
-	title: "TypeScript / React / Node developer",
+	title: "Software Developer",
 	location: "Canada - remote friendly",
-	tagline: "I learned to code at thirty-eight.",
+	tagline: "Developer, builder, & learning addict",
 	subtitle: "Now I build products with an operator's instincts and a beginner's appetite for hard problems.",
 	description:
-		"I spent fifteen years coaching people through physical change before making my own career change into software. This site is the logbook: the pivot, the projects, the experiments, and the work I am growing into next.",
+		"I spent fifteen years coaching people through physical change before making my own career change into software at 38. This site is the logbook: the pivot, the projects, the experiments, and the work I am growing into next.",
 	image: camProfileImage,
 };
 
 export const navItems = [
-	{ label: "Index", href: "#home" },
 	{ label: "Journey", href: "#journey" },
 	{ label: "Builds", href: "#projects" },
 	{ label: "Experience", href: "#experience" },

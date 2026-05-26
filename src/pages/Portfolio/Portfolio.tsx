@@ -35,7 +35,7 @@ function SiteNav(): JSX.Element {
 			<a href="#home" className="portfolio-nav__brand" aria-label="Cameron Makarchuk home">
 				<span className="portfolio-nav__mark">C</span>
 				<span>
-					<span className="portfolio-nav__name">cameron.dev</span>
+					<span className="portfolio-nav__name">~/code/portfolio</span>
 					<span className="portfolio-nav__meta">developer - node.0xCM</span>
 				</span>
 			</a>
@@ -64,9 +64,9 @@ function HeroSection(): JSX.Element {
 						System ready - developer journey online
 					</p>
 					<h1 className="portfolio-hero__title">
-						<span>{profile.tagline}</span>
+						<span>Developer, builder, & </span>
 						<span>
-							Now I <em>build</em> for a living.
+							<em>learning</em> addict.
 						</span>
 					</h1>
 					<p className="portfolio-hero__description">{profile.description}</p>
@@ -76,9 +76,6 @@ function HeroSection(): JSX.Element {
 						</a>
 						<a href="#journey" className="portfolio-button portfolio-button--ghost">
 							Read the journey
-						</a>
-						<a href={links.github} className="portfolio-hero__handle" target="_blank" rel="noreferrer">
-							@cmakarchuk
 						</a>
 					</div>
 				</div>
