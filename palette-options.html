@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio Palette Options</title>
+		<style>
+			:root {
+				color-scheme: dark;
+				font-family:
+					Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+				background: #07080d;
+				color: #f4f1ea;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				min-height: 100vh;
+				margin: 0;
+				padding: 48px;
+				background:
+					radial-gradient(circle at 15% 0%, rgba(76, 201, 240, 0.14), transparent 360px),
+					radial-gradient(circle at 88% 12%, rgba(249, 115, 82, 0.12), transparent 420px),
+					#07080d;
+			}
+
+			header {
+				max-width: 1180px;
+				margin: 0 auto 32px;
+			}
+
+			h1 {
+				margin: 0 0 10px;
+				font-size: clamp(40px, 7vw, 92px);
+				line-height: 0.92;
+				letter-spacing: -0.06em;
+			}
+
+			.intro {
+				max-width: 680px;
+				margin: 0;
+				color: rgba(244, 241, 234, 0.68);
+				font-size: 18px;
+				line-height: 1.55;
+			}
+
+			.board {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+				gap: 22px;
+				max-width: 1180px;
+				margin: 0 auto;
+			}
+
+			.palette {
+				--bg: #07080d;
+				--surface: #10131a;
+				--surface-strong: #171b24;
+				--text: #f4f1ea;
+				--muted: #a9adb7;
+				--primary: #4cc9f0;
+				--secondary: #f97352;
+				--accent: #c8ff5f;
+				--warm: #f2b84b;
+				position: relative;
+				min-height: 520px;
+				padding: 22px;
+				overflow: hidden;
+				background:
+					linear-gradient(135deg, color-mix(in srgb, var(--primary) 12%, transparent), transparent 42%),
+					var(--bg);
+				border: 1px solid color-mix(in srgb, var(--primary) 24%, transparent);
+				border-radius: 14px;
+				box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+			}
+
+			.palette::before {
+				position: absolute;
+				inset: 0;
+				content: "";
+				background-image:
+					linear-gradient(color-mix(in srgb, var(--primary) 9%, transparent) 1px, transparent 1px),
+					linear-gradient(
+						90deg,
+						color-mix(in srgb, var(--primary) 9%, transparent) 1px,
+						transparent 1px
+					);
+				background-size: 28px 28px;
+				opacity: 0.32;
+				mask-image: linear-gradient(to bottom, black, transparent 75%);
+				pointer-events: none;
+			}
+
+			.palette > * {
+				position: relative;
+				z-index: 1;
+			}
+
+			.palette__header {
+				display: flex;
+				justify-content: space-between;
+				gap: 16px;
+				margin-bottom: 20px;
+			}
+
+			.palette h2 {
+				margin: 0;
+				color: var(--text);
+				font-size: 24px;
+				letter-spacing: -0.04em;
+			}
+
+			.palette__mood {
+				margin: 7px 0 0;
+				color: var(--muted);
+				font-size: 14px;
+				line-height: 1.45;
+			}
+
+			.palette__badge {
+				height: fit-content;
+				padding: 7px 9px;
+				color: var(--accent);
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+				font-size: 11px;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+				background: color-mix(in srgb, var(--accent) 12%, transparent);
+				border: 1px solid color-mix(in srgb, var(--accent) 36%, transparent);
+				border-radius: 999px;
+				white-space: nowrap;
+			}
+
+			.swatches {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 8px;
+				margin-bottom: 22px;
+			}
+
+			.swatch {
+				min-height: 74px;
+				padding: 9px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				border-radius: 8px;
+				box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+			}
+
+			.swatch span {
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+				font-size: 10px;
+				font-weight: 700;
+				letter-spacing: 0.04em;
+			}
+
+			.swatch small {
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+				font-size: 10px;
+				opacity: 0.74;
+			}
+
+			.mock {
+				padding: 18px;
+				background: color-mix(in srgb, var(--surface) 88%, transparent);
+				border: 1px solid color-mix(in srgb, var(--primary) 22%, white 4%);
+				border-radius: 10px;
+			}
+
+			.mock__nav,
+			.mock__meta {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 12px;
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+				font-size: 10px;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+
+			.mock__nav {
+				color: var(--muted);
+				margin-bottom: 28px;
+			}
+
+			.mock__mark {
+				width: 28px;
+				height: 28px;
+				display: grid;
+				place-items: center;
+				color: var(--primary);
+				background: var(--bg);
+				border: 1px solid var(--primary);
+				border-radius: 7px;
+				box-shadow: 0 0 18px color-mix(in srgb, var(--primary) 28%, transparent);
+			}
+
+			.mock h3 {
+				max-width: 340px;
+				margin: 0 0 14px;
+				color: var(--text);
+				font-size: 43px;
+				line-height: 0.94;
+				letter-spacing: -0.06em;
+			}
+
+			.mock h3 em {
+				color: var(--secondary);
+				font-style: normal;
+			}
+
+			.mock__copy {
+				margin: 0 0 22px;
+				color: var(--muted);
+				font-size: 14px;
+				line-height: 1.55;
+			}
+
+			.mock__grid {
+				display: grid;
+				grid-template-columns: 0.9fr 1.1fr;
+				gap: 10px;
+			}
+
+			.mock__panel {
+				min-height: 128px;
+				padding: 14px;
+				background: var(--surface-strong);
+				border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+				border-radius: 8px;
+			}
+
+			.mock__panel strong {
+				display: block;
+				color: var(--accent);
+				font-size: 34px;
+				letter-spacing: -0.06em;
+				line-height: 1;
+			}
+
+			.mock__panel span {
+				display: block;
+				margin-top: 8px;
+				color: var(--muted);
+				font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+				font-size: 10px;
+				font-weight: 700;
+				letter-spacing: 0.08em;
+				text-transform: uppercase;
+			}
+
+			.mock__timeline {
+				display: grid;
+				gap: 8px;
+			}
+
+			.mock__event {
+				padding: 10px;
+				color: var(--text);
+				background: color-mix(in srgb, var(--surface) 76%, transparent);
+				border-left: 3px solid var(--primary);
+				border-radius: 7px;
+				font-size: 12px;
+			}
+
+			.mock__event:nth-child(2) {
+				border-color: var(--secondary);
+			}
+
+			.mock__event:nth-child(3) {
+				border-color: var(--warm);
+			}
+
+			.mock__meta {
+				margin-top: 18px;
+				color: var(--muted);
+			}
+
+			.mock__cta {
+				color: var(--primary);
+			}
+
+			.carbon {
+				--bg: #07080d;
+				--surface: #10131a;
+				--surface-strong: #171b24;
+				--text: #f4f1ea;
+				--muted: #a9adb7;
+				--primary: #4cc9f0;
+				--secondary: #f97352;
+				--accent: #c8ff5f;
+				--warm: #f2b84b;
+			}
+
+			.ink {
+				--bg: #06070a;
+				--surface: #111318;
+				--surface-strong: #1a1d23;
+				--text: #f5f0e8;
+				--muted: #a8a29a;
+				--primary: #67e8f9;
+				--secondary: #c8754a;
+				--accent: #8bd3a8;
+				--warm: #e8c77a;
+			}
+
+			.midnight {
+				--bg: #080711;
+				--surface: #12111c;
+				--surface-strong: #1c1a2a;
+				--text: #f7f3ff;
+				--muted: #aaa3ba;
+				--primary: #7dd3fc;
+				--secondary: #b85c7a;
+				--accent: #d7f75b;
+				--warm: #f59e5b;
+			}
+
+			.obsidian {
+				--bg: #040607;
+				--surface: #0e1414;
+				--surface-strong: #162020;
+				--text: #eff7f3;
+				--muted: #91a19b;
+				--primary: #5eead4;
+				--secondary: #ff6b4a;
+				--accent: #9fb7ff;
+				--warm: #ffd166;
+			}
+
+			.deep-space {
+				--bg: #090914;
+				--surface: #141421;
+				--surface-strong: #1d1d2e;
+				--text: #f3eadf;
+				--muted: #aaa0b2;
+				--primary: #38bdf8;
+				--secondary: #ef8354;
+				--accent: #b8f2e6;
+				--warm: #d9b26f;
+			}
+
+			@media (max-width: 760px) {
+				body {
+					padding: 24px;
+				}
+
+				.palette {
+					min-height: auto;
+				}
+
+				.swatches {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.mock__grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Portfolio Palette Options</h1>
+			<p class="intro">
+				Five darker palettes applied to a small version of the Journey OS interface. These are meant to show
+				how the colors feel in actual panels, headings, status chips, and timeline elements.
+			</p>
+		</header>
+
+		<main class="board">
+			<section class="palette carbon">
+				<div class="palette__header">
+					<div>
+						<h2>01. Carbon / Signal / Ember</h2>
+						<p class="palette__mood">Polished terminal, product engineer, warm human edge.</p>
+					</div>
+					<span class="palette__badge">balanced</span>
+				</div>
+				<div class="swatches">
+					<div class="swatch" style="background: var(--bg)"><span>BG</span><small>#07080d</small></div>
+					<div class="swatch" style="background: var(--primary); color: #071014"><span>PRIMARY</span><small>#4cc9f0</small></div>
+					<div class="swatch" style="background: var(--secondary); color: #160704"><span>SECOND</span><small>#f97352</small></div>
+					<div class="swatch" style="background: var(--accent); color: #111807"><span>ACCENT</span><small>#c8ff5f</small></div>
+				</div>
+				<div class="mock">
+					<div class="mock__nav"><span class="mock__mark">C</span><span>journey.os</span></div>
+					<h3>I learned to code at <em>thirty-eight</em>.</h3>
+					<p class="mock__copy">A developer homebase for the pivot, the builds, and the experiments.</p>
+					<div class="mock__grid">
+						<div class="mock__panel"><strong>38</strong><span>age at pivot</span></div>
+						<div class="mock__timeline">
+							<div class="mock__event">2009 - coaching systems</div>
+							<div class="mock__event">2022 - software pivot</div>
+							<div class="mock__event">Now - building useful things</div>
+						</div>
+					</div>
+					<div class="mock__meta"><span>Featured Builds</span><span class="mock__cta">View Projects</span></div>
+				</div>
+			</section>
+
+			<section class="palette ink">
+				<div class="palette__header">
+					<div>
+						<h2>02. Ink / Copper / Glass</h2>
+						<p class="palette__mood">Premium, mature, cyberpunk without default-neon.</p>
+					</div>
+					<span class="palette__badge">my pick</span>
+				</div>
+				<div class="swatches">
+					<div class="swatch" style="background: var(--bg)"><span>BG</span><small>#06070a</small></div>
+					<div class="swatch" style="background: var(--primary); color: #061012"><span>PRIMARY</span><small>#67e8f9</small></div>
+					<div class="swatch" style="background: var(--secondary); color: #170905"><span>SECOND</span><small>#c8754a</small></div>
+					<div class="swatch" style="background: var(--accent); color: #07130b"><span>ACCENT</span><small>#8bd3a8</small></div>
+				</div>
+				<div class="mock">
+					<div class="mock__nav"><span class="mock__mark">C</span><span>journey.os</span></div>
+					<h3>I learned to code at <em>thirty-eight</em>.</h3>
+					<p class="mock__copy">A developer homebase for the pivot, the builds, and the experiments.</p>
+					<div class="mock__grid">
+						<div class="mock__panel"><strong>38</strong><span>age at pivot</span></div>
+						<div class="mock__timeline">
+							<div class="mock__event">2009 - coaching systems</div>
+							<div class="mock__event">2022 - software pivot</div>
+							<div class="mock__event">Now - building useful things</div>
+						</div>
+					</div>
+					<div class="mock__meta"><span>Featured Builds</span><span class="mock__cta">View Projects</span></div>
+				</div>
+			</section>
+
+			<section class="palette midnight">
+				<div class="palette__header">
+					<div>
+						<h2>03. Midnight / Volt / Rosewood</h2>
+						<p class="palette__mood">Futuristic and personal, with richer color tension.</p>
+					</div>
+					<span class="palette__badge">moody</span>
+				</div>
+				<div class="swatches">
+					<div class="swatch" style="background: var(--bg)"><span>BG</span><small>#080711</small></div>
+					<div class="swatch" style="background: var(--primary); color: #06101a"><span>PRIMARY</span><small>#7dd3fc</small></div>
+					<div class="swatch" style="background: var(--secondary); color: #17070d"><span>SECOND</span><small>#b85c7a</small></div>
+					<div class="swatch" style="background: var(--accent); color: #131707"><span>ACCENT</span><small>#d7f75b</small></div>
+				</div>
+				<div class="mock">
+					<div class="mock__nav"><span class="mock__mark">C</span><span>journey.os</span></div>
+					<h3>I learned to code at <em>thirty-eight</em>.</h3>
+					<p class="mock__copy">A developer homebase for the pivot, the builds, and the experiments.</p>
+					<div class="mock__grid">
+						<div class="mock__panel"><strong>38</strong><span>age at pivot</span></div>
+						<div class="mock__timeline">
+							<div class="mock__event">2009 - coaching systems</div>
+							<div class="mock__event">2022 - software pivot</div>
+							<div class="mock__event">Now - building useful things</div>
+						</div>
+					</div>
+					<div class="mock__meta"><span>Featured Builds</span><span class="mock__cta">View Projects</span></div>
+				</div>
+			</section>
+
+			<section class="palette obsidian">
+				<div class="palette__header">
+					<div>
+						<h2>04. Obsidian / Mint / Vermilion</h2>
+						<p class="palette__mood">Fresh, sharp, command-center energy without synthetic gloss.</p>
+					</div>
+					<span class="palette__badge">fresh</span>
+				</div>
+				<div class="swatches">
+					<div class="swatch" style="background: var(--bg)"><span>BG</span><small>#040607</small></div>
+					<div class="swatch" style="background: var(--primary); color: #061311"><span>PRIMARY</span><small>#5eead4</small></div>
+					<div class="swatch" style="background: var(--secondary); color: #180805"><span>SECOND</span><small>#ff6b4a</small></div>
+					<div class="swatch" style="background: var(--accent); color: #070a16"><span>ACCENT</span><small>#9fb7ff</small></div>
+				</div>
+				<div class="mock">
+					<div class="mock__nav"><span class="mock__mark">C</span><span>journey.os</span></div>
+					<h3>I learned to code at <em>thirty-eight</em>.</h3>
+					<p class="mock__copy">A developer homebase for the pivot, the builds, and the experiments.</p>
+					<div class="mock__grid">
+						<div class="mock__panel"><strong>38</strong><span>age at pivot</span></div>
+						<div class="mock__timeline">
+							<div class="mock__event">2009 - coaching systems</div>
+							<div class="mock__event">2022 - software pivot</div>
+							<div class="mock__event">Now - building useful things</div>
+						</div>
+					</div>
+					<div class="mock__meta"><span>Featured Builds</span><span class="mock__cta">View Projects</span></div>
+				</div>
+			</section>
+
+			<section class="palette deep-space">
+				<div class="palette__header">
+					<div>
+						<h2>05. Deep Space / Plasma / Bone</h2>
+						<p class="palette__mood">Cyberpunk magazine feel with softer editorial warmth.</p>
+					</div>
+					<span class="palette__badge">editorial</span>
+				</div>
+				<div class="swatches">
+					<div class="swatch" style="background: var(--bg)"><span>BG</span><small>#090914</small></div>
+					<div class="swatch" style="background: var(--primary); color: #06101a"><span>PRIMARY</span><small>#38bdf8</small></div>
+					<div class="swatch" style="background: var(--secondary); color: #180a05"><span>SECOND</span><small>#ef8354</small></div>
+					<div class="swatch" style="background: var(--accent); color: #071311"><span>ACCENT</span><small>#b8f2e6</small></div>
+				</div>
+				<div class="mock">
+					<div class="mock__nav"><span class="mock__mark">C</span><span>journey.os</span></div>
+					<h3>I learned to code at <em>thirty-eight</em>.</h3>
+					<p class="mock__copy">A developer homebase for the pivot, the builds, and the experiments.</p>
+					<div class="mock__grid">
+						<div class="mock__panel"><strong>38</strong><span>age at pivot</span></div>
+						<div class="mock__timeline">
+							<div class="mock__event">2009 - coaching systems</div>
+							<div class="mock__event">2022 - software pivot</div>
+							<div class="mock__event">Now - building useful things</div>
+						</div>
+					</div>
+					<div class="mock__meta"><span>Featured Builds</span><span class="mock__cta">View Projects</span></div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
