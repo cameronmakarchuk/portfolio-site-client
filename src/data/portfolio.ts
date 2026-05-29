@@ -3,7 +3,7 @@ import camProfileImage from "../assets/images/cam-profile-square.png";
 import homelabImage from "../assets/images/homelab-placeholder.png";
 import recLeagueImage from "../assets/images/recleague-iphone.png";
 
-export type Accent = "cyan" | "magenta" | "lime" | "amber" | "coral" | "teal";
+export type Accent = "cyan" | "lime" | "amber" | "coral";
 
 export type JourneyEvent = {
 	year: string;
@@ -54,7 +54,7 @@ export const navItems = [
 
 export const stats = [
 	{ value: "15+", label: "Years coaching", accent: "cyan" },
-	{ value: "38", label: "Age at pivot", accent: "magenta" },
+	{ value: "38", label: "Age at pivot", accent: "coral" },
 	{ value: "04+", label: "Years developer experience", accent: "lime" },
 	{ value: "03", label: "Builds in progress", accent: "amber" },
 ] satisfies Array<{ value: string; label: string; accent: Accent }>;
@@ -72,14 +72,14 @@ export const journeyEvents: JourneyEvent[] = [
 		title: "BluePhoenix Fitness moved online",
 		description:
 			"Started turning coaching systems into digital workflows, content, automations, and client tools.",
-		accent: "teal",
+		accent: "lime",
 	},
 	{
 		year: "2022",
 		title: "Career change at 38",
 		description:
 			"Committed to software development full time and rebuilt my work life around code, curiosity, and the discipline I already trusted.",
-		accent: "magenta",
+		accent: "coral",
 		isPivot: true,
 	},
 	{
@@ -124,7 +124,7 @@ export const featuredBuilds: FeaturedBuild[] = [
 		stack: ["React", "JavaScript", "Node", "Express"],
 		image: brainstormImage,
 		imageAlt: "BrainStorm mobile app challenge dashboard",
-		accent: "magenta",
+		accent: "coral",
 	},
 	{
 		id: "03",
