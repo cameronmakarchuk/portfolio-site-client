@@ -13,8 +13,6 @@ $color-text-faint: rgba(170, 160, 178, 0.62);
 $color-border: rgba(255, 255, 255, 0.12);
 $color-border-strong: rgba(255, 255, 255, 0.22);
 $color-cyan: #38bdf8;
-$color-teal: #b8f2e6;
-$color-magenta: #ef8354;
 $color-coral: #ef8354;
 $color-lime: #b8f2e6;
 $color-amber: #d9b26f;
@@ -65,7 +63,7 @@ $radius-panel: 0.5rem;
 	text-transform: uppercase;
 }
 
-@mixin gradient-text($from: $color-magenta, $to: $color-cyan) {
+@mixin gradient-text($from: $color-coral, $to: $color-cyan) {
 	background: linear-gradient(120deg, $from, $color-purple 48%, $to);
 	-webkit-background-clip: text;
 	background-clip: text;

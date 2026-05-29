@@ -64,9 +64,9 @@ function HeroSection(): JSX.Element {
 						System ready - developer journey online
 					</p>
 					<h1 className="portfolio-hero__title">
-						<span>Developer, builder, & </span>
+						<span>Developer, builder & </span>
 						<span>
-							<em>learning</em> addict
+							constantly <em>improving</em> 
 						</span>
 					</h1>
 					<p className="portfolio-hero__description">{profile.description}</p>
@@ -193,7 +193,7 @@ function ProjectsSection(): JSX.Element {
 							Projects, experiments, and things I am <em>building</em>
 						</>
 					}
-					meta="case studies + placeholders"
+					meta="case studies + projects"
 				/>
 				<div className="portfolio-projects">
 					{featuredBuilds.map((project) => (
@@ -276,8 +276,8 @@ function ContactSection(): JSX.Element {
 		{ label: "GitHub", value: "cameronmakarchuk", href: links.github, accent: "lime" },
 		{ label: "LinkedIn", value: "in/cameronmakarchuk", href: links.linkedin, accent: "amber" },
 		{ label: "Instagram", value: "@cameronmakarchuk", href: links.instagram, accent: "coral" },
-		{ label: "X", value: "@cmakarchuk", href: links.x, accent: "teal" },
-		{ label: "Fitness", value: "bluephoenixfitness.com", href: links.bluePhoenix, accent: "magenta" },
+		{ label: "X", value: "@cmakarchuk", href: links.x, accent: "lime" },
+		{ label: "Fitness", value: "bluephoenixfitness.com", href: links.bluePhoenix, accent: "amber" },
 	] satisfies Array<{ label: string; value: string; href: string; accent: Accent }>;
 
 	return (
