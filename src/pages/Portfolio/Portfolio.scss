@@ -259,8 +259,7 @@
 	}
 
 	em {
-		// @include gradient-text($color-coral, $color-cyan);
-        color: $color-coral;
+		color: $color-coral;
 		font-style: normal;
 	}
 }
@@ -282,19 +281,6 @@
 	align-items: center;
 	gap: 0.8rem;
 	margin-top: 2rem;
-}
-
-.portfolio-hero__handle {
-	padding: 0.8rem 0.4rem;
-	color: $color-text-muted;
-	font-family: $font-mono;
-	font-size: 0.82rem;
-	text-decoration: none;
-
-	&:hover,
-	&:focus-visible {
-		color: $color-lime;
-	}
 }
 
 .portfolio-hero__profile-card {
@@ -439,8 +425,7 @@
 	}
 
 	em {
-		// @include gradient-text($color-coral, $color-cyan);
-        color: $color-coral;
+		color: $color-coral;
 		font-style: normal;
 	}
 }
@@ -779,8 +764,7 @@
 	}
 
 	em {
-		// @include gradient-text($color-coral, $color-cyan);
-        color: $color-coral;
+		color: $color-coral;
 		font-style: normal;
 	}
 
