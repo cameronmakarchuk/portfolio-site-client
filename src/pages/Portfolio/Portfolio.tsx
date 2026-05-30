@@ -2,6 +2,7 @@ import './Portfolio.scss';
 import {
 	experienceItems,
 	featuredBuilds,
+	focusItems,
 	journeyEvents,
 	links,
 	navItems,
@@ -20,6 +21,7 @@ export default function PortfolioPage(): JSX.Element {
 			<main>
 				<HeroSection />
 				<StackTicker />
+				<FocusSection />
 				<JourneySection />
 				<ProjectsSection />
 				<ExperienceSection />
@@ -70,7 +72,7 @@ function HeroSection(): JSX.Element {
 						</span>
 					</h1>
 					<p className='portfolio-hero__description'>{profile.description}</p>
-					<div className='portfolio-hero__actions' aria-label='Primary actions'>
+					<div className='portfolio-hero__actions'>
 						<a href='#projects' className='portfolio-button portfolio-button--primary'>
 							View builds
 						</a>
@@ -89,7 +91,7 @@ function HeroSection(): JSX.Element {
 						</div>
 					</div>
 					<div className='portfolio-hero__profile-copy'>
-						<p className='portfolio-label'>// Profile</p>
+						<p className='portfolio-label'>Profile</p>
 						<h2>{profile.name}</h2>
 						<p>{profile.title}</p>
 						<span>{profile.location}</span>
@@ -110,17 +112,49 @@ function HeroSection(): JSX.Element {
 }
 
 function StackTicker(): JSX.Element {
-	const tickerItems = ['TypeScript', 'React', 'Node', 'Sass', 'APIs', 'Product thinking', 'Career change at 38'];
-	const repeatedItems = [...tickerItems, ...tickerItems];
+	const tickerItems = ['TypeScript', 'React', 'Node', 'CSS', 'Sass', 'APIs', 'GraphQL', 'Linux', 'AI'];
+	const repeatedItems = ['primary', 'duplicate'].flatMap((group) =>
+		tickerItems.map((label) => ({ id: `${group}-${label}`, label })),
+	);
 
 	return (
 		<div className='portfolio-ticker' aria-hidden='true'>
 			<div className='portfolio-ticker__track'>
-				{repeatedItems.map((item, index) => (
-					<span key={`${item}-${index}`}>{item}</span>
+				{repeatedItems.map((item) => (
+					<span key={item.id}>{item.label}</span>
 				))}
 			</div>
 		</div>
+	);
+}
+
+function FocusSection(): JSX.Element {
+	return (
+		<section className='portfolio-section portfolio-focus' id='focus'>
+			<div className='portfolio-section__inner'>
+				<SectionHeading
+					kicker='01 - Now / focus'
+					title={
+						<>
+							What has my <em>attention</em> right now
+						</>
+					}
+					meta='current signals'
+				/>
+				<div className='portfolio-focus__grid'>
+					{focusItems.map((item) => (
+						<article
+							className={`portfolio-card portfolio-focus__item ${accentClass(item.accent)}`}
+							key={item.label}
+						>
+							<p className='portfolio-label'>{item.label}</p>
+							<h3>{item.title}</h3>
+							<p>{item.description}</p>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
 	);
 }
 
@@ -129,13 +163,13 @@ function JourneySection(): JSX.Element {
 		<section className='portfolio-section portfolio-section--bordered' id='journey'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='01 - The journey'
+					kicker='02 - The journey'
 					title={
 						<>
 							From coach to <em>builder</em>
 						</>
 					}
-					meta='2009 - present'
+					meta='2007 - present'
 				/>
 				<div className='portfolio-journey'>
 					{journeyEvents.map((event) => (
@@ -192,7 +226,7 @@ function ProjectsSection(): JSX.Element {
 		<section className='portfolio-section' id='projects'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='02 - Featured builds'
+					kicker='03 - Featured builds'
 					title={
 						<>
 							Projects, experiments, and things I am <em>building</em>
@@ -211,7 +245,7 @@ function ProjectsSection(): JSX.Element {
 							</div>
 							<div className='portfolio-project__content'>
 								<p className='portfolio-label'>
-									// {project.id} - {project.year}
+									{project.id} - {project.year}
 								</p>
 								<div className='portfolio-project__title-row'>
 									<h3>{project.name}</h3>
@@ -219,6 +253,20 @@ function ProjectsSection(): JSX.Element {
 								</div>
 								<p className='portfolio-project__summary'>{project.summary}</p>
 								<p>{project.description}</p>
+								<div className='portfolio-project__details'>
+									<div>
+										<span>Problem</span>
+										<p>{project.details.problem}</p>
+									</div>
+									<div>
+										<span>Built</span>
+										<p>{project.details.built}</p>
+									</div>
+									<div>
+										<span>Learned</span>
+										<p>{project.details.learned}</p>
+									</div>
+								</div>
 								<ul className='portfolio-tags' aria-label={`${project.name} tech stack`}>
 									{project.stack.map((item) => (
 										<li key={item}>{item}</li>
@@ -238,7 +286,7 @@ function ExperienceSection(): JSX.Element {
 		<section className='portfolio-section portfolio-section--bordered' id='experience'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='03 - Experience snapshot'
+					kicker='04 - Experience snapshot'
 					title={
 						<>
 							What I've been up to <em>professionally</em>
@@ -248,10 +296,10 @@ function ExperienceSection(): JSX.Element {
 				/>
 				<div className='portfolio-experience'>
 					<div className='portfolio-card portfolio-experience__now'>
-						<p className='portfolio-label'>// Current framework</p>
+						<p className='portfolio-label'>Current framework</p>
 						<h3>Builder with a founder mindset.</h3>
 						<p>
-							I bring entreprenuer thinking into software development: clear communication, user empathy,
+							I bring entrepreneur thinking into software development: clear communication, user empathy,
 							follow-through, and understanding the business impact of what we're building.
 						</p>
 					</div>
@@ -269,7 +317,7 @@ function ExperienceSection(): JSX.Element {
 						))}
 					</div>
 					<div className='portfolio-card portfolio-skills'>
-						<p className='portfolio-label'>// Tooling</p>
+						<p className='portfolio-label'>Tooling</p>
 						<ul className='portfolio-tags portfolio-tags--large'>
 							{skills.map((skill) => (
 								<li key={skill}>{skill}</li>
@@ -284,19 +332,21 @@ function ExperienceSection(): JSX.Element {
 
 function ContactSection(): JSX.Element {
 	const contactLinks = [
+		{ label: 'Email', value: 'cameron@bluephoenixfitness.com', href: links.email, accent: 'cyan' },
 		{ label: 'GitHub', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
 		{ label: 'LinkedIn', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
 		{ label: 'Instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
 		{ label: 'X', value: '@cmakarchuk', href: links.x, accent: 'lime' },
 		{ label: 'Fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
-	] satisfies Array<{ label: string; value: string; href: string; accent: Accent }>;
+		{ label: 'Resume', value: 'Download', href: links.resume, accent: 'cyan', download: true },
+	] satisfies Array<{ label: string; value: string; href: string; accent: Accent; download?: boolean }>;
 
 	return (
 		<footer className='portfolio-section portfolio-contact' id='contact'>
 			<div className='portfolio-section__inner'>
 				<p className='portfolio-kicker'>
 					<span className='portfolio-kicker__dot' />
-					04 - Contact
+					05 - Contact
 				</p>
 				<div className='portfolio-contact__grid'>
 					<div>
@@ -314,6 +364,7 @@ function ContactSection(): JSX.Element {
 								href={item.href}
 								className={`portfolio-contact__link ${accentClass(item.accent)}`}
 								key={item.label}
+								download={item.download ? true : undefined}
 								target={item.href.startsWith('http') ? '_blank' : undefined}
 								rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
 							>
