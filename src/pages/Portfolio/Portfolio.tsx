@@ -324,9 +324,10 @@ function ContactSection(): JSX.Element {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const contactLinks = [
 		{ command: 'github', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
+		{ command: 'x', value: '@cmakarchuk', href: links.x, accent: 'cyan' },
 		{ command: 'linkedin', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
 		{ command: 'instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
-		{ command: 'fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
+		{ command: 'fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'lime' },
 	] satisfies Array<{ command: string; value: string; href: string; accent: Accent }>;
 
 	const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
