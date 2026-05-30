@@ -1,7 +1,9 @@
+import { type FormEvent, useState } from 'react';
 import './Portfolio.scss';
 import {
 	experienceItems,
 	featuredBuilds,
+	focusItems,
 	journeyEvents,
 	links,
 	navItems,
@@ -20,6 +22,7 @@ export default function PortfolioPage(): JSX.Element {
 			<main>
 				<HeroSection />
 				<StackTicker />
+				<FocusSection />
 				<JourneySection />
 				<ProjectsSection />
 				<ExperienceSection />
@@ -70,7 +73,7 @@ function HeroSection(): JSX.Element {
 						</span>
 					</h1>
 					<p className='portfolio-hero__description'>{profile.description}</p>
-					<div className='portfolio-hero__actions' aria-label='Primary actions'>
+					<div className='portfolio-hero__actions'>
 						<a href='#projects' className='portfolio-button portfolio-button--primary'>
 							View builds
 						</a>
@@ -89,7 +92,7 @@ function HeroSection(): JSX.Element {
 						</div>
 					</div>
 					<div className='portfolio-hero__profile-copy'>
-						<p className='portfolio-label'>// Profile</p>
+						<p className='portfolio-label'>Profile</p>
 						<h2>{profile.name}</h2>
 						<p>{profile.title}</p>
 						<span>{profile.location}</span>
@@ -110,17 +113,49 @@ function HeroSection(): JSX.Element {
 }
 
 function StackTicker(): JSX.Element {
-	const tickerItems = ['TypeScript', 'React', 'Node', 'Sass', 'APIs', 'Product thinking', 'Career change at 38'];
-	const repeatedItems = [...tickerItems, ...tickerItems];
+	const tickerItems = ['TypeScript', 'React', 'Node', 'CSS', 'Sass', 'APIs', 'GraphQL', 'Linux', 'AI'];
+	const repeatedItems = ['primary', 'duplicate'].flatMap((group) =>
+		tickerItems.map((label) => ({ id: `${group}-${label}`, label })),
+	);
 
 	return (
 		<div className='portfolio-ticker' aria-hidden='true'>
 			<div className='portfolio-ticker__track'>
-				{repeatedItems.map((item, index) => (
-					<span key={`${item}-${index}`}>{item}</span>
+				{repeatedItems.map((item) => (
+					<span key={item.id}>{item.label}</span>
 				))}
 			</div>
 		</div>
+	);
+}
+
+function FocusSection(): JSX.Element {
+	return (
+		<section className='portfolio-section portfolio-focus' id='focus'>
+			<div className='portfolio-section__inner'>
+				<SectionHeading
+					kicker='01 - Now / focus'
+					title={
+						<>
+							What has my <em>attention</em> right now
+						</>
+					}
+					meta='current signals'
+				/>
+				<div className='portfolio-focus__list'>
+					{focusItems.map((item, itemIndex) => (
+						<article className={`portfolio-focus__item ${accentClass(item.accent)}`} key={item.label}>
+							<span className='portfolio-focus__number'>{String(itemIndex + 1).padStart(2, '0')}</span>
+							<div className='portfolio-focus__copy'>
+								<p className='portfolio-label'>{item.label}</p>
+								<h3>{item.title}</h3>
+								<p>{item.description}</p>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</section>
 	);
 }
 
@@ -129,13 +164,13 @@ function JourneySection(): JSX.Element {
 		<section className='portfolio-section portfolio-section--bordered' id='journey'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='01 - The journey'
+					kicker='02 - The journey'
 					title={
 						<>
 							From coach to <em>builder</em>
 						</>
 					}
-					meta='2009 - present'
+					meta='2007 - present'
 				/>
 				<div className='portfolio-journey'>
 					{journeyEvents.map((event) => (
@@ -192,7 +227,7 @@ function ProjectsSection(): JSX.Element {
 		<section className='portfolio-section' id='projects'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='02 - Featured builds'
+					kicker='03 - Featured builds'
 					title={
 						<>
 							Projects, experiments, and things I am <em>building</em>
@@ -211,7 +246,7 @@ function ProjectsSection(): JSX.Element {
 							</div>
 							<div className='portfolio-project__content'>
 								<p className='portfolio-label'>
-									// {project.id} - {project.year}
+									{project.id} - {project.year}
 								</p>
 								<div className='portfolio-project__title-row'>
 									<h3>{project.name}</h3>
@@ -238,7 +273,7 @@ function ExperienceSection(): JSX.Element {
 		<section className='portfolio-section portfolio-section--bordered' id='experience'>
 			<div className='portfolio-section__inner'>
 				<SectionHeading
-					kicker='03 - Experience snapshot'
+					kicker='04 - Experience snapshot'
 					title={
 						<>
 							What I've been up to <em>professionally</em>
@@ -248,10 +283,10 @@ function ExperienceSection(): JSX.Element {
 				/>
 				<div className='portfolio-experience'>
 					<div className='portfolio-card portfolio-experience__now'>
-						<p className='portfolio-label'>// Current framework</p>
+						<p className='portfolio-label'>Current framework</p>
 						<h3>Builder with a founder mindset.</h3>
 						<p>
-							I bring entreprenuer thinking into software development: clear communication, user empathy,
+							I bring entrepreneur thinking into software development: clear communication, user empathy,
 							follow-through, and understanding the business impact of what we're building.
 						</p>
 					</div>
@@ -269,7 +304,7 @@ function ExperienceSection(): JSX.Element {
 						))}
 					</div>
 					<div className='portfolio-card portfolio-skills'>
-						<p className='portfolio-label'>// Tooling</p>
+						<p className='portfolio-label'>Tooling</p>
 						<ul className='portfolio-tags portfolio-tags--large'>
 							{skills.map((skill) => (
 								<li key={skill}>{skill}</li>
@@ -283,51 +318,139 @@ function ExperienceSection(): JSX.Element {
 }
 
 function ContactSection(): JSX.Element {
+	const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+	const [isMessageSent, setIsMessageSent] = useState(false);
+	const [formError, setFormError] = useState('');
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const contactLinks = [
-		{ label: 'GitHub', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
-		{ label: 'LinkedIn', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
-		{ label: 'Instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
-		{ label: 'X', value: '@cmakarchuk', href: links.x, accent: 'lime' },
-		{ label: 'Fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
-	] satisfies Array<{ label: string; value: string; href: string; accent: Accent }>;
+		{ command: 'github', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
+		{ command: 'linkedin', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
+		{ command: 'instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
+		{ command: 'fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
+	] satisfies Array<{ command: string; value: string; href: string; accent: Accent }>;
+
+	const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		const form = event.currentTarget;
+		setFormError('');
+		setIsSubmitting(true);
+
+		try {
+			const response = await fetch('https://formspree.io/f/mldqpvjd', {
+				method: 'POST',
+				body: new FormData(form),
+				headers: {
+					Accept: 'application/json',
+				},
+			});
+
+			if (!response.ok) {
+				setFormError('Something went sideways. Please try again.');
+				return;
+			}
+
+			form.reset();
+			setIsContactFormOpen(false);
+			setIsMessageSent(true);
+		} catch {
+			setFormError('Something went sideways. Please try again.');
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
 
 	return (
 		<footer className='portfolio-section portfolio-contact' id='contact'>
 			<div className='portfolio-section__inner'>
-				<p className='portfolio-kicker'>
-					<span className='portfolio-kicker__dot' />
-					04 - Contact
-				</p>
-				<div className='portfolio-contact__grid'>
-					<div>
-						<h2>
-							Let's <em>build</em> something impactful
-						</h2>
+				<SectionHeading
+					kicker='05 - Contact'
+					title={
+						<>
+							Let's build something <em>awesome</em>
+						</>
+					}
+					meta='open channel'
+				/>
+				<div className='portfolio-contact__layout'>
+					<div className='portfolio-contact__intro'>
 						<p>
-							Have an idea for something you need built? Just want to connect with another builder? You
-							can find me at any of these spots, happy to connect.
+							Have an idea for something you need built? Just want to connect with another builder? The
+							form is the fastest route, and the rest of my links are here too.
 						</p>
+						<button
+							className={`portfolio-contact__primary ${
+								isMessageSent ? 'portfolio-contact__primary--sent' : ''
+							}`}
+							type='button'
+							onClick={() => setIsContactFormOpen(true)}
+						>
+							{isMessageSent ? 'Message sent' : 'Start a conversation'}
+						</button>
 					</div>
-					<div className='portfolio-contact__links'>
+					<nav className='portfolio-contact__commands' aria-label='Contact links'>
 						{contactLinks.map((item) => (
 							<a
 								href={item.href}
-								className={`portfolio-contact__link ${accentClass(item.accent)}`}
-								key={item.label}
+								className={`portfolio-contact__command ${accentClass(item.accent)}`}
+								key={item.command}
 								target={item.href.startsWith('http') ? '_blank' : undefined}
 								rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
 							>
-								<span>{item.label}</span>
+								<span aria-hidden='true'>$</span>
+								<strong>{item.command}</strong>
 								<strong>{item.value}</strong>
 							</a>
 						))}
-					</div>
+					</nav>
 				</div>
 				<div className='portfolio-footerline'>
-					<span>© 2026 Cameron Makarchuk - Toronto, Canada - Remote</span>
-					<span>EOF - built with care</span>
+					<span>© 2026 The Makarchuk Company - Toronto, Canada</span>
 				</div>
 			</div>
+			{isContactFormOpen && (
+				<div className='portfolio-modal' role='dialog' aria-modal='true' aria-labelledby='contact-form-title'>
+					<button
+						className='portfolio-modal__backdrop'
+						type='button'
+						aria-label='Close contact form'
+						onClick={() => setIsContactFormOpen(false)}
+					/>
+					<div className='portfolio-modal__panel'>
+						<div className='portfolio-modal__header'>
+							<div>
+								<p className='portfolio-label'>Contact form</p>
+								<h3 id='contact-form-title'>Start a conversation</h3>
+							</div>
+							<button
+								className='portfolio-modal__close'
+								type='button'
+								aria-label='Close contact form'
+								onClick={() => setIsContactFormOpen(false)}
+							>
+								x
+							</button>
+						</div>
+						<form className='portfolio-contact-form' onSubmit={handleContactSubmit}>
+							<label>
+								Name
+								<input name='name' type='text' autoComplete='name' required />
+							</label>
+							<label>
+								Email
+								<input name='email' type='email' autoComplete='email' required />
+							</label>
+							<label>
+								Message
+								<textarea name='message' rows={5} required />
+							</label>
+							{formError && <p className='portfolio-contact-form__error'>{formError}</p>}
+							<button type='submit' disabled={isSubmitting}>
+								{isSubmitting ? 'Sending...' : 'Send message'}
+							</button>
+						</form>
+					</div>
+				</div>
+			)}
 		</footer>
 	);
 }

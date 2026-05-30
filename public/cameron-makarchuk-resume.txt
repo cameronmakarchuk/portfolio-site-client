@@ -1,0 +1,37 @@
+Cameron Makarchuk
+Software Developer
+Toronto, Canada - remote friendly
+
+Links
+GitHub: https://github.com/cameronmakarchuk
+LinkedIn: https://linkedin.com/in/cameronmakarchuk
+Email: cameron@bluephoenixfitness.com
+
+Profile
+Software developer with a background in coaching, business ownership, systems thinking, and helping people move through hard transitions. I bring founder/operator instincts into software work: clear communication, user empathy, follow-through, and a bias toward practical systems.
+
+Experience
+Intermediate Backend Software Developer, Lush
+2025 - Present
+Planning, building, and maintaining backend systems that power the website/app for a global ecommerce company.
+
+Junior Backend Software Developer, Lush
+2023 - 2025
+Developed and maintained internal tools used for order management systems, document translation, and product subscriptions.
+
+Founder / Coach, Boom Bodyshaping Studio / BluePhoenix Fitness
+2007 - Present
+Built and operated a coaching business, managed clients, systems, marketing, and online delivery.
+
+Selected Projects
+RecLeague
+Full-stack league discovery and registration concept built with React, Sass, Node, Express, and MySQL.
+
+BrainStorm
+Hackathon ideation app with prompts, voting, and rewards built with React, JavaScript, Node, and Express.
+
+Homelab
+Personal infrastructure and automation lab focused on Linux, networking, self-hosting, and operational learning.
+
+Skills
+JavaScript, TypeScript, React, CSS, Sass, Node.js, Express, GraphQL, SQL, Git, APIs, Linux, AI agents
