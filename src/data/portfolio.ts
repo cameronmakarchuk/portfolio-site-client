@@ -1,6 +1,6 @@
 import brainstormImage from '../assets/images/brainstorm-iphone.png';
 import camProfileImage from '../assets/images/cam-profile-square.png';
-import homelabImage from '../assets/images/homelab-placeholder.png';
+import homelabImage from '../assets/images/homelab-dashboard.png';
 import recLeagueImage from '../assets/images/recleague-iphone.png';
 
 export type Accent = 'cyan' | 'lime' | 'amber' | 'coral';
@@ -21,11 +21,6 @@ export type FeaturedBuild = {
 	year: string;
 	summary: string;
 	description: string;
-	details: {
-		problem: string;
-		built: string;
-		learned: string;
-	};
 	stack: string[];
 	image: string;
 	imageAlt: string;
@@ -73,23 +68,23 @@ export const stats = [
 export const focusItems: FocusItem[] = [
 	{
 		label: 'Building',
-		title: 'Portfolio polish, homelab systems, and practical product ideas.',
+		title: 'Portfolio site redesign, homelab updates, & AI lead booking assistant',
 		description:
-			'Keeping the loop tight between frontend craft, backend architecture, automation, and the projects that make those skills concrete.',
+			'Giving the portfolio site a much needed facelift with the help of Claude Design & Codex, improving my self-hosted Jellyfin media server, and experimenting with building an AI lead booking assistant for local businesses.',
 		accent: 'cyan',
 	},
 	{
 		label: 'Learning',
-		title: 'AI agents, infrastructure habits, and deeper TypeScript patterns.',
+		title: 'AI agents, data structures & algorithms',
 		description:
-			'Exploring tools that make small teams faster while staying grounded in clear systems, readable code, and useful outcomes.',
+			'Taking time to actual learn data structures & algorithms properly, and learning how to build with tools like Codex and Claude Code/Design more effectively.',
 		accent: 'coral',
 	},
 	{
-		label: 'Open to',
-		title: 'Backend, full-stack, and product-minded engineering work.',
+		label: 'For Fun',
+		title: 'Cycling & reading Red Rising series',
 		description:
-			'Especially teams that care about ownership, communication, customer impact, and building software people can trust.',
+			"Getting back on the bike now that it's nicer outside, and really enjoying the Red Rising series (almost done book 3!).",
 		accent: 'lime',
 	},
 ];
@@ -141,13 +136,6 @@ export const featuredBuilds: FeaturedBuild[] = [
 		summary: 'Find and register for adult recreational sports leagues.',
 		description:
 			'A full-stack league discovery and registration concept that helped turn early React, Sass, Node, Express, and MySQL practice into a real product flow.',
-		details: {
-			problem:
-				'Adult rec sports discovery and league registration can be scattered across disconnected sites and manual workflows.',
-			built: 'A mobile-first product flow for browsing leagues, viewing details, managing profiles, and registering for play.',
-			learned:
-				'How frontend state, API contracts, relational data, and product clarity all have to move together.',
-		},
 		stack: ['React', 'Sass', 'Node', 'Express', 'MySQL'],
 		image: recLeagueImage,
 		imageAlt: 'RecLeague mobile app league detail screen',
@@ -161,13 +149,6 @@ export const featuredBuilds: FeaturedBuild[] = [
 		summary: 'A team ideation app with prompts, voting, and rewards.',
 		description:
 			'Built during a 24-hour hackathon - hosted by Microsoft & Brainstation - with a small team, focused on turning messy collaboration into a guided mobile-first workflow.',
-		details: {
-			problem:
-				'Creative teams can lose momentum when brainstorming has no structure, voting, or shared sense of progress.',
-			built: 'A prompt-led ideation flow with challenge screens, idea submission, voting, and reward moments.',
-			learned:
-				'How to scope under pressure, communicate with a team, and protect the core user flow when time is tight.',
-		},
 		stack: ['React', 'JavaScript', 'Node', 'Express'],
 		image: brainstormImage,
 		imageAlt: 'BrainStorm mobile app challenge dashboard',
@@ -181,16 +162,9 @@ export const featuredBuilds: FeaturedBuild[] = [
 		summary: 'Self-hosted experiments, automation, and infrastructure learning.',
 		description:
 			'My personal experimentation with self-hosting local services, scripts, tooling, and the kind of tinkering that keeps the learning loop alive.',
-		details: {
-			problem:
-				'Modern software work benefits from understanding the systems underneath the app, not just the app surface.',
-			built: 'A small lab environment for services, networking, automation scripts, backups, and infrastructure practice.',
-			learned:
-				'How operational thinking sharpens debugging, deployment decisions, and respect for simple reliable systems.',
-		},
 		stack: ['Linux', 'Networking', 'Automation', 'Self-hosting'],
 		image: homelabImage,
-		imageAlt: 'Homelab dashboard placeholder',
+		imageAlt: 'Homelab dashboard with system status, storage widgets, and self-hosted app shortcuts',
 		accent: 'cyan',
 	},
 ];
@@ -242,8 +216,6 @@ export const skills = [
 ];
 
 export const links = {
-	email: 'mailto:cameron@bluephoenixfitness.com',
-	resume: '/cameron-makarchuk-resume.txt',
 	github: 'https://github.com/cameronmakarchuk',
 	linkedin: 'https://linkedin.com/in/cameronmakarchuk',
 	instagram: 'https://instagram.com/cameronmakarchuk',

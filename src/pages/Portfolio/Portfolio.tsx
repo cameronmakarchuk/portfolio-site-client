@@ -1,3 +1,4 @@
+import { type FormEvent, useState } from 'react';
 import './Portfolio.scss';
 import {
 	experienceItems,
@@ -141,15 +142,15 @@ function FocusSection(): JSX.Element {
 					}
 					meta='current signals'
 				/>
-				<div className='portfolio-focus__grid'>
-					{focusItems.map((item) => (
-						<article
-							className={`portfolio-card portfolio-focus__item ${accentClass(item.accent)}`}
-							key={item.label}
-						>
-							<p className='portfolio-label'>{item.label}</p>
-							<h3>{item.title}</h3>
-							<p>{item.description}</p>
+				<div className='portfolio-focus__list'>
+					{focusItems.map((item, itemIndex) => (
+						<article className={`portfolio-focus__item ${accentClass(item.accent)}`} key={item.label}>
+							<span className='portfolio-focus__number'>{String(itemIndex + 1).padStart(2, '0')}</span>
+							<div className='portfolio-focus__copy'>
+								<p className='portfolio-label'>{item.label}</p>
+								<h3>{item.title}</h3>
+								<p>{item.description}</p>
+							</div>
 						</article>
 					))}
 				</div>
@@ -253,20 +254,6 @@ function ProjectsSection(): JSX.Element {
 								</div>
 								<p className='portfolio-project__summary'>{project.summary}</p>
 								<p>{project.description}</p>
-								<div className='portfolio-project__details'>
-									<div>
-										<span>Problem</span>
-										<p>{project.details.problem}</p>
-									</div>
-									<div>
-										<span>Built</span>
-										<p>{project.details.built}</p>
-									</div>
-									<div>
-										<span>Learned</span>
-										<p>{project.details.learned}</p>
-									</div>
-								</div>
 								<ul className='portfolio-tags' aria-label={`${project.name} tech stack`}>
 									{project.stack.map((item) => (
 										<li key={item}>{item}</li>
@@ -331,54 +318,139 @@ function ExperienceSection(): JSX.Element {
 }
 
 function ContactSection(): JSX.Element {
+	const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+	const [isMessageSent, setIsMessageSent] = useState(false);
+	const [formError, setFormError] = useState('');
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const contactLinks = [
-		{ label: 'Email', value: 'cameron@bluephoenixfitness.com', href: links.email, accent: 'cyan' },
-		{ label: 'GitHub', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
-		{ label: 'LinkedIn', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
-		{ label: 'Instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
-		{ label: 'X', value: '@cmakarchuk', href: links.x, accent: 'lime' },
-		{ label: 'Fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
-		{ label: 'Resume', value: 'Download', href: links.resume, accent: 'cyan', download: true },
-	] satisfies Array<{ label: string; value: string; href: string; accent: Accent; download?: boolean }>;
+		{ command: 'github', value: 'cameronmakarchuk', href: links.github, accent: 'lime' },
+		{ command: 'linkedin', value: 'in/cameronmakarchuk', href: links.linkedin, accent: 'amber' },
+		{ command: 'instagram', value: '@cameronmakarchuk', href: links.instagram, accent: 'coral' },
+		{ command: 'fitness', value: 'bluephoenixfitness.com', href: links.bluePhoenix, accent: 'amber' },
+	] satisfies Array<{ command: string; value: string; href: string; accent: Accent }>;
+
+	const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		const form = event.currentTarget;
+		setFormError('');
+		setIsSubmitting(true);
+
+		try {
+			const response = await fetch('https://formspree.io/f/mldqpvjd', {
+				method: 'POST',
+				body: new FormData(form),
+				headers: {
+					Accept: 'application/json',
+				},
+			});
+
+			if (!response.ok) {
+				setFormError('Something went sideways. Please try again.');
+				return;
+			}
+
+			form.reset();
+			setIsContactFormOpen(false);
+			setIsMessageSent(true);
+		} catch {
+			setFormError('Something went sideways. Please try again.');
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
 
 	return (
 		<footer className='portfolio-section portfolio-contact' id='contact'>
 			<div className='portfolio-section__inner'>
-				<p className='portfolio-kicker'>
-					<span className='portfolio-kicker__dot' />
-					05 - Contact
-				</p>
-				<div className='portfolio-contact__grid'>
-					<div>
-						<h2>
-							Let's <em>build</em> something impactful
-						</h2>
+				<SectionHeading
+					kicker='05 - Contact'
+					title={
+						<>
+							Let's build something <em>awesome</em>
+						</>
+					}
+					meta='open channel'
+				/>
+				<div className='portfolio-contact__layout'>
+					<div className='portfolio-contact__intro'>
 						<p>
-							Have an idea for something you need built? Just want to connect with another builder? You
-							can find me at any of these spots, happy to connect.
+							Have an idea for something you need built? Just want to connect with another builder? The
+							form is the fastest route, and the rest of my links are here too.
 						</p>
+						<button
+							className={`portfolio-contact__primary ${
+								isMessageSent ? 'portfolio-contact__primary--sent' : ''
+							}`}
+							type='button'
+							onClick={() => setIsContactFormOpen(true)}
+						>
+							{isMessageSent ? 'Message sent' : 'Start a conversation'}
+						</button>
 					</div>
-					<div className='portfolio-contact__links'>
+					<nav className='portfolio-contact__commands' aria-label='Contact links'>
 						{contactLinks.map((item) => (
 							<a
 								href={item.href}
-								className={`portfolio-contact__link ${accentClass(item.accent)}`}
-								key={item.label}
-								download={item.download ? true : undefined}
+								className={`portfolio-contact__command ${accentClass(item.accent)}`}
+								key={item.command}
 								target={item.href.startsWith('http') ? '_blank' : undefined}
 								rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
 							>
-								<span>{item.label}</span>
+								<span aria-hidden='true'>$</span>
+								<strong>{item.command}</strong>
 								<strong>{item.value}</strong>
 							</a>
 						))}
-					</div>
+					</nav>
 				</div>
 				<div className='portfolio-footerline'>
-					<span>© 2026 Cameron Makarchuk - Toronto, Canada - Remote</span>
-					<span>EOF - built with care</span>
+					<span>© 2026 The Makarchuk Company - Toronto, Canada</span>
 				</div>
 			</div>
+			{isContactFormOpen && (
+				<div className='portfolio-modal' role='dialog' aria-modal='true' aria-labelledby='contact-form-title'>
+					<button
+						className='portfolio-modal__backdrop'
+						type='button'
+						aria-label='Close contact form'
+						onClick={() => setIsContactFormOpen(false)}
+					/>
+					<div className='portfolio-modal__panel'>
+						<div className='portfolio-modal__header'>
+							<div>
+								<p className='portfolio-label'>Contact form</p>
+								<h3 id='contact-form-title'>Start a conversation</h3>
+							</div>
+							<button
+								className='portfolio-modal__close'
+								type='button'
+								aria-label='Close contact form'
+								onClick={() => setIsContactFormOpen(false)}
+							>
+								x
+							</button>
+						</div>
+						<form className='portfolio-contact-form' onSubmit={handleContactSubmit}>
+							<label>
+								Name
+								<input name='name' type='text' autoComplete='name' required />
+							</label>
+							<label>
+								Email
+								<input name='email' type='email' autoComplete='email' required />
+							</label>
+							<label>
+								Message
+								<textarea name='message' rows={5} required />
+							</label>
+							{formError && <p className='portfolio-contact-form__error'>{formError}</p>}
+							<button type='submit' disabled={isSubmitting}>
+								{isSubmitting ? 'Sending...' : 'Send message'}
+							</button>
+						</form>
+					</div>
+				</div>
+			)}
 		</footer>
 	);
 }
