@@ -1,6 +1,6 @@
 import brainstormImage from '../assets/images/brainstorm-iphone.png';
 import camProfileImage from '../assets/images/cam-profile-square.png';
-import homelabImage from '../assets/images/homelab-placeholder.png';
+import homelabImage from '../assets/images/homelab-dashboard.png';
 import recLeagueImage from '../assets/images/recleague-iphone.png';
 
 export type Accent = 'cyan' | 'lime' | 'amber' | 'coral';
@@ -27,6 +27,13 @@ export type FeaturedBuild = {
 	accent: Accent;
 };
 
+export type FocusItem = {
+	label: string;
+	title: string;
+	description: string;
+	accent: Accent;
+};
+
 export type ExperienceItem = {
 	role: string;
 	org: string;
@@ -44,6 +51,7 @@ export const profile = {
 };
 
 export const navItems = [
+	{ label: 'Focus', href: '#focus' },
 	{ label: 'Journey', href: '#journey' },
 	{ label: 'Builds', href: '#projects' },
 	{ label: 'Experience', href: '#experience' },
@@ -53,9 +61,33 @@ export const navItems = [
 export const stats = [
 	{ value: '15+', label: 'Years coaching', accent: 'cyan' },
 	{ value: '38', label: 'Age at pivot', accent: 'coral' },
-	{ value: '04+', label: 'Years developer experience', accent: 'lime' },
-	{ value: '03', label: 'Builds in progress', accent: 'amber' },
+	{ value: '03+', label: 'Years building software', accent: 'lime' },
+	{ value: '03', label: 'Featured builds', accent: 'amber' },
 ] satisfies Array<{ value: string; label: string; accent: Accent }>;
+
+export const focusItems: FocusItem[] = [
+	{
+		label: 'Building',
+		title: 'Portfolio site redesign, homelab updates, & AI lead booking assistant',
+		description:
+			'Giving the portfolio site a much needed facelift with the help of Claude Design & Codex, improving my self-hosted Jellyfin media server, and experimenting with building an AI lead booking assistant for local businesses.',
+		accent: 'cyan',
+	},
+	{
+		label: 'Learning',
+		title: 'AI agents, data structures & algorithms',
+		description:
+			'Taking time to actual learn data structures & algorithms properly, and learning how to build with tools like Codex and Claude Code/Design more effectively.',
+		accent: 'coral',
+	},
+	{
+		label: 'For Fun',
+		title: 'Cycling & reading Red Rising series',
+		description:
+			"Getting back on the bike now that it's nicer outside, and really enjoying the Red Rising series (almost done book 3!).",
+		accent: 'lime',
+	},
+];
 
 export const journeyEvents: JourneyEvent[] = [
 	{
@@ -132,7 +164,7 @@ export const featuredBuilds: FeaturedBuild[] = [
 			'My personal experimentation with self-hosting local services, scripts, tooling, and the kind of tinkering that keeps the learning loop alive.',
 		stack: ['Linux', 'Networking', 'Automation', 'Self-hosting'],
 		image: homelabImage,
-		imageAlt: 'Homelab dashboard placeholder',
+		imageAlt: 'Homelab dashboard with system status, storage widgets, and self-hosted app shortcuts',
 		accent: 'cyan',
 	},
 ];
@@ -150,7 +182,7 @@ export const experienceItems: ExperienceItem[] = [
 		org: 'Lush',
 		period: '2023 - 2025',
 		description:
-			'Involved in the development and maintenance of internal tools used for order management systems, translating documents, and product subscriptions.',
+			'Involved in the development and maintenance of internal tools used for order management systems, document translation, and product subscriptions.',
 	},
 	{
 		role: 'Founder / Coach',
