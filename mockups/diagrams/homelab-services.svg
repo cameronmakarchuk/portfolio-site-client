@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+	<text x="8" y="18" class="meta">Self-hosted, instead of subscribed</text>
+
+	<text x="8" y="56" class="title">Jellyfin</text>
+	<text x="8" y="75" class="body">Personal media server</text>
+	<text x="392" y="56" class="tag mint" text-anchor="end">MEDIA</text>
+	<line x1="8" y1="92" x2="392" y2="92" class="rule"/>
+
+	<text x="8" y="120" class="title">Kavita</text>
+	<text x="8" y="139" class="body">Books and comic books</text>
+	<text x="392" y="120" class="tag mint" text-anchor="end">READING</text>
+	<line x1="8" y1="156" x2="392" y2="156" class="rule"/>
+
+	<text x="8" y="184" class="title">Nextcloud</text>
+	<text x="8" y="203" class="body">Cloud storage, Dropbox-style</text>
+	<text x="392" y="184" class="tag mint" text-anchor="end">FILES</text>
+	<line x1="8" y1="220" x2="392" y2="220" class="rule"/>
+
+	<text x="8" y="248" class="title">Immich</text>
+	<text x="8" y="267" class="body">Photo backup, like Google Photos</text>
+	<text x="392" y="248" class="tag mint" text-anchor="end">PHOTOS</text>
+
+	<text x="392" y="292" class="tag coral" text-anchor="end">NO SUBSCRIPTION FEES</text>
+</svg>

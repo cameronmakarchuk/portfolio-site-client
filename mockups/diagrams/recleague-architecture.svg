@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+	<text x="8" y="18" class="meta">Two repos · client + server</text>
+
+	<rect x="8" y="36" width="108" height="170" rx="3" class="box"/>
+	<text x="18" y="57" class="title">React client</text>
+	<line x1="8" y1="66" x2="116" y2="66" class="rule"/>
+	<text x="18" y="85" class="field-sm">React</text>
+	<text x="18" y="104" class="field-sm">Sass</text>
+	<text x="18" y="123" class="field-sm">axios</text>
+	<text x="18" y="142" class="field-sm">Google Maps</text>
+	<text x="18" y="194" class="tag mint">RESPONSIVE</text>
+
+	<rect x="140" y="36" width="124" height="170" rx="3" class="box"/>
+	<text x="150" y="57" class="title">Express API</text>
+	<line x1="140" y1="66" x2="264" y2="66" class="rule"/>
+	<text x="150" y="85" class="field-sm">/auth</text><text x="256" y="85" class="tag mint" text-anchor="end">JWT</text>
+	<text x="150" y="104" class="field-sm">/users</text>
+	<text x="150" y="123" class="field-sm">/leagues</text>
+	<text x="150" y="142" class="field-sm">/league_details</text>
+	<text x="150" y="194" class="tag mint">NODE · KNEX</text>
+
+	<rect x="288" y="36" width="104" height="170" rx="3" class="box"/>
+	<text x="298" y="57" class="title">MySQL</text>
+	<line x1="288" y1="66" x2="392" y2="66" class="rule"/>
+	<text x="298" y="85" class="field-sm">users</text>
+	<text x="298" y="104" class="field-sm">leagues</text>
+	<text x="298" y="123" class="field-sm">league_details</text>
+	<text x="298" y="194" class="tag mint">SEEDED DATA</text>
+
+	<path d="M116 124 H140" class="link"/><path d="M135 120 L140 124 L135 128" class="link"/>
+	<text x="128" y="114" class="tag" fill="#8c8596" text-anchor="middle">REST</text>
+	<path d="M264 124 H288" class="link"/><path d="M283 120 L288 124 L283 128" class="link"/>
+	<text x="276" y="114" class="tag" fill="#8c8596" text-anchor="middle">SQL</text>
+
+	<line x1="8" y1="226" x2="392" y2="226" class="rule"/>
+	<circle cx="12" cy="248" r="3.5" class="mint"/>
+	<text x="24" y="252" class="body"><tspan class="strong">Player</tspan> · find, browse and join leagues</text>
+	<circle cx="12" cy="276" r="3.5" class="coral"/>
+	<text x="24" y="280" class="body"><tspan class="strong">League owner</tspan> · create and edit leagues</text>
+</svg>

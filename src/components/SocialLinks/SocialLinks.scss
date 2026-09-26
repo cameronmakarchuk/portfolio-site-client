@@ -1,0 +1,17 @@
+@use "../../styles/partials/theme" as *;
+
+.social-links {
+	display: flex;
+	gap: 20px;
+	font-size: 19px;
+	color: $color-text-soft;
+}
+
+.social-links__label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}

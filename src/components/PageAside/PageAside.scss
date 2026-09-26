@@ -1,0 +1,61 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.page-aside__top {
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+}
+
+.page-aside__home {
+	@include text-mono(13px, $color-text-muted);
+
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	text-decoration: none;
+}
+
+.page-aside__avatar {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.page-aside__intro {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.page-aside__eyebrow {
+	@include text-mono;
+
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+}
+
+.page-aside__title {
+	margin: 0;
+	font: 400 44px / 1.1 $font-serif;
+	letter-spacing: -0.01em;
+}
+
+.page-aside__lede {
+	@include text-lede;
+
+	color: $color-text-soft;
+}
+
+.page-aside__bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.page-aside__social {
+	padding-top: 20px;
+	border-top: 1px solid $color-rule;
+}

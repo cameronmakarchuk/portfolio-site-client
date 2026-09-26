@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Cameron Makarchuk — portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The logbook-style portfolio at [www.cameronmakarchuk.com](https://www.cameronmakarchuk.com): the story on the left, a timeline of work and projects on the right, and a case study page for each project.
 
-## Available Scripts
+Built with React, TypeScript, React Router, Sass and Vite. Hosted on AWS Amplify.
 
-In the project directory, you can run:
+## Scripts
 
-### `npm start`
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Type-check and build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run compile` | Type-check only (also runs on `git push`) |
+| `npm run lint` / `npm run format` | Biome lint and format for `src/` and `mockups/` (Biome also runs on staged files at commit) |
+| `npm run mockups` | Regenerate the device mockups, diagrams and link preview image (see below) |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Where things live
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Content:** `src/data/portfolio.ts` (profile, links, the "Now" items, the timeline) and `src/data/projects.ts` (each case study). Most content changes only touch these two files.
+- **Pages:** `src/pages/` (home, project case study, about, 404). Shared pieces are in `src/components/`.
+- **Styles:** design tokens and type mixins in `src/styles/partials/`. The visual and writing guidelines are in [`docs/brand-style-guide.md`](docs/brand-style-guide.md).
+- **Static files:** `public/` (favicon, resume PDF, `og-image.png`).
 
-### `npm test`
+## Mockups
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The laptop and phone mockups, diagrams, and `public/og-image.png` are generated, not hand-made. The list of images lives in `mockups/config.ts`, and `mockups/generate.ts` explains how to add one. The script uses Playwright, so on a new machine run this once first:
 
-### `npm run build`
+```bash
+npx playwright install chromium
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Re-run `npm run mockups` after content changes that appear in the screenshots, such as the home page or a case study.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Deploying
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Amplify builds with `npm run build` and serves `dist/`. Project pages are client-side routes, so the Amplify app needs a rewrite rule (Hosting → Rewrites and redirects) that sends page URLs to `index.html`:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+| Source address | Target address | Type |
+| --- | --- | --- |
+| `</^[^.]+$\|\.(?!(css\|gif\|ico\|jpg\|jpeg\|js\|png\|txt\|svg\|webp\|woff\|woff2\|ttf\|map\|json\|pdf)$)([^.]+$)/>` | `/index.html` | `200 (Rewrite)` |

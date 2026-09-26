@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+	<text x="8" y="18" class="meta">How an idea moves through BrainStorm</text>
+
+	<text x="8" y="58" class="meta">01</text>
+	<text x="44" y="58" class="title">Weekly challenge</text>
+	<text x="44" y="77" class="body">“Suggest the next team building activity”</text>
+	<line x1="8" y1="96" x2="392" y2="96" class="rule"/>
+
+	<text x="8" y="124" class="meta">02</text>
+	<text x="44" y="124" class="title">Post ideas</text>
+	<text x="44" y="143" class="body">Anyone on the team can add one</text>
+	<line x1="8" y1="162" x2="392" y2="162" class="rule"/>
+
+	<text x="8" y="190" class="meta">03</text>
+	<text x="44" y="190" class="title">Upvote</text>
+	<text x="44" y="209" class="body">Reddit style: the strongest ideas rise</text>
+	<g transform="translate(330 170)">
+		<rect x="0" y="0" width="54" height="16" rx="2" fill="#b8f2e6" opacity=".9"/>
+		<rect x="0" y="22" width="36" height="16" rx="2" fill="#3a3a42"/>
+		<rect x="0" y="44" width="22" height="16" rx="2" fill="#3a3a42"/>
+	</g>
+	<line x1="8" y1="244" x2="392" y2="244" class="rule"/>
+
+	<text x="8" y="272" class="meta coral">04</text>
+	<text x="44" y="272" class="title">Top idea wins</text>
+	<text x="44" y="291" class="body">and becomes the team’s next activity</text>
+</svg>

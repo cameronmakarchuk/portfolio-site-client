@@ -1,0 +1,66 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.image-lightbox__trigger {
+	display: block;
+	width: 100%;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: zoom-in;
+	transition: opacity 160ms ease;
+
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+.image-lightbox {
+	max-width: calc(100vw - 32px);
+	max-height: calc(100vh - 32px);
+	padding: 0;
+	border: 1px solid $color-rule;
+	background: $color-surface;
+	color: $color-text;
+
+	&::backdrop {
+		background: rgba(0, 0, 0, 0.75);
+		backdrop-filter: blur(4px);
+	}
+}
+
+.image-lightbox__figure {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0;
+	padding: 48px 24px 20px;
+}
+
+// Fits the image inside the viewport at its natural shape, never larger than the image itself.
+.image-lightbox__image {
+	display: block;
+	width: auto;
+	max-width: min(1200px, calc(100vw - 82px));
+	max-height: calc(100vh - 160px);
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.image-lightbox__caption {
+	@include text-mono(12px);
+
+	max-width: 72ch;
+}
+
+.image-lightbox__close {
+	@include text-mono(22px, $color-text-soft);
+
+	position: absolute;
+	top: 8px;
+	right: 12px;
+	padding: 4px 8px;
+	border: none;
+	background: none;
+	cursor: pointer;
+}

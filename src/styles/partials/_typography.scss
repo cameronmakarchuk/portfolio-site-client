@@ -1,9 +1,35 @@
-@font-face {
-    font-family: "Mona Sans";
-    src:
-        url("/src/assets/fonts/Mona-Sans.woff2") format("woff2"),
-        url("/src/assets/fonts/Mona-Sans.woff") format("woff");
-    font-weight: 200 900;
-    font-stretch: 75% 125%;
-    font-display: swap;
+@use "./theme" as *;
+
+@mixin text-mono($size: 13px, $color: $color-text-faint) {
+	font: 400 #{$size} / 1.4 $font-mono;
+	color: $color;
+}
+
+@mixin text-status {
+	font: 400 11px / 1.4 $font-mono;
+	color: $color-mint;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+@mixin text-title($size: 20px) {
+	font: 400 #{$size} / 1.35 $font-sans;
+}
+
+@mixin text-body {
+	font: 400 15px / 1.55 $font-sans;
+	color: $color-text-muted;
+}
+
+@mixin text-lede($size: 20px, $line-height: 1.5) {
+	margin: 0;
+	font: 300 #{$size} / #{$line-height} $font-serif;
+	text-wrap: pretty;
+}
+
+@mixin text-quote {
+	margin: 0;
+	font: italic 300 24px / 1.5 $font-serif;
+	color: $color-text-soft;
+	text-wrap: pretty;
 }

@@ -1,0 +1,80 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.home-aside__top {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.home-aside__profile {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.home-aside__avatar {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.home-aside__identity {
+	@include text-mono(13px, $color-text);
+
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.home-aside__name {
+	margin: 0;
+	font: inherit;
+}
+
+.home-aside__role {
+	color: $color-text-muted;
+}
+
+.home-aside__bio {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+
+	p {
+		@include text-lede;
+	}
+}
+
+.home-aside__bio-aside {
+	color: $color-text-quiet;
+
+	a {
+		text-decoration-color: $color-underline-muted;
+	}
+}
+
+.home-aside__bottom {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.home-aside__links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding-top: 20px;
+	border-top: 1px solid $color-rule;
+}
+
+.home-aside__resume {
+	@include text-mono(13px, $color-text-soft);
+}
+
+.home-aside__location {
+	@include text-mono(12px);
+}
