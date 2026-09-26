@@ -3,7 +3,7 @@ import type { ShareCardText } from './frames.ts';
 // The images `npm run mockups` generates. Add an entry here to create a new one; see generate.ts for how it works.
 
 /** A rectangle in source-image pixels, used to cut one screen out of a larger design board. */
-export type Region = { left: number; top: number; width: number; height: number };
+type Region = { left: number; top: number; width: number; height: number };
 
 /** Where a device mockup's screen content comes from. */
 export type ScreenSource =

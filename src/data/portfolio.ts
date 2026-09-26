@@ -11,7 +11,7 @@ export type TimelineEntry =
 	| { kind: 'role'; year: string; title: string; description: string; link?: ExternalLink }
 	| { kind: 'pivot'; year: string; text: string };
 
-export type AboutSection = {
+type AboutSection = {
 	label: string;
 	body: string;
 	isPivot?: boolean;
@@ -31,7 +31,7 @@ export const links = {
 	instagram: 'https://instagram.com/cameronmakarchuk',
 	x: 'https://x.com/cmakarchuk',
 	bluePhoenix: 'https://bluephoenixfitness.com',
-	resume: '../../public/Cameron Makarchuk Resume 2026.pdf',
+	resume: '/cameron-makarchuk-resume-2026.pdf',
 };
 
 export const nowUpdatedLabel = 'Updated Sep 2026';
