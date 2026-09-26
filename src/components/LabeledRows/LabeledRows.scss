@@ -1,0 +1,63 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.labeled-rows {
+	--row-spacing: 28px;
+	--label-offset: 4px;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.labeled-rows--relaxed {
+	--row-spacing: 32px;
+	--label-offset: 6px;
+}
+
+.labeled-rows--bottom-rule .labeled-row:last-child {
+	border-bottom: 1px solid $color-rule;
+}
+
+.labeled-row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 8px;
+	padding: var(--row-spacing) 0;
+	border-top: 1px solid $color-rule;
+
+	&:first-child {
+		padding-top: 0;
+		border-top: none;
+	}
+
+	@include tablet-up {
+		grid-template-columns: $row-label-width minmax(0, 1fr);
+		gap: 24px;
+	}
+}
+
+.labeled-row__label {
+	@include text-mono;
+
+	padding-top: var(--label-offset);
+}
+
+.labeled-row__label--pivot {
+	color: $color-coral;
+}
+
+.labeled-row__content {
+	min-width: 0;
+}
+
+.labeled-row__prose {
+	@include text-lede(20px, 1.6);
+
+	max-width: $prose-max-width;
+}
+
+.labeled-row__quote {
+	@include text-quote;
+
+	max-width: $prose-max-width;
+}

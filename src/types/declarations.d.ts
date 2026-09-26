@@ -19,6 +19,11 @@ declare module '*.jpeg' {
 	export default src;
 }
 
+declare module '*.webp' {
+	const src: string;
+	export default src;
+}
+
 declare module '*.gif' {
 	const src: string;
 	export default src;
@@ -26,17 +31,6 @@ declare module '*.gif' {
 
 // For SVG (can be used as URLs or React components)
 declare module '*.svg' {
-	const src: string;
-	export default src;
-}
-
-// For fonts
-declare module '*.woff' {
-	const src: string;
-	export default src;
-}
-
-declare module '*.woff2' {
 	const src: string;
 	export default src;
 }

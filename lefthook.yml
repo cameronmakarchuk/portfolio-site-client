@@ -1,27 +1,13 @@
-# EXAMPLE USAGE:
-#
-#   Refer for explanation to following link:
-#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
-#
-# pre-push:
-#   commands:
-#     packages-audit:
-#       tags: frontend security
-#       run: yarn audit
-#     gems-audit:
-#       tags: backend security
-#       run: bundle audit
-#
+# https://lefthook.dev/configuration/
 pre-commit:
-  parallel: true
   commands:
-    Linter:
-      root: "./client"
-      run: npm run lint
-  
+    biome:
+      glob: "*.{js,ts,jsx,tsx,json,jsonc,css}"
+      run: npx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      stage_fixed: true
+
 pre-push:
-  parallel: true
   commands:
-    TypeCheck:
-      root: "./client"
-      run: npx tsc
+    typecheck:
+      # `-b` is required: the root tsconfig.json only holds project references, so plain `tsc` checks nothing.
+      run: npx tsc -b

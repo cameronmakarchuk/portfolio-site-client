@@ -1,8 +1,11 @@
+import { Outlet, ScrollRestoration } from 'react-router';
 import './App.scss';
-import PortfolioPage from './pages/Portfolio/Portfolio';
 
-function App() {
-	return <PortfolioPage />;
+export function App(): JSX.Element {
+	return (
+		<>
+			<ScrollRestoration />
+			<Outlet />
+		</>
+	);
 }
-
-export default App;

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+	<text x="8" y="18" class="meta">Points, levels and rewards</text>
+
+	<rect x="8" y="36" width="186" height="72" rx="3" class="box"/>
+	<text x="20" y="62" class="title">Post an idea</text>
+	<text x="20" y="88" class="tag mint">+ POINTS</text>
+	<rect x="206" y="36" width="186" height="72" rx="3" class="box"/>
+	<text x="218" y="62" class="title">Upvote an idea</text>
+	<text x="218" y="88" class="tag mint">+ POINTS</text>
+
+	<text x="8" y="146" class="meta">Level</text>
+	<text x="392" y="146" class="meta" text-anchor="end">Gold · Level 3</text>
+	<rect x="8" y="158" width="384" height="4" rx="2" fill="#3a3a42"/>
+	<rect x="8" y="158" width="256" height="4" rx="2" fill="#b8f2e6"/>
+	<circle cx="8" cy="160" r="4" fill="#b8f2e6"/>
+	<circle cx="136" cy="160" r="4" fill="#b8f2e6"/>
+	<circle cx="264" cy="160" r="5" fill="#111114" stroke="#b8f2e6" stroke-width="2"/>
+	<circle cx="392" cy="160" r="4" fill="#3a3a42"/>
+	<text x="8" y="184" class="meta">L1</text>
+	<text x="136" y="184" class="meta" text-anchor="middle">L2</text>
+	<text x="264" y="184" class="field" text-anchor="middle">Gold</text>
+	<text x="392" y="184" class="meta" text-anchor="end">Platinum</text>
+
+	<line x1="8" y1="212" x2="392" y2="212" class="rule"/>
+	<text x="8" y="244" class="title">Redeem your rewards</text>
+	<text x="8" y="264" class="body">Spend points in the rewards section of the app.</text>
+	<text x="392" y="244" class="tag coral" text-anchor="end">REDEEM →</text>
+</svg>
