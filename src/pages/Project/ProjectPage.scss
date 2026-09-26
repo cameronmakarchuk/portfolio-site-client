@@ -1,0 +1,73 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.project-page__status {
+	@include text-status;
+}
+
+.project-page__cover {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 0;
+}
+
+.project-page__caption {
+	@include text-mono(12px);
+}
+
+.project-page__built {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	max-width: $prose-max-width;
+}
+
+.project-page__highlights {
+	@include text-body;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: 0;
+	padding: 0 0 0 18px;
+}
+
+.project-page__details {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 16px;
+}
+
+.project-pager {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	border-top: 1px solid $color-rule;
+	border-bottom: 1px solid $color-rule;
+}
+
+.project-pager__link {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 24px 0;
+	text-decoration: none;
+}
+
+.project-pager__link--previous {
+	padding-right: 24px;
+	border-right: 1px solid $color-rule;
+}
+
+.project-pager__link--next {
+	padding-left: 24px;
+	text-align: right;
+}
+
+.project-pager__meta {
+	@include text-mono(12px);
+}
+
+.project-pager__name {
+	@include text-title(18px);
+}

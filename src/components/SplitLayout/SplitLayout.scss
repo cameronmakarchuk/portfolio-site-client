@@ -1,0 +1,73 @@
+@use "../../styles/partials/theme" as *;
+
+@mixin section-padding {
+	padding: 48px 24px;
+
+	@include tablet-up {
+		padding: 64px 40px;
+	}
+
+	@include desktop-up {
+		padding: 56px 56px 48px 64px;
+	}
+}
+
+.split-layout {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: $layout-max-width;
+	min-height: 100vh;
+	margin: 0 auto;
+
+	@include desktop-up {
+		flex-wrap: nowrap;
+	}
+}
+
+.split-layout__aside {
+	display: flex;
+	flex: 1 1 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 40px;
+	align-self: flex-start;
+	border-bottom: 1px solid $color-rule;
+
+	@include section-padding;
+
+	// Pinned by its bottom edge so it works at any screen height: an aside that fits is exactly one
+	// screen tall and pins straight away; a taller one scrolls with the page until its end is in view.
+	@include desktop-up {
+		position: sticky;
+		bottom: 0;
+		flex: 0 0 clamp(440px, 40vw, 560px);
+		align-self: flex-end;
+		min-height: 100vh;
+		border-right: 1px solid $color-rule;
+		border-bottom: none;
+	}
+}
+
+.split-layout--page .split-layout__aside {
+	@include desktop-up {
+		flex-basis: clamp(400px, 34vw, 480px);
+	}
+}
+
+.split-layout__main {
+	display: flex;
+	flex: 1 1 100%;
+	flex-direction: column;
+	gap: 48px;
+	min-width: 0;
+
+	@include section-padding;
+
+	@include desktop-up {
+		flex: 1 1 0;
+	}
+}
+
+.split-layout--page .split-layout__main {
+	gap: 56px;
+}

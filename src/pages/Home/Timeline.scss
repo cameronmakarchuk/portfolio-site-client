@@ -1,0 +1,71 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.timeline-project {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.timeline-project__heading {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 12px;
+}
+
+.timeline-project__title {
+	@include text-title;
+}
+
+.timeline-project__cover-link {
+	display: block;
+
+	&:hover {
+		opacity: 0.85;
+	}
+}
+
+.timeline-project__status {
+	@include text-status;
+}
+
+.timeline-project__summary {
+	@include text-body;
+
+	margin: 0;
+}
+
+.timeline-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 20px;
+}
+
+.timeline-card {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.timeline-role {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.timeline-role__title {
+	@include text-title;
+}
+
+.timeline-role__description {
+	@include text-body;
+
+	margin: 0;
+}
+
+.timeline-pivot {
+	margin: 0;
+	font: italic 300 24px / 1.35 $font-serif;
+	color: $color-coral;
+}

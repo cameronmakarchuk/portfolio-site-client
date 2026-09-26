@@ -1,0 +1,143 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.contact-prompt {
+	--question-size: 20px;
+	--action-size: 24px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 6px;
+}
+
+.contact-prompt--large {
+	--question-size: 22px;
+	--action-size: 26px;
+}
+
+.contact-prompt__question {
+	font: 300 var(--question-size) / 1.3 $font-serif;
+	color: $color-text-quiet;
+}
+
+.contact-prompt__action {
+	padding: 0;
+	border: none;
+	background: none;
+	color: $color-coral;
+	font: 400 var(--action-size) / 1.3 $font-serif;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+	cursor: pointer;
+	transition: opacity 160ms ease;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.contact-dialog {
+	width: calc(100% - 32px);
+	max-width: 520px;
+	padding: 0;
+	border: 1px solid $color-rule;
+	background: $color-bg;
+	color: $color-text;
+
+	&::backdrop {
+		background: rgba(0, 0, 0, 0.6);
+		backdrop-filter: blur(4px);
+	}
+}
+
+.contact-dialog__panel {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 32px;
+}
+
+.contact-dialog__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.contact-dialog__title {
+	margin: 0;
+	font: 400 28px / 1.2 $font-serif;
+}
+
+.contact-dialog__close {
+	@include text-mono(20px, $color-text-soft);
+
+	padding: 0 4px;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.contact-dialog__form {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.contact-dialog__field {
+	@include text-mono(12px);
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	input,
+	textarea {
+		padding: 12px;
+		border: 1px solid $color-rule;
+		background: $color-surface;
+		color: $color-text;
+		font: 400 15px / 1.5 $font-sans;
+		resize: vertical;
+
+		&:focus {
+			border-color: $color-mint;
+			outline: none;
+		}
+	}
+}
+
+.contact-dialog__error {
+	@include text-body;
+
+	margin: 0;
+	color: $color-coral;
+}
+
+.contact-dialog__submit {
+	@include text-mono(13px, $color-coral);
+
+	align-self: flex-start;
+	padding: 12px 18px;
+	border: 1px solid $color-coral;
+	background: none;
+	cursor: pointer;
+	transition: opacity 160ms ease;
+
+	&:hover,
+	&:disabled {
+		opacity: 0.7;
+	}
+
+	&:disabled {
+		cursor: progress;
+	}
+}
+
+.contact-dialog__confirmation {
+	@include text-lede;
+
+	color: $color-text-soft;
+}

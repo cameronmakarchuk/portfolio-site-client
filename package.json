@@ -4,28 +4,31 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"compile": "tsc",
+		"compile": "tsc -b",
 		"dev": "vite",
 		"start": "vite",
 		"build": "tsc -b && vite build",
 		"preview": "vite preview",
-		"format": "biome format --write ./src",
-		"lint": "biome lint --write ./src",
-		"inc": "npm --no-git-tag-version version --type && npm version"
+		"format": "biome format --write ./src ./mockups",
+		"lint": "biome lint --write ./src ./mockups",
+		"mockups": "node mockups/generate.ts"
 	},
 	"dependencies": {
-		"@types/node": "^22.13.10",
-		"@types/react": "^18.0.25",
-		"@types/react-dom": "^18.0.9",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"sass": "^1.56.1",
-		"typescript": "^5.7.2"
+		"react-router": "^7.18.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.16",
+		"@types/node": "^22.13.10",
+		"@types/react": "^18.0.25",
+		"@types/react-dom": "^18.0.9",
 		"@vitejs/plugin-react": "^4.3.4",
 		"lefthook": "^1.7.18",
+		"playwright": "^1.63.0",
+		"sass": "^1.56.1",
+		"sharp": "^0.35.4",
+		"typescript": "^5.7.2",
 		"vite": "^6.2.1"
 	}
 }

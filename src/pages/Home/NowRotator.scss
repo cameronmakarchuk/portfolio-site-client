@@ -1,0 +1,76 @@
+@use "../../styles/partials/theme" as *;
+@use "../../styles/partials/typography" as *;
+
+.now-rotator {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid $color-rule;
+}
+
+.now-rotator__header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.now-rotator__badge {
+	font: 500 12px / 1.4 $font-mono;
+	color: $color-mint;
+	letter-spacing: 0.06em;
+}
+
+.now-rotator__updated {
+	@include text-mono(12px);
+}
+
+.now-rotator__item {
+	display: flex;
+	align-items: baseline;
+	gap: 16px;
+	min-height: 30px;
+	padding: 0;
+	border: none;
+	background: none;
+	color: inherit;
+	text-align: left;
+	cursor: pointer;
+	transition: opacity 300ms ease;
+}
+
+.now-rotator__item--faded {
+	opacity: 0;
+}
+
+.now-rotator__label {
+	@include text-mono(12px);
+
+	flex: none;
+	width: 80px;
+}
+
+.now-rotator__text {
+	font: 400 20px / 1.4 $font-sans;
+	color: $color-text;
+}
+
+.now-rotator__ticks {
+	display: flex;
+	gap: 6px;
+}
+
+// The visible tick is a 2px line; the button keeps a larger hit area around it.
+.now-rotator__tick {
+	width: 24px;
+	height: 12px;
+	padding: 0;
+	border: none;
+	background: linear-gradient($color-rule-strong, $color-rule-strong) center / 100% 2px no-repeat;
+	cursor: pointer;
+}
+
+.now-rotator__tick--active {
+	background-image: linear-gradient($color-mint, $color-mint);
+}
