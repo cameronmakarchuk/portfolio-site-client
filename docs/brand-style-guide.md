@@ -4,6 +4,8 @@ This guide captures the visual and editorial system behind the portfolio site. U
 
 The code is authoritative. When this guide and the code disagree, trust the code and update this guide.
 
+When this guide changes, also update the `cameron-personal-brand` agent skill (`SKILL.md` and its `references/brand-style-guide.md` copy) so work outside this repo follows the same brand.
+
 | Concern | Source |
 | --- | --- |
 | Color, layout and breakpoint tokens | `src/styles/partials/_theme.scss` |
